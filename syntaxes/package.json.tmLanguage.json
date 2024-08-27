@@ -10,6 +10,7 @@
 		"scripts": {
 			"begin": "(?=\"scripts\")",
 			"end": "(?<=,)|(?=})",
+			"applyEndPatternLast": true,
 			"name": "meta.embedded.shellscript.json.package",
 			"patterns": [
 				{ "include": "source.json#objectkey" },
