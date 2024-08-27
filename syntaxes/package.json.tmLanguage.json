@@ -9,8 +9,7 @@
 	"repository": {
 		"scripts": {
 			"begin": "(?=\"scripts\")",
-			"end": "(?<=,)|(?=})",
-			"applyEndPatternLast": true,
+			"end": "(?<=,)(?!\\G)|(?=})",
 			"name": "meta.embedded.shellscript.json.package",
 			"patterns": [
 				{ "include": "source.json#objectkey" },
