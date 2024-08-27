@@ -35,6 +35,13 @@
 				"injectTo": [
 					"source.json"
 				]
+			},
+			{
+				"scopeName": "source.shellscript.json.escaped",
+				"path": "./syntaxes/shellscript.json.escaped.tmLanguage.json",
+				"injectTo": [
+					"source.json"
+				]
 			}
 		]
 	},

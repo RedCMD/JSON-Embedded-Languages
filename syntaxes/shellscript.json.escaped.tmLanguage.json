@@ -1,0 +1,38 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "package.json",
+	"scopeName": "source.shellscript.json.escaped",
+	"injectionSelector": "L:source.json meta.embedded.shellscript.json.package -string.quoted.double.shell",
+	"patterns": [
+		{ "include": "#string" }
+	],
+	"repository": {
+		"string": {
+			"begin": "\\$?(\\\\\")",
+			"end": "\\\\\"",
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.string.begin.shell" },
+				"1": { "name": "constant.character.escape.json" }
+			},
+			"endCaptures": { "0": { "name": "punctuation.definition.string.end.shell constant.character.escape.json" } },
+			"name": "string.quoted.double.shell",
+			"patterns": [
+				{
+					"match": "\\\\{4}",
+					"name": "constant.character.escape.shell"
+				},
+				{
+					"match": "\\\\{3}\"",
+					"name": "constant.character.escape.shell"
+				},
+				{
+					"match": "\\\\{2}[$`]",
+					"name": "constant.character.escape.shell"
+				},
+				{ "include": "source.json#stringcontent" },
+				{ "include": "source.shell#variable" },
+				{ "include": "source.shell#interpolation" }
+			]
+		}
+	}
+}
