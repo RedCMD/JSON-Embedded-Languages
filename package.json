@@ -1,0 +1,29 @@
+{
+	"name": "json-embedded-languages",
+	"displayName": "json-embedded-languages",
+	"description": "JSON Embedded Languages",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.92.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"extensionDependencies": [
+		"vscode.json-language-features"
+	],
+	"contributes": {
+		"grammars": [
+			{
+				"scopeName": "source.json.package",
+				"path": "./syntaxes/package.json.tmLanguage.json",
+				"embeddedLanguages": {
+					"source.shell": "shellscript"
+				},
+				"injectTo": [
+					"source.json"
+				]
+			}
+		]
+	}
+}

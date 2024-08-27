@@ -1,0 +1,8 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "package.json",
+	"scopeName": "source.json.package",
+	"injectionSelector": "L:source.json -string -comment",
+	"patterns": [ ],
+	"repository": { }
+}
