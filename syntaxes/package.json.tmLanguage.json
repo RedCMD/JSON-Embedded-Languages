@@ -2,17 +2,20 @@
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
 	"name": "package.json",
 	"scopeName": "source.json.package",
-	"injectionSelector": "L:source.json meta.structure.dictionary.json -meta.embedded.shellscript.json.package -meta.structure.dictionary.value.json -meta.structure.array.json -string -comment",
+	"injectionSelector": "L:source.json meta.structure.dictionary.json -meta.structure.dictionary.value.json -meta.structure.array.json -string -comment",
 	"patterns": [
 		{ "include": "#scripts" }
 	],
 	"repository": {
 		"scripts": {
-			"begin": "(?=\"scripts\")",
-			"end": "(?<=,)(?!\\G)|(?=})",
-			"name": "meta.embedded.shellscript.json.package",
+			"begin": "(?!\\G)(?<=\"scripts\")(?!})",
+			"end": "(?<=,)|(?=})",
 			"patterns": [
-				{ "include": "source.json#objectkey" },
+				{
+					"comment": "the JSON object key",
+					"include": "source.json#objectkey"
+				},
+				{ "include": "source.json#comments" },
 				{
 					"comment": "Taken straight from `source.json`",
 					"begin": ":",
@@ -58,7 +61,17 @@
 															"comment": "Setup a `\\G` anchor for ShellScript to use",
 															"begin": "|",
 															"end": "(*FAIL)",
-															"patterns": [ { "include": "source.shell" } ]
+															"patterns": [
+																{ "include": "source.shell" },
+																{
+																	"begin": "(?!^[ \\t]*+$)(?:(?<=^until | until |\\tuntil |^while | while |\\twhile |^elif | elif |\\telif |^else | else |\\telse |^then | then |\\tthen |^do | do |\\tdo |^if | if |\\tif )|(?<=\"\\G|^|;|\\||&|!|\\(|\\{|`))[ \\t]*+(?!nocorrect\\W|nocorrect\\$|function\\W|function\\$|foreach\\W|foreach\\$|repeat\\W|repeat\\$|logout\\W|logout\\$|coproc\\W|coproc\\$|select\\W|select\\$|while\\W|while\\$|pushd\\W|pushd\\$|until\\W|until\\$|case\\W|case\\$|done\\W|done\\$|elif\\W|elif\\$|else\\W|else\\$|esac\\W|esac\\$|popd\\W|popd\\$|then\\W|then\\$|time\\W|time\\$|for\\W|for\\$|end\\W|end\\$|fi\\W|fi\\$|do\\W|do\\$|in\\W|in\\$|if\\W|if\\$)",
+																	"end": "(?=;|\\||&|\\n|\\)|`|\\{|\\}|[ \\t]*#|\\])(?<!\\\\)",
+																	"beginCaptures": { },
+																	"endCaptures": { },
+																	"name": "meta.statement.shell",
+																	"patterns": [ { "include": "source.shell#typical_statements" } ]
+																}
+															]
 														},
 														{ "include": "source.json#stringcontent" }
 													]
@@ -91,6 +104,10 @@
 							"name": "invalid.illegal.expected-dictionary-separator.json"
 						}
 					]
+				},
+				{
+					"match": "[^\\s\\}]",
+					"name": "invalid.illegal.expected-dictionary-separator.json"
 				}
 			]
 		}
