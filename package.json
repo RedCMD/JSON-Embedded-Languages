@@ -1,7 +1,7 @@
 {
 	"name": "json-embedded-languages",
 	"displayName": "JSON Embedded Languages",
-	"description": "Embed Languages into JSON",
+	"description": "Embed Language(s) into JSON",
 	"publisher": "RedCMD",
 	"version": "0.0.4",
 	"engines": {
@@ -23,9 +23,6 @@
 	],
 	"categories": [
 		"Programming Languages"
-	],
-	"extensionDependencies": [
-		"vscode.json-language-features"
 	],
 	"contributes": {
 		"grammars": [
