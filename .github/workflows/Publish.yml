@@ -6,18 +6,18 @@ on:
       version:
         description: 'Version'
         required: true
-        default: 'minor x.1.0'
+        default: 'minor'
         type: choice
         options:
-        - patch x.x.1
-        - minor x.1.0
-        - major 1.0.0
+        - patch
+        - minor
+        - major
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@master
 
       - name: Install Dependencies
         run: | # vsce etc
