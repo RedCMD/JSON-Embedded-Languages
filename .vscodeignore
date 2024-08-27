@@ -1,4 +1,9 @@
 .vscode/**
 .vscode-test/**
+_test_files/**
+.github/**
+
 .gitignore
 vsc-extension-quickstart.md
+
+**/*.svg

@@ -1,11 +1,26 @@
 {
 	"name": "json-embedded-languages",
-	"displayName": "json-embedded-languages",
-	"description": "JSON Embedded Languages",
+	"displayName": "JSON Embedded Languages",
+	"description": "Embed Languages into JSON",
+	"publisher": "RedCMD",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.92.0"
 	},
+	"icon": "images/shell.json.icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RedCMD/JSON-Embedded-Languages.git"
+	},
+	"bugs": {
+		"url": "https://github.com/RedCMD/JSON-Embedded-Languages/issues"
+	},
+	"homepage": "https://marketplace.visualstudio.com/items?itemName=RedCMD.json-embedded-languages",
+	"keywords": [
+		"package.json",
+		"shellscript",
+		"scripts embed"
+	],
 	"categories": [
 		"Programming Languages"
 	],
@@ -18,12 +33,15 @@
 				"scopeName": "source.json.package",
 				"path": "./syntaxes/package.json.tmLanguage.json",
 				"embeddedLanguages": {
-					"source.shell": "shellscript"
+					"meta.embedded.shellscript": "shellscript"
 				},
 				"injectTo": [
 					"source.json"
 				]
 			}
 		]
+	},
+	"devDependencies": {
+		"vsce": "^2.15.0"
 	}
 }

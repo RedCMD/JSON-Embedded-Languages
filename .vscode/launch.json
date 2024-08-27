@@ -6,7 +6,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Extension",
+			"name": "package.json Extension",
 			"type": "extensionHost",
 			"request": "launch",
 			"args": [

@@ -1,0 +1,48 @@
+name: Publish Extension
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+        default: 'minor x.1.0'
+        type: choice
+        options:
+        - patch x.x.1
+        - minor x.1.0
+        - major 1.0.0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: | # vsce etc
+          npm i
+
+      - name: Setup Github Actions
+        run: | # allow use of `git push`
+          git config --global user.name "RedCMD"
+          git config --global user.email "theredcmd@gmail.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Sync Github Actions"
+
+      - name: Package Extension
+        run: | # `.vsix` file
+          npx vsce package ${{ github.event.inputs.version }}
+          git push --tags
+          echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
+
+      - name: Generate Release
+        run: | # create release page on github with `.vsix` file
+          gh release create v$VERSION --generate-notes json-embedded-languages-$VERSION.vsix
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Publish Release
+        run: | # upload to Extension Marketplace
+          npx vsce publish -p ${{ secrets.VSCE_PAT }} --packagePath json-embedded-languages-$VERSION.vsix
+          git push
