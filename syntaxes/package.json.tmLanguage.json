@@ -2,7 +2,97 @@
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
 	"name": "package.json",
 	"scopeName": "source.json.package",
-	"injectionSelector": "L:source.json -string -comment",
-	"patterns": [ ],
-	"repository": { }
+	"injectionSelector": "L:source.json meta.structure.dictionary.json -meta.embedded.shellscript.json.package -meta.structure.dictionary.value.json -meta.structure.array.json -string -comment",
+	"patterns": [
+		{ "include": "#scripts" }
+	],
+	"repository": {
+		"scripts": {
+			"begin": "(?=\"scripts\")",
+			"end": "(?<=,)|(?=})",
+			"name": "meta.embedded.shellscript.json.package",
+			"patterns": [
+				{ "include": "source.json#objectkey" },
+				{
+					"comment": "Taken straight from `source.json`",
+					"begin": ":",
+					"beginCaptures": { "0": { "name": "punctuation.separator.dictionary.key-value.json" } },
+					"end": "(,)|(?=\\})",
+					"endCaptures": { "1": { "name": "punctuation.separator.dictionary.pair.json" } },
+					"name": "meta.structure.dictionary.value.json",
+					"patterns": [
+						{
+							"begin": "\\{",
+							"beginCaptures": { "0": { "name": "punctuation.definition.dictionary.begin.json" } },
+							"end": "\\}",
+							"endCaptures": { "0": { "name": "punctuation.definition.dictionary.end.json" } },
+							"name": "meta.structure.dictionary.json",
+							"patterns": [
+								{
+									"comment": "the JSON object key",
+									"include": "source.json#objectkey"
+								},
+								{ "include": "source.json#comments" },
+								{
+									"begin": ":",
+									"beginCaptures": { "0": { "name": "punctuation.separator.dictionary.key-value.json" } },
+									"end": "(,)|(?=\\})",
+									"endCaptures": { "1": { "name": "punctuation.separator.dictionary.pair.json" } },
+									"name": "meta.structure.dictionary.value.json",
+									"patterns": [
+										{
+											"comment": "VSCode TextMate bug. For some reason, including a grammar from within a capture group doesn't load the include. We have to pre-load the include outside of a capture group. `source.shell`",
+											"begin": "(*FAIL)",
+											"end": "|",
+											"patterns": [ { "include": "source.shell" } ]
+										},
+										{
+											"match": "(\")((?>[^\\\\\"]++|\\\\.)++)(\")",
+											"captures": {
+												"0": { "name": "string.quoted.double.json" },
+												"1": { "name": "punctuation.definition.string.begin.json.package" },
+												"2": {
+													"name": "meta.embedded.shellscript.json.package",
+													"patterns": [
+														{
+															"comment": "Setup a `\\G` anchor for ShellScript to use",
+															"begin": "|",
+															"end": "(*FAIL)",
+															"patterns": [ { "include": "source.shell" } ]
+														},
+														{ "include": "source.json#stringcontent" }
+													]
+												},
+												"3": { "name": "punctuation.definition.string.end.json.package" }
+											}
+										},
+										{
+											"comment": "the JSON object value",
+											"include": "source.json#value"
+										},
+										{
+											"match": "[^\\s,]",
+											"name": "invalid.illegal.expected-dictionary-separator.json"
+										}
+									]
+								},
+								{
+									"match": "[^\\s\\}]",
+									"name": "invalid.illegal.expected-dictionary-separator.json"
+								}
+							]
+						},
+						{
+							"comment": "the JSON object value",
+							"include": "source.json#value"
+						},
+						{
+							"match": "[^\\s,]",
+							"name": "invalid.illegal.expected-dictionary-separator.json"
+						}
+					]
+				}
+			]
+		}
+	}
 }
