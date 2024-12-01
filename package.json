@@ -19,7 +19,8 @@
 	"keywords": [
 		"package.json",
 		"shellscript",
-		"scripts embed"
+		"scripts embed",
+		"language-configuration"
 	],
 	"categories": [
 		"Programming Languages"
@@ -29,6 +30,10 @@
 			{
 				"scopeName": "source.json",
 				"path": "./syntaxes/JSON.tmLanguage.json"
+			},
+			{
+				"scopeName": "source.json.comments",
+				"path": "./syntaxes/JSONC.tmLanguage.json"
 			},
 			{
 				"scopeName": "source.json.shellscript",
@@ -45,6 +50,16 @@
 				"path": "./syntaxes/shellscript.json.escaped.tmLanguage.json",
 				"injectTo": [
 					"source.json"
+				]
+			},
+			{
+				"scopeName": "source.json.comments.language-configuration",
+				"path": "./syntaxes/language-configuration.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
+				},
+				"injectTo": [
+					"source.json.comments"
 				]
 			},
 			{
