@@ -27,8 +27,12 @@
 	"contributes": {
 		"grammars": [
 			{
-				"scopeName": "source.json.package",
-				"path": "./syntaxes/package.json.tmLanguage.json",
+				"scopeName": "source.json",
+				"path": "./syntaxes/JSON.tmLanguage.json"
+			},
+			{
+				"scopeName": "source.json.shellscript",
+				"path": "./syntaxes/scripts.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.shellscript": "shellscript"
 				},
