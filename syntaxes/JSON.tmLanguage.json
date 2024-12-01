@@ -63,7 +63,7 @@
 			"patterns": [
 				{
 					"begin": "(?=\"((?>[^\\\\\"]++|\\\\.)*+)\")",
-					"end": "(?<=,)|(?=})",
+					"end": "(?!\\G)(?<=,)|(?=})",
 					"name": ".$1.",
 					"patterns": [ { "include": "#objectpair" } ]
 				},
@@ -80,8 +80,8 @@
 				{
 					"begin": ":",
 					"beginCaptures": { "0": { "name": "punctuation.separator.dictionary.key-value.json" } },
-					"end": "(,)|(?=})",
-					"endCaptures": { "1": { "name": "punctuation.separator.dictionary.pair.json" } },
+					"end": ",|(?=})",
+					"endCaptures": { "0": { "name": "punctuation.separator.dictionary.pair.json" } },
 					"name": "meta.structure.dictionary.value.json",
 					"patterns": [
 						{
