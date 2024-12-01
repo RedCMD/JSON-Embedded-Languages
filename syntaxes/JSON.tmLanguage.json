@@ -64,7 +64,7 @@
 				{
 					"begin": "(?=\"((?>[^\\\\\"]++|\\\\.)*+)\")",
 					"end": "(?!\\G)(?<=,)|(?=})",
-					"name": ".$1.",
+					"name": ".meta.embedded.$1.",
 					"patterns": [ { "include": "#objectpair" } ]
 				},
 				{ "include": "#objectpair" }

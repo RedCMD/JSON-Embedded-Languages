@@ -3,7 +3,7 @@
 	"comment": "https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/pyproject.json",
 	"name": "json.legacy_tox_ini",
 	"scopeName": "source.json.legacy_tox_ini",
-	"injectionSelector": "L:source.json .tool. .tox. .legacy_tox_ini. meta.structure.dictionary.value.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -string -comment",
+	"injectionSelector": "L:source.json .meta.embedded.tool. .meta.embedded.tox. .meta.embedded.legacy_tox_ini. meta.structure.dictionary.value.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -string -comment",
 	"patterns": [
 		{ "include": "#legacy_tox_ini" }
 	],

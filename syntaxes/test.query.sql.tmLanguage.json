@@ -3,7 +3,7 @@
 	"comment": "https://github.com/omnigres/omnigres/blob/master/pg_yregress/schema.json#L190",
 	"name": "json.query",
 	"scopeName": "source.json.sql",
-	"injectionSelector": "L:source.json .test. .query. meta.structure.dictionary.value.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -string -comment",
+	"injectionSelector": "L:source.json .meta.embedded.test. .meta.embedded.query. meta.structure.dictionary.value.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -string -comment",
 	"patterns": [
 		{ "include": "#query" }
 	],
