@@ -4,14 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version'
-        required: true
-        default: 'minor'
+        description: Version
+        default: minor
         type: choice
         options:
-        - patch
-        - minor
-        - major
+          - patch
+          - minor
+          - major
 
 jobs:
   release:
@@ -19,30 +18,31 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Install Dependencies
-        run: | # vsce etc
+      - name: Install Dependencies # vsce etc
+        run: | # shell
           npm i
 
-      - name: Setup Github Actions
-        run: | # allow use of `git push`
+      - name: Setup Github Actions # allow use of `git push`
+        run: | # shell
           git config --global user.name "RedCMD"
           git config --global user.email "theredcmd@gmail.com"
           git add .
           git diff-index --quiet HEAD || git commit -m "Sync Github Actions"
 
-      - name: Package Extension
-        run: | # `.vsix` file
+      - name: Package Extension # `.vsix` file
+        run: | # shell
           npx vsce package ${{ github.event.inputs.version }}
-          git push
-          git push --tags
+          git push --follow-tags
           echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
 
-      - name: Generate Release
-        run: | # create release page on github with `.vsix` file
+      - name: Generate Release # create release page on github with `.vsix` file
+        run: | # shell
           gh release create v$VERSION --generate-notes json-embedded-languages-$VERSION.vsix
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Publish Release
-        run: | # upload to Extension Marketplace
-          npx vsce publish -p ${{ secrets.VSCE_PAT }} --packagePath json-embedded-languages-$VERSION.vsix
+      - name: Publish Release # upload to Extension Marketplace
+        run: | # shell
+          npx vsce publish --packagePath json-embedded-languages-$VERSION.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
