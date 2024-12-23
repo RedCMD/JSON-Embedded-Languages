@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "Schema \"markdownDescription\" and \"patternProperties\" Escapes",
+	"scopeName": "source.json.markdown.escape",
+	"injectionSelector": "L:source.json meta.embedded.text.html.markdown -source.json.comments",
+	"patterns": [
+		{ "include": "#raw" },
+		{ "include": "source.json#stringcontent" }
+	],
+	"repository": {
+		"raw": {
+			"match": "(?<!`)(`++)((?>[^`]++|(?!\\1(?!`))`++)++)(\\1)",
+			"name": "markup.inline.raw.string.markdown",
+			"captures": {
+				"1": { "name": "punctuation.definition.raw.markdown" },
+				"2": { "patterns": [ { "include": "source.json#stringcontent" } ] },
+				"3": { "name": "punctuation.definition.raw.markdown" }
+			}
+		}
+	}
+}

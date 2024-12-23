@@ -1,0 +1,30 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "Schema \"pattern\" and \"patternProperties\" Regex",
+	"scopeName": "source.json.pattern",
+	"injectionSelector": [
+		"L:source.json .meta.embedded.patternProperties. meta.structure.dictionary.json support.type.property-name.json -(.meta.embedded.patternProperties. meta.structure.dictionary.json meta.structure.dictionary.json) -(.meta.embedded.patternProperties. meta.structure.array.json) -meta.embedded.json.textmate.regexp -comment -source.json.comments",
+		"L:source.json .meta.embedded.pattern. string.quoted.double.json -(.meta.embedded.pattern. meta.structure.dictionary.json) -(.meta.embedded.pattern. meta.structure.array.json) -meta.embedded.json.textmate.regexp -comment -source.json.comments"
+	],
+	"patterns": [
+		{
+			"comment": "https://github.com/microsoft/vscode-textmate/issues/242",
+			"include": "source.json.textmate.regexp#_pre-load_"
+		},
+		{ "include": "#regexp" }
+	],
+	"repository": {
+		"regexp": {
+			"match": "(?<=\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"captures": {
+				"0": {
+					"name": "meta.embedded.json.textmate.regexp",
+					"patterns": [
+						{ "include": "source.json.textmate.regexp" },
+						{ "include": "source.json#stringcontent" }
+					]
+				}
+			}
+		}
+	}
+}

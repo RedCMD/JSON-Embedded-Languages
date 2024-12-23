@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "Schema \"markdownDescription\" and \"patternProperties\" Markdown",
+	"scopeName": "source.json.markdown",
+	"injectionSelector": "L:source.json .meta.embedded.markdownDescription. string.quoted.double.json -(.meta.embedded.markdownDescription. meta.structure.dictionary.json) -(.meta.embedded.markdownDescription. meta.structure.array.json) -meta.embedded.text.html.markdown -comment -source.json.comments",
+	"patterns": [
+		{
+			"comment": "https://github.com/microsoft/vscode-textmate/issues/242",
+			"include": "text.html.markdown#_pre-load_"
+		},
+		{ "include": "#markdown" },
+		{ "include": "source.json#stringcontent" }
+	],
+	"repository": {
+		"markdown": {
+			"match": "(?<=\"|\\\\[nr])(?>[^\\\\\"\\x-\\x1F]++|\\\\[^nr])++(?=\"|\\\\[nr])",
+			"captures": {
+				"0": {
+					"name": "meta.embedded.text.html.markdown",
+					"patterns": [
+						{
+							"comment": "Setup \\G anchor for Markdown",
+							"begin": "|",
+							"end": "(*FAIL)",
+							"patterns": [ { "include": "text.html.markdown" } ]
+						}
+					]
+				}
+			}
+		}
+	}
+}

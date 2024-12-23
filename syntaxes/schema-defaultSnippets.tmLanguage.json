@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "Schema \"defaultSnippets\" Snippets",
+	"scopeName": "source.json.snippets",
+	"injectionSelector": [
+		"L:source.json .meta.embedded.defaultSnippets. meta.structure.array.json .meta.embedded.bodyText. string.quoted.double.json -(.meta.embedded.bodyText. meta.structure.dictionary.json) -(.meta.embedded.bodyText. meta.structure.array.json) -(.meta.embedded.defaultSnippets. meta.structure.array.json meta.structure.array.json .meta.embedded.bodyText.) -(.meta.embedded.defaultSnippets. meta.structure.dictionary.json meta.structure.dictionary.json .meta.embedded.bodyText.) -meta.embedded.json.comments.snippets.snippets -comment -source.json.comments",
+		"L:source.json .meta.embedded.defaultSnippets. meta.structure.array.json .meta.embedded.body. (string.quoted.double.json | support.type.property-name.json) -(.meta.embedded.defaultSnippets. meta.structure.array.json meta.structure.array.json .meta.embedded.body.) -(.meta.embedded.defaultSnippets. meta.structure.dictionary.json meta.structure.dictionary.json .meta.embedded.body.) -meta.embedded.json.comments.snippets.snippets -comment -source.json.comments"
+	],
+	"patterns": [
+		{
+			"comment": "https://github.com/microsoft/vscode-textmate/issues/242",
+			"include": "source.json.comments.snippets#_pre-load_"
+		},
+		{ "include": "#body-key" },
+		{ "include": "#bodyText-string" },
+		{ "include": "#body-string" }
+	],
+	"repository": {
+		"body-key": {
+			"match": "(?<={\\s*+\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++|(?<=\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++(?=\"\\s*+:)",
+			"captures": {
+				"0": {
+					"name": "meta.embedded.json.comments.snippets.snippets string.json support.type.property-name.json",
+					"patterns": [
+						{ "include": "source.json.comments.snippets#any" },
+						{ "include": "source.json.comments.snippets#body_stringcontent" },
+						{ "include": "source.json#stringcontent" }
+					]
+				}
+			}
+		},
+		"bodyText-string": {
+			"match": "(?<=\"bodyText\"\\s*+:\\s*+\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"captures": {
+				"0": {
+					"name": "meta.embedded.json.comments.snippets.snippets string.quoted.double.json",
+					"patterns": [
+						{ "include": "source.json.comments.snippets#any" },
+						{ "include": "source.json.comments.snippets#body_stringcontent" },
+						{ "include": "source.json#stringcontent" }
+					]
+				}
+			}
+		},
+		"body-string": {
+			"match": "(?<=\")\\G(?>(\\^)?+((?>[^\\\\\"\\x-\\x1F]++|\\\\.)++)|(\\^))",
+			"captures": {
+				"1": { "name": "keyword.control.unstringify.json.schema" },
+				"2": {
+					"name": "meta.embedded.json.comments.snippets.snippets string.quoted.double.json",
+					"patterns": [
+						{ "include": "source.json.comments.snippets#any" },
+						{ "include": "source.json.comments.snippets#body_stringcontent" },
+						{ "include": "source.json#stringcontent" }
+					]
+				},
+				"3": { "name": "keyword.control.unstringify.json.schema" }
+			}
+		}
+	}
+}
