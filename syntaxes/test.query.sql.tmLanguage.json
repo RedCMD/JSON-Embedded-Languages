@@ -3,35 +3,26 @@
 	"comment": "https://github.com/omnigres/omnigres/blob/master/pg_yregress/schema.json#L190",
 	"name": "json.query",
 	"scopeName": "source.json.sql",
-	"injectionSelector": "L:source.json .meta.embedded.test. .meta.embedded.query. meta.structure.dictionary.value.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -string -comment",
+	"injectionSelector": "L:source.json .meta.embedded.test. .meta.embedded.query. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -meta.embedded.sql.json -comment -source.json.comments",
 	"patterns": [
+		{
+			"comment": "https://github.com/microsoft/vscode-textmate/issues/242",
+			"include": "source.sql#_pre-load_"
+		},
 		{ "include": "#query" }
 	],
 	"repository": {
 		"query": {
-			"patterns": [
-				{
-					"comment": "VSCode TextMate bug. For some reason, including a grammar from within a capture group doesn't load the include. We have to pre-load the include outside of a capture group. https://github.com/microsoft/vscode-textmate/issues/242",
-					"begin": "(*FAIL)",
-					"end": "|",
-					"patterns": [ { "include": "source.sql" } ]
-				},
-				{
-					"match": "(\")((?>[^\\\\\"]++|\\\\.)++)(\")",
-					"captures": {
-						"0": { "name": "string.quoted.double.json" },
-						"1": { "name": "punctuation.definition.string.begin.json" },
-						"2": {
-							"name": "meta.embedded.sql.json",
-							"patterns": [
-								{ "include": "source.sql" },
-								{ "include": "source.json#stringcontent" }
-							]
-						},
-						"3": { "name": "punctuation.definition.string.end.json" }
-					}
+			"match": "\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"captures": {
+				"0": {
+					"name": "meta.embedded.sql.json",
+					"patterns": [
+						{ "include": "source.sql" },
+						{ "include": "source.json#stringcontent" }
+					]
 				}
-			]
+			}
 		}
 	}
 }
