@@ -1,37 +1,28 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
 	"comment": "https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/pyproject.json",
-	"name": "json.legacy_tox_ini",
+	"name": "legacy_tox_ini",
 	"scopeName": "source.json.legacy_tox_ini",
-	"injectionSelector": "L:source.json .meta.embedded.tool. .meta.embedded.tox. .meta.embedded.legacy_tox_ini. meta.structure.dictionary.value.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -string -comment",
+	"injectionSelector": "L:source.json .meta.embedded.tool. .meta.embedded.tox. .meta.embedded.legacy_tox_ini. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -meta.embedded.ini.json -comment -source.json.comments",
 	"patterns": [
+		{
+			"comment": "https://github.com/microsoft/vscode-textmate/issues/242",
+			"include": "source.ini#_pre-load_"
+		},
 		{ "include": "#legacy_tox_ini" }
 	],
 	"repository": {
 		"legacy_tox_ini": {
-			"patterns": [
-				{
-					"comment": "VSCode TextMate bug. For some reason, including a grammar from within a capture group doesn't load the include. We have to pre-load the include outside of a capture group. `source.ini`",
-					"begin": "(*FAIL)",
-					"end": "|",
-					"patterns": [ { "include": "source.ini" } ]
-				},
-				{
-					"match": "(\")((?>[^\\\\\"]++|\\\\.)++)(\")",
-					"captures": {
-						"0": { "name": "string.quoted.double.json" },
-						"1": { "name": "punctuation.definition.string.begin.json" },
-						"2": {
-							"name": "meta.embedded.ini.json",
-							"patterns": [
-								{ "include": "source.ini" },
-								{ "include": "source.json#stringcontent" }
-							]
-						},
-						"3": { "name": "punctuation.definition.string.end.json" }
-					}
+			"match": "\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"captures": {
+				"0": {
+					"name": "meta.embedded.ini.json",
+					"patterns": [
+						{ "include": "source.ini" },
+						{ "include": "source.json#stringcontent" }
+					]
 				}
-			]
+			}
 		}
 	}
 }
