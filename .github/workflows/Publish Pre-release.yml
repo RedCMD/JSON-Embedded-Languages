@@ -16,7 +16,7 @@ jobs:
 
       - name: Install Dependencies # vsce etc
         run: | # shell
-          npm i
+          npm i vsce -g
 
       - name: Setup Github Actions # allow use of `git push`
         run: | # shell
@@ -27,7 +27,7 @@ jobs:
 
       - name: Publish Pre-release # upload to Extension Marketplace
         run: | # shell
-          npx vsce publish patch --pre-release
+          vsce publish patch --pre-release
           git push --follow-tags
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
