@@ -85,6 +85,13 @@
 				]
 			},
 			{
+				"scopeName": "source.json.package.scopes",
+				"path": "./syntaxes/package.scopes.tmLanguage.json",
+				"injectTo": [
+					"source.json"
+				]
+			},
+			{
 				"scopeName": "source.json.markdown",
 				"path": "./syntaxes/schema-markdown.tmLanguage.json",
 				"embeddedLanguages": {

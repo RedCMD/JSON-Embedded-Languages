@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "`package.json` embeddedLanguages & tokenTypes & balancedBracketScopes & unbalancedBracketScopes & injectTo & scopeName",
+	"scopeName": "source.json.package.scopes",
+	"injectionSelector": [
+		"L:source.json .meta.embedded.contributes. .meta.embedded.grammars. meta.structure.array.json (.meta.embedded.embeddedLanguages. meta.structure.dictionary.json | .meta.embedded.tokenTypes. meta.structure.dictionary.json) -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.json.textmate.source -comment -source.json.comments",
+		"L:source.json .meta.embedded.contributes. .meta.embedded.grammars. meta.structure.array.json (.meta.embedded.balancedBracketScopes. meta.structure.array.json | .meta.embedded.unbalancedBracketScopes. meta.structure.array.json | .meta.embedded.injectTo. meta.structure.array.json ) -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json meta.structure.array.json) -meta.embedded.json.textmate.source -comment -source.json.comments",
+		"L:source.json .meta.embedded.contributes. .meta.embedded.grammars. meta.structure.array.json .meta.embedded.scopeName. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json meta.structure.array.json) -meta.embedded.json.textmate.source -comment -source.json.comments"
+	],
+	"patterns": [
+		{ "include": "#embeddedLanguages" }
+	],
+	"repository": {
+		"embeddedLanguages": {
+			"match": "(?<=\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"captures": {
+				"0": {
+					"name": "meta.embedded.json.textmate.source",
+					"patterns": [
+						{
+							"begin": "(?>text|source|markdown)(?=\\.[\\w.:])",
+							"end": "(?![\\w.:-])",
+							"beginCaptures": { "0": { "name": "support.function.tm" } },
+							"name": "string",
+							"patterns": [
+								{
+									"match": "\\.",
+									"name": "support.function.tm"
+								}
+							]
+						},
+						{
+							"match": "[\\w.:][\\w.:-]*",
+							"name": "string $0"
+						},
+						{
+							"comment": "balancedBracketScopes ONLY",
+							"match": "(?<=\")\\*(?!.)",
+							"name": "keyword.control.any"
+						},
+						{
+							"comment": "tokenTypes Type ONLY",
+							"match": "(?<=\")other(?!.)",
+							"name": "meta.embedded.other"
+						},
+						{ "include": "source.json#stringcontent" }
+					]
+				}
+			}
+		}
+	}
+}
