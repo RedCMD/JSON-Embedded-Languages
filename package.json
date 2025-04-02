@@ -19,8 +19,9 @@
 	"keywords": [
 		"package.json",
 		"shellscript",
-		"scripts embed",
-		"language-configuration"
+		"language-configuration",
+		"regex",
+		"embedded language"
 	],
 	"categories": [
 		"Programming Languages"
@@ -28,11 +29,13 @@
 	"contributes": {
 		"grammars": [
 			{
-				"scopeName": "source.json",
+				"language": "json",
+				"scopeName": "source.json.embedded",
 				"path": "./syntaxes/JSON.tmLanguage.json"
 			},
 			{
-				"scopeName": "source.json.comments",
+				"language": "jsonc",
+				"scopeName": "source.json.comments.embedded",
 				"path": "./syntaxes/JSONC.tmLanguage.json"
 			},
 			{
@@ -42,14 +45,14 @@
 					"meta.embedded.shellscript": "shellscript"
 				},
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
 				"scopeName": "source.shellscript.json.escaped",
 				"path": "./syntaxes/shellscript.json.escaped.tmLanguage.json",
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
@@ -59,7 +62,7 @@
 					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
 				},
 				"injectTo": [
-					"source.json.comments"
+					"source.json.comments.embedded"
 				]
 			},
 			{
@@ -71,7 +74,7 @@
 					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
 				},
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
@@ -81,14 +84,14 @@
 					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
 				},
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
 				"scopeName": "source.json.package.scopes",
 				"path": "./syntaxes/package.scopes.tmLanguage.json",
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
@@ -98,14 +101,14 @@
 					"meta.embedded.text.html.markdown": "markdown"
 				},
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
 				"scopeName": "source.json.markdown.escape",
 				"path": "./syntaxes/schema-markdown-escape.tmLanguage.json",
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
@@ -115,7 +118,7 @@
 					"meta.embedded.ini": "ini"
 				},
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			},
 			{
@@ -125,7 +128,7 @@
 					"meta.embedded.sql": "sql"
 				},
 				"injectTo": [
-					"source.json"
+					"source.json.embedded"
 				]
 			}
 		]

@@ -3,7 +3,7 @@
 	"comment": "https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/pyproject.json",
 	"name": "legacy_tox_ini",
 	"scopeName": "source.json.legacy_tox_ini",
-	"injectionSelector": "L:source.json .meta.embedded.tool. .meta.embedded.tox. .meta.embedded.legacy_tox_ini. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -meta.embedded.ini.json -comment -source.json.comments",
+	"injectionSelector": "L:source.json.embedded .meta.embedded.tool. .meta.embedded.tox. .meta.embedded.legacy_tox_ini. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -meta.embedded.ini.json -comment",
 	"patterns": [
 		{
 			"comment": "https://github.com/microsoft/vscode-textmate/issues/242",
