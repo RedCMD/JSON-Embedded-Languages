@@ -30,3 +30,10 @@ Please report any you come across.
 * The GitHub [Issue](https://github.com/microsoft/vscode/issues/224581) that spawned the idea
 * [Repository](https://github.com/RedCMD/JSON-Embedded-Languages)
 * [Marketplace](https://marketplace.visualstudio.com/items?itemName=RedCMD.json-embedded-languages)
+
+
+## TODO:
+* `package.json`/`"when"`
+* `package.json`/`"problemMatchers"`/`"regexp"`
+* `globs`/`"filenamePatterns"`
+* switch JSON escaped oniguruma regex for JSON escaped JavaScript regex
