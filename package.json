@@ -21,7 +21,8 @@
 		"shellscript",
 		"language-configuration",
 		"regex",
-		"embedded language"
+		"embedded language",
+		"problemMatchers"
 	],
 	"categories": [
 		"Programming Languages"

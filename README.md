@@ -34,6 +34,5 @@ Please report any you come across.
 
 ## TODO:
 * `package.json`/`"when"`
-* `package.json`/`"problemMatchers"`/`"regexp"`
 * `globs`/`"filenamePatterns"`
 * switch JSON escaped oniguruma regex for JSON escaped JavaScript regex
