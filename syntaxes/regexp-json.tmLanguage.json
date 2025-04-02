@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
 	"name": "Schema \"pattern\" and \"patternProperties\", package.json \"firstLine\"",
-	"scopeName": "source.json.pattern",
+	"scopeName": "source.json.regexp",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.embedded.patternProperties. meta.structure.dictionary.json support.type.property-name.json -(.meta.embedded.patternProperties. meta.structure.dictionary.json meta.structure.dictionary.json) -(.meta.embedded.patternProperties. meta.structure.array.json) -meta.embedded.json.textmate.regexp -comment",
 		"L:source.json.embedded .meta.embedded.pattern. string.quoted.double.json -(.meta.embedded.pattern. meta.structure.dictionary.json) -(.meta.embedded.pattern. meta.structure.array.json) -meta.embedded.json.textmate.regexp -comment",

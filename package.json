@@ -56,16 +56,6 @@
 				]
 			},
 			{
-				"scopeName": "source.json.comments.language-configuration",
-				"path": "./syntaxes/language-configuration.tmLanguage.json",
-				"embeddedLanguages": {
-					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
-				},
-				"injectTo": [
-					"source.json.comments.embedded"
-				]
-			},
-			{
 				"scopeName": "source.json.snippets",
 				"path": "./syntaxes/schema-defaultSnippets.tmLanguage.json",
 				"embeddedLanguages": {
@@ -78,8 +68,18 @@
 				]
 			},
 			{
-				"scopeName": "source.json.pattern",
-				"path": "./syntaxes/schema-pattern.tmLanguage.json",
+				"scopeName": "source.json.comments.regexp",
+				"path": "./syntaxes/regexp-jsonc.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
+				},
+				"injectTo": [
+					"source.json.comments.embedded"
+				]
+			},
+			{
+				"scopeName": "source.json.regexp",
+				"path": "./syntaxes/regexp-json.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
 				},

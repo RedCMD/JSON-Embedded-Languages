@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
 	"comment": "https://github.com/wraith13/vscode-schemas/blob/master/en/latest/schemas/language-configuration.json#L237-L258",
 	"name": "language-configuration",
-	"scopeName": "source.json.comments.language-configuration",
+	"scopeName": "source.json.comments.regexp",
 	"injectionSelector": [
 		"L:source.json.embedded.comments .meta.embedded.wordPattern. (.meta.embedded.pattern. -(meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments) | -(meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments)) meta.structure.dictionary.value.json.comments string.quoted.double.json.comments -meta.structure.array.json.comments -meta.embedded.json.textmate.regexp -comment",
 		"L:source.json.embedded.comments .meta.embedded.folding. .meta.embedded.markers. (.meta.embedded.start. | .meta.embedded.end.) meta.structure.dictionary.value.json.comments string.quoted.double.json.comments -(meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments) -meta.structure.array.json.comments -meta.embedded.json.textmate.regexp -comment",
