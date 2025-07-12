@@ -41,7 +41,7 @@
 			},
 			{
 				"scopeName": "source.json.shellscript",
-				"path": "./syntaxes/scripts.tmLanguage.json",
+				"path": "./syntaxes/package-scripts.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.shellscript": "shellscript"
 				},
@@ -51,7 +51,7 @@
 			},
 			{
 				"scopeName": "source.shellscript.json.escaped",
-				"path": "./syntaxes/shellscript.json.escaped.tmLanguage.json",
+				"path": "./syntaxes/package-shellscript.json.escaped.tmLanguage.json",
 				"injectTo": [
 					"source.json.embedded"
 				]
@@ -90,7 +90,7 @@
 			},
 			{
 				"scopeName": "source.json.package.scopes",
-				"path": "./syntaxes/package.scopes.tmLanguage.json",
+				"path": "./syntaxes/package-scopes.tmLanguage.json",
 				"injectTo": [
 					"source.json.embedded"
 				]
@@ -114,7 +114,7 @@
 			},
 			{
 				"scopeName": "source.json.legacy_tox_ini",
-				"path": "./syntaxes/legacy_tox_ini.tmLanguage.json",
+				"path": "./syntaxes/legacy-tox-ini.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.ini": "ini"
 				},
@@ -124,7 +124,7 @@
 			},
 			{
 				"scopeName": "source.json.sql",
-				"path": "./syntaxes/test.query.sql.tmLanguage.json",
+				"path": "./syntaxes/test-query-sql.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.sql": "sql"
 				},
