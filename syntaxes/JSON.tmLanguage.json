@@ -62,9 +62,10 @@
 			"name": "meta.structure.dictionary.json",
 			"patterns": [
 				{
-					"begin": "(?=\"((?>[^\\\\\"]++|\\\\.)*+)\")",
+					"comment": "Apply a targetable scopeName to the entire object. Attempt to remove all non-scope characters; as they are not targetable",
+					"begin": "(?=\"\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(?<scope>(?>[0-9A-Za-z_.:-]++|\\\\u00(?i:2[DE]|3[0-9A]|4[1-9A-F]|5[0-9AF]|6[1-9A-F]|7[0-9A]))*+)\\g<separator>(?<string>(?>[^\\\\\"]++|\\\\.)*+)(?<separator>(?>[^0-9A-Za-z_.:\\\\\"]++|\\\\u(?!00(?i:2[DE]|3[0-9A]|4[1-9A-F]|5[0-9AF]|6[1-9A-F]|7[0-9A]))\\h{1,4}|\\\\.?)*+){0}\")",
 					"end": "(?!\\G)(?<=,)|(?=})",
-					"name": ".meta.embedded.$1.",
+					"name": ".meta.embedded.$1$2$3$4$5$6$7$8$9.",
 					"patterns": [ { "include": "#objectpair" } ]
 				},
 				{ "include": "#objectpair" }
