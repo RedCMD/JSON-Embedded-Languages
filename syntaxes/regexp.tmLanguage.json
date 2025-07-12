@@ -174,6 +174,7 @@
 			]
 		},
 		"unicode": {
+			"comment": "Unicode requires flag u or v to be active",
 			"patterns": [
 				{
 					"match": "\\\\{2}u{(0*\\h{4,5})}",

@@ -1,0 +1,164 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "\"when\" & \"enablement\" inside package.json and keybingings.json",
+	"comment": "https://code.visualstudio.com/api/references/when-clause-contexts",
+	"scopeName": "source.json.package.when",
+	"injectionSelector": [
+		"L:source.json.embedded .meta.embedded.contributes. (.meta.embedded.continueEditSession. | .meta.embedded.keybindings. | .meta.embedded.viewsWelcome. | .meta.embedded.taskDefinitions. | .meta.embedded.chatParticipants. | .meta.embedded.languageModelTools. | .meta.embedded.debuggers. | .meta.embedded.debugVisualizers. | .meta.embedded.walkthroughs. | .meta.embedded.chatViewsWelcome. | .meta.embedded.breakpoints.) meta.structure.array.json .meta.embedded.when. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.when.json -comment",
+		"L:source.json.embedded .meta.embedded.contributes. (.meta.embedded.walkthroughs. meta.structure.array.json .meta.embedded.steps. | .meta.embedded.chatParticipants. meta.structure.array.json .meta.embedded.commands.) meta.structure.array.json .meta.embedded.when. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json meta.structure.array.json) -meta.embedded.when.json -comment",
+		"L:source.json.embedded .meta.embedded.contributes. (.meta.embedded.views. | .meta.embedded.menus. | .meta.embedded.viewsContainers.) meta.structure.dictionary.json meta.structure.array.json .meta.embedded.when. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.when.json -comment",
+		"L:source.json.embedded .meta.embedded.contributes. (.meta.embedded.keybindings. .meta.embedded.when. | .meta.embedded.commands. .meta.embedded.enablement.) string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.when.json -comment",
+		"L:source.json.embedded .meta.embedded.contributes. .meta.embedded.viewsWelcome. meta.structure.array.json .meta.embedded.enablement. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.when.json -comment",
+		"L:source.json.comments.embedded meta.structure.array.json.comments .meta.embedded.when. string.quoted.double.json.comments -(meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments) -(meta.structure.array.json.comments meta.structure.array.json.comments) -meta.embedded.when.json -comment"
+	],
+	"patterns": [
+		{
+			"begin": "(?<=\")\\G(?=(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++\")",
+			"end": "(?=\"|$)",
+			"name": "meta.embedded.when.json",
+			"patterns": [ { "include": "#when" } ]
+		}
+	],
+	"repository": {
+		"when": {
+			"comment": "https://vscode.dev/github/microsoft/vscode/blob/main/src/vs/platform/contextkey/common/scanner.ts#L198-L268",
+			"patterns": [
+				{ "include": "#parenthesized" },
+				{ "include": "#single-quote" },
+				{ "include": "#regexp" },
+				{ "include": "#operator" },
+				{ "include": "#in" },
+				{ "include": "#key" },
+				{ "include": "source.json#stringcontent" }
+			]
+		},
+		"parenthesized": {
+			"patterns": [
+				{
+					"begin": "\\(",
+					"end": "\\)|(?=\")|$",
+					"beginCaptures": { "0": { "name": "meta.brace.round.begin.when.json" } },
+					"endCaptures": { "0": { "name": "meta.brace.round.end.when.json" } },
+					"patterns": [
+						{ "include": "source.json#stringcontent" },
+						{ "include": "#when" }
+					]
+				},
+				{
+					"match": "\\)+",
+					"name": "invalid.illegal.brace.when.json"
+				}
+			]
+		},
+		"operator": {
+			"patterns": [
+				{
+					"begin": "([!=]==?)|([<>]=?)|(=~)",
+					"end": "(?=[\"&)|])|$",
+					"beginCaptures": {
+						"1": { "name": "keyword.operator.comparison.when.json" },
+						"2": { "name": "keyword.operator.relational.when.json" },
+						"3": { "name": "keyword.operator.comparison.when.json" }
+					},
+					"name": "meta.value.when.json",
+					"patterns": [
+						{ "include": "#regexp" },
+						{
+							"begin": "(?=[]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+							"end": "(?![]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+							"name": "string.unquoted.when.json",
+							"patterns": [
+								{
+									"comment": "parseFloat()",
+									"match": "\\G[-+]?(?>(?>[0-9]+(?>\\.[0-9]*)?|\\.[0-9]+)(?>[Ee][-+]?[0-9]+)?|Infinity)",
+									"name": "constant.numeric.when.json"
+								},
+								{ "include": "#boolean" },
+								{ "include": "source.json#stringcontent" }
+							]
+						},
+						{ "include": "#when" }
+					]
+				},
+				{
+					"match": "!",
+					"name": "keyword.operator.logical.not.when.json"
+				},
+				{
+					"match": "&&",
+					"name": "keyword.operator.logical.and.when.json"
+				},
+				{
+					"match": "\\|\\|",
+					"name": "keyword.operator.logical.or.when.json"
+				},
+				{
+					"match": "[&=|~]+",
+					"name": "invalid.illegal.keyword.operator.when.json"
+				}
+			]
+		},
+		"in": {
+			"patterns": [
+				{
+					"begin": "in(?![]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+					"end": "(?=[!\"&)|]|$)",
+					"beginCaptures": { "0": { "name": "keyword.operator.expression.in.when.json" } },
+					"name": "meta.value.when.json",
+					"patterns": [
+						{
+							"begin": "(?=[]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+							"end": "(?![]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+							"name": "variable.other.value.when.json",
+							"patterns": [ { "include": "source.json#stringcontent" } ]
+						},
+						{ "include": "#when" }
+					]
+				},
+				{
+					"match": "not(?![]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+					"name": "keyword.operator.expression.not.when.json"
+				}
+			]
+		},
+		"boolean": {
+			"match": "\\G(?>true|false)(?![]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+			"name": "constant.language.boolean.$0.when.json"
+		},
+		"single-quote": {
+			"begin": "'",
+			"end": "'|(?=\")|$",
+			"beginCaptures": { "0": { "name": "punctuation.definition.string.begin.when.json" } },
+			"endCaptures": { "0": { "name": "punctuation.definition.string.end.when.json" } },
+			"name": "string.quoted.single.when.json",
+			"patterns": [ { "include": "source.json#stringcontent" } ]
+		},
+		"key": {
+			"begin": "(?=[]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+			"end": "(?![]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
+			"name": "variable.other.constant.key.when.json",
+			"patterns": [
+				{ "include": "#boolean" },
+				{ "include": "source.json#stringcontent" }
+			]
+		},
+		"regexp": {
+			"begin": "(\\\\)?(/)",
+			"end": "(\\\\)?(/)([igsmyu]*)|(?=\")|$",
+			"beginCaptures": {
+				"1": { "name": "constant.character.escape.regexp.json" },
+				"2": { "name": "punctuation.definition.string.begin.when.json" }
+			},
+			"endCaptures": {
+				"1": { "name": "constant.character.escape.regexp.json" },
+				"2": { "name": "punctuation.definition.string.end.when.json" },
+				"3": { "name": "keyword.other.when.json" }
+			},
+			"name": "string.regexp.when.json",
+			"patterns": [
+				{ "include": "source.json.regexp#regexp" },
+				{ "include": "source.json#stringcontent" }
+			]
+		}
+	}
+}

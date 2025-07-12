@@ -9,6 +9,9 @@ Then using multiple injection grammars that target and inject specific languages
   Requires the builtin `ShellScript` extension or [better-shell-syntax](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-shellscript-syntax)  
 ![Example `package.json`](images/Example-Scripts.png)
 
+* [when-clause-contexts](https://code.visualstudio.com/api/references/when-clause-contexts) within `"when"` for `package.json` (`JSON`)  
+![Example `package.json/when`](images/Example-when.png)
+
 * Regular Expressions within `"wordPattern"`, `"folding"`, `"onEnterRules"` and `"indentationRules"` for `language-configuration.json` (`JSONC`)  
   Requires [JSON TextMate](https://marketplace.visualstudio.com/items?itemName=RedCMD.tmlanguage-syntax-highlighter) extension  
 ![Example `language-configuration.json`](images/Example-language-configuration.png)
@@ -33,6 +36,4 @@ Please report any you come across.
 
 
 ## TODO:
-* `package.json`/`"when"`
 * `globs`/`"filenamePatterns"`
-* switch JSON escaped oniguruma regex for JSON escaped JavaScript regex

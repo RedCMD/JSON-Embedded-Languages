@@ -80,6 +80,17 @@
 				]
 			},
 			{
+				"scopeName": "source.json.package.when",
+				"path": "./syntaxes/package-when.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.when.json": "javascript"
+				},
+				"injectTo": [
+					"source.json.comments.embedded",
+					"source.json.embedded"
+				]
+			},
+			{
 				"scopeName": "source.json.package.scopes",
 				"path": "./syntaxes/package-scopes.tmLanguage.json",
 				"injectTo": [
