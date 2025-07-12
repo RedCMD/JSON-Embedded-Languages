@@ -17,45 +17,47 @@
 	],
 	"repository": {
 		"body-key": {
-			"match": "(?<={\\s*+\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++|(?<=\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++(?=\"\\s*+:)",
+			"match": "(?<={\\s*+\")\\G(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++(?=\")|(?<=\")\\G(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++(?=\"\\s*+:)",
 			"captures": {
 				"0": {
-					"name": "meta.embedded.json.comments.snippets.snippets string.json support.type.property-name.json",
+					"name": "support.type.property-name.string.json",
 					"patterns": [
 						{ "include": "source.json.comments.snippets#any" },
 						{ "include": "source.json.comments.snippets#body_stringcontent" },
 						{ "include": "source.json#stringcontent" }
 					]
 				}
-			}
+			},
+			"name": "meta.embedded.json.comments.snippets.snippets"
 		},
 		"bodyText-string": {
-			"match": "(?<=\"bodyText\"\\s*+:\\s*+\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"match": "(?<=\"bodyText\"\\s*+:\\s*+\")\\G(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++(?=\")",
 			"captures": {
 				"0": {
-					"name": "meta.embedded.json.comments.snippets.snippets string.quoted.double.json",
+					"name": "string.quoted.double.json",
 					"patterns": [
 						{ "include": "source.json.comments.snippets#any" },
 						{ "include": "source.json.comments.snippets#body_stringcontent" },
 						{ "include": "source.json#stringcontent" }
 					]
 				}
-			}
+			},
+			"name": "meta.embedded.json.comments.snippets.snippets"
 		},
 		"body-string": {
-			"match": "(?<=\")\\G(?>(\\^)?+((?>[^\\\\\"\\x-\\x1F]++|\\\\.)++)|(\\^))",
+			"match": "(?<=\")\\G(?!\")(?>(\\^)?+((?>[^\\x00-\\x1F\"\\\\]++|\\\\.)*+))(?=\")",
 			"captures": {
 				"1": { "name": "keyword.control.unstringify.json.schema" },
 				"2": {
-					"name": "meta.embedded.json.comments.snippets.snippets string.quoted.double.json",
+					"name": "string.quoted.double.json",
 					"patterns": [
 						{ "include": "source.json.comments.snippets#any" },
 						{ "include": "source.json.comments.snippets#body_stringcontent" },
 						{ "include": "source.json#stringcontent" }
 					]
-				},
-				"3": { "name": "keyword.control.unstringify.json.schema" }
-			}
+				}
+			},
+			"name": "meta.embedded.json.comments.snippets.snippets"
 		}
 	}
 }

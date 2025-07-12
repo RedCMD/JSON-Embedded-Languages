@@ -13,7 +13,7 @@
 	],
 	"repository": {
 		"query": {
-			"match": "\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"match": "\\G(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++",
 			"captures": {
 				"0": {
 					"name": "meta.embedded.sql.json",

@@ -12,41 +12,38 @@
 	],
 	"repository": {
 		"embeddedLanguages": {
-			"match": "(?<=\")\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
-			"captures": {
-				"0": {
-					"name": "meta.embedded.json.textmate.source",
+			"begin": "(?<=\")\\G(?=(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++\")",
+			"end": "(?=\"|$)",
+			"name": "meta.embedded.json.textmate.source",
+			"patterns": [
+				{
+					"begin": "(?>text|source|markdown)(?=\\.[\\w.:])",
+					"end": "(?![\\w.:-])",
+					"beginCaptures": { "0": { "name": "support.function.tm" } },
+					"name": "string",
 					"patterns": [
 						{
-							"begin": "(?>text|source|markdown)(?=\\.[\\w.:])",
-							"end": "(?![\\w.:-])",
-							"beginCaptures": { "0": { "name": "support.function.tm" } },
-							"name": "string",
-							"patterns": [
-								{
-									"match": "\\.",
-									"name": "support.function.tm"
-								}
-							]
-						},
-						{
-							"match": "[\\w.:][\\w.:-]*",
-							"name": "string $0"
-						},
-						{
-							"comment": "balancedBracketScopes ONLY",
-							"match": "(?<=\")\\*(?!.)",
-							"name": "keyword.control.any"
-						},
-						{
-							"comment": "tokenTypes Type ONLY",
-							"match": "(?<=\")other(?!.)",
-							"name": "meta.embedded.other"
-						},
-						{ "include": "source.json#stringcontent" }
+							"match": "\\.",
+							"name": "support.function.tm"
+						}
 					]
-				}
-			}
+				},
+				{
+					"match": "[\\w.:][\\w.:-]*",
+					"name": "string $0"
+				},
+				{
+					"comment": "balancedBracketScopes ONLY",
+					"match": "(?<=\")\\*(?=\")",
+					"name": "keyword.control.any"
+				},
+				{
+					"comment": "tokenTypes Type ONLY",
+					"match": "(?<=\")other(?=\")",
+					"name": "meta.embedded.other"
+				},
+				{ "include": "source.json#stringcontent" }
+			]
 		}
 	}
 }

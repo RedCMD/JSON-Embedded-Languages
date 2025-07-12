@@ -12,7 +12,7 @@
 	],
 	"repository": {
 		"scripts": {
-			"match": "\\G(?>[^\\\\\"\\x-\\x1F]++|\\\\.)++",
+			"match": "(?<=\")\\G(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++(?=\")",
 			"captures": {
 				"0": {
 					"name": "meta.embedded.shellscript.json",
@@ -20,7 +20,7 @@
 						{
 							"comment": "Setup a `\\G` anchor for ShellScript to use",
 							"begin": "|",
-							"end": "(*FAIL)",
+							"end": "(?!)",
 							"patterns": [
 								{ "include": "source.shell" },
 								{

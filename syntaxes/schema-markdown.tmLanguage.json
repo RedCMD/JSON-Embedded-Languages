@@ -17,7 +17,7 @@
 	],
 	"repository": {
 		"markdown": {
-			"match": "(?<=\"|\\\\[nr])(?>[^\\\\\"\\x-\\x1F]++|\\\\[^nr])++(?=\"|\\\\[nr])",
+			"match": "(?<=\"|\\\\[nr])(?>[^\\x00-\\x1F\"\\\\]++|\\\\[^nr])++(?=\"|\\\\[nr])",
 			"captures": {
 				"0": {
 					"name": "meta.embedded.text.html.markdown",
@@ -25,7 +25,7 @@
 						{
 							"comment": "Setup \\G anchor for Markdown",
 							"begin": "|",
-							"end": "(*FAIL)",
+							"end": "(?!)",
 							"patterns": [ { "include": "text.html.markdown" } ]
 						}
 					]
