@@ -69,22 +69,13 @@
 				]
 			},
 			{
-				"scopeName": "source.json.comments.regexp",
-				"path": "./syntaxes/regexp-jsonc.tmLanguage.json",
-				"embeddedLanguages": {
-					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
-				},
-				"injectTo": [
-					"source.json.comments.embedded"
-				]
-			},
-			{
 				"scopeName": "source.json.regexp",
-				"path": "./syntaxes/regexp-json.tmLanguage.json",
+				"path": "./syntaxes/regexp.tmLanguage.json",
 				"embeddedLanguages": {
-					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
+					"meta.embedded.json.regexp": "javascript"
 				},
 				"injectTo": [
+					"source.json.comments.embedded",
 					"source.json.embedded"
 				]
 			},
