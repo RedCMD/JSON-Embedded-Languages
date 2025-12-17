@@ -122,16 +122,6 @@
 				"injectTo": [
 					"source.json.embedded"
 				]
-			},
-			{
-				"scopeName": "source.json.sql",
-				"path": "./syntaxes/test-query-sql.tmLanguage.json",
-				"embeddedLanguages": {
-					"meta.embedded.sql": "sql"
-				},
-				"injectTo": [
-					"source.json.embedded"
-				]
 			}
 		]
 	},
