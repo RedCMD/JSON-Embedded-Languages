@@ -5,8 +5,10 @@ _test_files/**
 node_modules/**
 
 .gitignore
+CHANGELOG.md
 vsc-extension-quickstart.md
 
 **/*.svg
+**/*.vsix
 **/Example*.png
 **/tests/**

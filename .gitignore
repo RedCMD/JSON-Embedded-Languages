@@ -1,3 +1,5 @@
 node_modules
-*.vsix
 _test_files
+.git
+
+*.vsix
