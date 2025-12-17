@@ -56,7 +56,7 @@
 							"match": "[$A-Z_a-z][$0-9A-Z_a-z]*",
 							"name": "variable.other.regexp.json"
 						},
-						{ "include": "source.json#stringcontent" }
+						{ "include": "source.json.embedded#stringcontent" }
 					]
 				},
 				{
@@ -170,7 +170,7 @@
 					"match": "(\\\\{2})[^\\\\\"]",
 					"captures": { "1": { "name": "constant.character.escape.backslash.regex.regexp.json" } }
 				},
-				{ "include": "source.json#stringcontent" }
+				{ "include": "source.json.embedded#stringcontent" }
 			]
 		},
 		"unicode": {
@@ -196,7 +196,7 @@
 							"match": "[a-zA-Z_]+",
 							"name": "variable.other.constant.regexp.json"
 						},
-						{ "include": "source.json#stringcontent" }
+						{ "include": "source.json.embedded#stringcontent" }
 					]
 				}
 			]

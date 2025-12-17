@@ -5,7 +5,7 @@
 	"injectionSelector": "L:source.json.embedded meta.embedded.text.html.markdown",
 	"patterns": [
 		{ "include": "#raw" },
-		{ "include": "source.json#stringcontent" }
+		{ "include": "source.json.embedded#stringcontent" }
 	],
 	"repository": {
 		"raw": {
@@ -13,7 +13,7 @@
 			"name": "markup.inline.raw.string.markdown",
 			"captures": {
 				"1": { "name": "punctuation.definition.raw.markdown" },
-				"2": { "patterns": [ { "include": "source.json#stringcontent" } ] },
+				"2": { "patterns": [ { "include": "source.json.embedded#stringcontent" } ] },
 				"3": { "name": "punctuation.definition.raw.markdown" }
 			}
 		}

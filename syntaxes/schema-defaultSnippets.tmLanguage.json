@@ -24,7 +24,7 @@
 					"patterns": [
 						{ "include": "source.json.comments.snippets#any" },
 						{ "include": "source.json.comments.snippets#body_stringcontent" },
-						{ "include": "source.json#stringcontent" }
+						{ "include": "source.json.embedded#stringcontent" }
 					]
 				}
 			},
@@ -38,7 +38,7 @@
 					"patterns": [
 						{ "include": "source.json.comments.snippets#any" },
 						{ "include": "source.json.comments.snippets#body_stringcontent" },
-						{ "include": "source.json#stringcontent" }
+						{ "include": "source.json.embedded#stringcontent" }
 					]
 				}
 			},
@@ -53,7 +53,7 @@
 					"patterns": [
 						{ "include": "source.json.comments.snippets#any" },
 						{ "include": "source.json.comments.snippets#body_stringcontent" },
-						{ "include": "source.json#stringcontent" }
+						{ "include": "source.json.embedded#stringcontent" }
 					]
 				}
 			},

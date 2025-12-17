@@ -29,7 +29,7 @@
 									"name": "meta.statement.shell",
 									"patterns": [ { "include": "source.shell#typical_statements" } ]
 								},
-								{ "include": "source.json#stringcontent" }
+								{ "include": "source.json.embedded#stringcontent" }
 							]
 						}
 					]

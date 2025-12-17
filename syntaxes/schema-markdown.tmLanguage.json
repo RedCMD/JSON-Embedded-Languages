@@ -13,7 +13,7 @@
 			"include": "text.html.markdown#_pre-load_"
 		},
 		{ "include": "#markdown" },
-		{ "include": "source.json#stringcontent" }
+		{ "include": "source.json.embedded#stringcontent" }
 	],
 	"repository": {
 		"markdown": {

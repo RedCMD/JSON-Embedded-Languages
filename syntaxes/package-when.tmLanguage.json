@@ -29,7 +29,7 @@
 				{ "include": "#operator" },
 				{ "include": "#in" },
 				{ "include": "#key" },
-				{ "include": "source.json#stringcontent" }
+				{ "include": "source.json.embedded#stringcontent" }
 			]
 		},
 		"parenthesized": {
@@ -40,7 +40,7 @@
 					"beginCaptures": { "0": { "name": "meta.brace.round.begin.when.json" } },
 					"endCaptures": { "0": { "name": "meta.brace.round.end.when.json" } },
 					"patterns": [
-						{ "include": "source.json#stringcontent" },
+						{ "include": "source.json.embedded#stringcontent" },
 						{ "include": "#when" }
 					]
 				},
@@ -74,7 +74,7 @@
 									"name": "constant.numeric.when.json"
 								},
 								{ "include": "#boolean" },
-								{ "include": "source.json#stringcontent" }
+								{ "include": "source.json.embedded#stringcontent" }
 							]
 						},
 						{ "include": "#when" }
@@ -110,7 +110,7 @@
 							"begin": "(?=[]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
 							"end": "(?![]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
 							"name": "variable.other.value.when.json",
-							"patterns": [ { "include": "source.json#stringcontent" } ]
+							"patterns": [ { "include": "source.json.embedded#stringcontent" } ]
 						},
 						{ "include": "#when" }
 					]
@@ -131,7 +131,7 @@
 			"beginCaptures": { "0": { "name": "punctuation.definition.string.begin.when.json" } },
 			"endCaptures": { "0": { "name": "punctuation.definition.string.end.when.json" } },
 			"name": "string.quoted.single.when.json",
-			"patterns": [ { "include": "source.json#stringcontent" } ]
+			"patterns": [ { "include": "source.json.embedded#stringcontent" } ]
 		},
 		"key": {
 			"begin": "(?=[]#$%*-<>-\\[^_\\p{L}]|\\\\[\\\\\"/])",
@@ -139,7 +139,7 @@
 			"name": "variable.other.constant.key.when.json",
 			"patterns": [
 				{ "include": "#boolean" },
-				{ "include": "source.json#stringcontent" }
+				{ "include": "source.json.embedded#stringcontent" }
 			]
 		},
 		"regexp": {
@@ -157,7 +157,7 @@
 			"name": "string.regexp.when.json",
 			"patterns": [
 				{ "include": "source.json.regexp#regexp" },
-				{ "include": "source.json#stringcontent" }
+				{ "include": "source.json.embedded#stringcontent" }
 			]
 		}
 	}

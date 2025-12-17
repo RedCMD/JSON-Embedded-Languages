@@ -42,7 +42,7 @@
 					"match": "(?<=\")other(?=\")",
 					"name": "meta.embedded.other"
 				},
-				{ "include": "source.json#stringcontent" }
+				{ "include": "source.json.embedded#stringcontent" }
 			]
 		}
 	}

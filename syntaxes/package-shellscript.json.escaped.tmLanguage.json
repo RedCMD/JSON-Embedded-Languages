@@ -30,7 +30,7 @@
 					"match": "\\\\{2}[$`]",
 					"name": "constant.character.escape.shell"
 				},
-				{ "include": "source.json#stringcontent" },
+				{ "include": "source.json.embedded#stringcontent" },
 				{ "include": "source.shell#variable" },
 				{ "include": "source.shell#interpolation" }
 			]
