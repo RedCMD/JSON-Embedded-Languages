@@ -124,16 +124,6 @@
 				]
 			},
 			{
-				"scopeName": "source.json.legacy_tox_ini",
-				"path": "./syntaxes/legacy-tox-ini.tmLanguage.json",
-				"embeddedLanguages": {
-					"meta.embedded.ini": "ini"
-				},
-				"injectTo": [
-					"source.json.embedded"
-				]
-			},
-			{
 				"scopeName": "source.json.sql",
 				"path": "./syntaxes/test-query-sql.tmLanguage.json",
 				"embeddedLanguages": {
