@@ -16,7 +16,7 @@ jobs:
 
       - name: Install Dependencies # vsce etc
         run: | # shell
-          npm i @vscode/vsce -g
+          npm i
 
       - name: Setup Github Actions # allow use of `git push`
         run: | # shell
