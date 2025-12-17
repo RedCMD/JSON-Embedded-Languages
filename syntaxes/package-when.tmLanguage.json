@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "\"when\" & \"enablement\" inside package.json and keybingings.json",
+	"name": "\"when\" & \"enablement\" inside package.json and keybindings.json",
 	"comment": "https://code.visualstudio.com/api/references/when-clause-contexts",
 	"scopeName": "source.json.package.when",
 	"injectionSelector": [
@@ -144,7 +144,7 @@
 		},
 		"regexp": {
 			"begin": "(\\\\)?(/)",
-			"end": "(\\\\)?(/)([igsmyu]*)|(?=\")|$",
+			"end": "(\\\\)?(/)([gimsuy]*)|(?=\")|$",
 			"beginCaptures": {
 				"1": { "name": "constant.character.escape.regexp.json" },
 				"2": { "name": "punctuation.definition.string.begin.when.json" }

@@ -1,5 +1,8 @@
 [
 	{
+		"when": "regex =~ /flags/igsmyu && controlCharacters =~ /\\cA\\ca\\cM\\cm\\cJ\\cj\\cZ\\cz  \\c@\\c*/ || escapeChars =~ /\\0\\b\\f\\n\\r\\t\\v/ && alpha =~ /ÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒ/"
+	},
+	{
 		"key": "enter",
 		"command": "-magit.visit-at-point",
 		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
