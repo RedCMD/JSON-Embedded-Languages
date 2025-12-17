@@ -25,9 +25,13 @@ jobs:
           git add .
           git diff-index --quiet HEAD || git commit -m "Sync Github Actions"
 
+      - name: Run Tests # check grammars are working
+        run: | # shell
+          npm run test
+
       - name: Publish Pre-release # upload to Extension Marketplace
         run: | # shell
-          vsce publish patch --pre-release
+          npm run publish --- patch --pre-release
           git push --follow-tags
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}

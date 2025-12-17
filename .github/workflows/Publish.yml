@@ -29,6 +29,10 @@ jobs:
           git add .
           git diff-index --quiet HEAD || git commit -m "Sync Github Actions"
 
+      - name: Run Tests # check grammars are working
+        run: | # shell
+          npm run test
+
       - name: Package Extension # `.vsix` file
         run: | # shell
           npm run package --- ${{ github.event.inputs.version }}

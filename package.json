@@ -29,7 +29,12 @@
 	],
 	"scripts": {
 		"package": "vsce package",
-		"publish": "vsce publish"
+		"publish": "vsce publish",
+		"test": "npm run test:JSON && npm run test:JSONC",
+		"test:grammars": "vscode-tmgrammar-snap --grammar ./syntaxes/tests/grammars/ini.tmLanguage.json --grammar ./syntaxes/tests/grammars/markdown.tmLanguage.json --grammar ./syntaxes/tests/grammars/shell-unix-bash.tmLanguage.json --grammar ./syntaxes/tests/grammars/snippets.tmLanguage.json --grammar ./syntaxes/tests/grammars/sql.tmLanguage.json",
+		"test:JSON": "npm run test:grammars -- ./syntaxes/tests/JSON/*.json --scope source.json.embedded",
+		"test:JSONC": "npm run test:grammars -- ./syntaxes/tests/JSONC/*.json --scope source.json.comments.embedded",
+		"test:update": "npm run test:JSON -- --updateSnapshot && npm run test:JSONC -- --updateSnapshot"
 	},
 	"contributes": {
 		"grammars": [
@@ -141,6 +146,7 @@
 		]
 	},
 	"devDependencies": {
-		"@vscode/vsce": "^3.7.1"
+		"@vscode/vsce": "^3.7.1",
+		"vscode-tmgrammar-test": "^0.1.3"
 	}
 }

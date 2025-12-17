@@ -1,0 +1,603 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "JSON Snippets",
+	"scopeName": "source.json.comments.snippets",
+	"patterns": [
+		{ "include": "#root" },
+		{ "include": "#body" },
+		{ "include": "#value" },
+		{
+			"begin": "\\A(?= *\\$)",
+			"end": "(?!\\G)",
+			"applyEndPatternLast": 1,
+			"name": "meta.embedded.json.comments.snippets.snippets string.quoted.double.json.comments.snippets",
+			"patterns": [ { "include": "#any" } ]
+		}
+	],
+	"repository": {
+		"root": {
+			"begin": "{",
+			"beginCaptures": { "0": { "name": "punctuation.definition.dictionary.begin.json.comments.snippets" } },
+			"end": "}",
+			"endCaptures": { "0": { "name": "punctuation.definition.dictionary.end.json.comments.snippets" } },
+			"name": "meta.structure.dictionary.json.comments.snippets",
+			"patterns": [
+				{
+					"begin": ":",
+					"beginCaptures": { "0": { "name": "punctuation.separator.dictionary.key-value.json.comments.snippets" } },
+					"end": ",|(?=})",
+					"endCaptures": { "0": { "name": "punctuation.separator.dictionary.pair.json.comments.snippets" } },
+					"name": "meta.structure.dictionary.value.json.comments.snippets",
+					"patterns": [
+						{
+							"begin": "{",
+							"beginCaptures": { "0": { "name": "punctuation.definition.dictionary.begin.json.comments.snippets" } },
+							"end": "}",
+							"endCaptures": { "0": { "name": "punctuation.definition.dictionary.end.json.comments.snippets" } },
+							"name": "meta.structure.dictionary.json.comments.snippets",
+							"patterns": [
+								{ "include": "#body" },
+								{ "include": "#objectpair" }
+							]
+						},
+						{
+							"comment": "the JSON object value",
+							"include": "#value"
+						},
+						{
+							"match": "\\S",
+							"name": "invalid.illegal.expected-dictionary-separator.json.comments.snippets"
+						}
+					]
+				},
+				{ "include": "#objectpair" }
+			]
+		},
+		"body": {
+			"begin": "(?<=\"body\")(?!})",
+			"end": "(?<=,)|(?=})",
+			"patterns": [
+				{ "include": "#comments" },
+				{
+					"begin": ":",
+					"beginCaptures": { "0": { "name": "punctuation.separator.dictionary.key-value.json.comments.snippets" } },
+					"end": ",|(?=})",
+					"endCaptures": { "0": { "name": "punctuation.separator.dictionary.pair.json.comments.snippets" } },
+					"name": "meta.structure.dictionary.value.json.comments.snippets",
+					"patterns": [
+						{ "include": "#body-string" },
+						{
+							"begin": "\\[",
+							"beginCaptures": { "0": { "name": "punctuation.definition.array.begin.json.comments.snippets" } },
+							"end": "]",
+							"endCaptures": { "0": { "name": "punctuation.definition.array.end.json.comments.snippets" } },
+							"name": "meta.structure.array.json.comments.snippets",
+							"patterns": [
+								{ "include": "#body-string" },
+								{ "include": "#value" },
+								{
+									"match": ",",
+									"name": "punctuation.separator.array.json.comments.snippets"
+								},
+								{
+									"match": "\\S",
+									"name": "invalid.illegal.expected-array-separator.json.comments.snippets"
+								}
+							]
+						},
+						{
+							"comment": "the JSON object value",
+							"include": "#value"
+						},
+						{
+							"match": "\\S",
+							"name": "invalid.illegal.expected-dictionary-separator.json.comments.snippets"
+						}
+					]
+				},
+				{
+					"match": "\\S",
+					"name": "invalid.illegal.expected-dictionary-separator.json.comments.snippets"
+				}
+			]
+		},
+		"body-string": {
+			"begin": "\"",
+			"beginCaptures": { "0": { "name": "punctuation.definition.string.begin.json.comments.snippets" } },
+			"end": "\"",
+			"endCaptures": { "0": { "name": "punctuation.definition.string.end.json.comments.snippets" } },
+			"name": "meta.embedded.json.comments.snippets.snippets string.quoted.double.json.comments.snippets",
+			"patterns": [ { "include": "#any" } ]
+		},
+		"any": {
+			"begin": "(?x)\n(?=\n  (?<any>\n    \\\\{4}|\n    \\\\{2}[$}]|\n    \\\\.|\n    \\$[0-9]+|\n    \\$[_a-zA-Z0-9]+|\n    \\${(?>\n      0*[1-9][0-9]*\\|(?!,)(?>\n        [^\\\\\",|]+|\n        \\\\{4}|\n        \\\\{2}[,|]|\n        \\\\.|\n        ,(?![,|])\n      )+\\||\n      (?>\n        [0-9]+|[_a-zA-Z0-9]+\n      )\n      (?>\n        :(?>[^\\\\\"$}]+|\\g<any>+|\\$)*|\n        \\\\?/\n        (?>[^\\\\\"/]+|\\\\{2,5}/|\\\\{4}|\\\\[^/])*\n        (?>(?<=\\\\)\\\\?/)?(?<!\\\\)\\\\?/\n        (?>\n          [^\\\\\"/$]+|\n          \\\\{4}|\n          \\\\{2,3}/|\n          \\\\[^/]|\n          \\${[0-9]+(?>\n            :/[_a-zA-Z][_a-zA-Z0-9]*|\n            :(?>\n              \\?(?>\n                [^\\\\\":}]+|\n                \\\\{4}|\n                \\\\{2}[$}]|\n                \\\\[^\\\\]\n              )+:|\n              (?![?/])[+-]?\n            )\n            (?>\n              [^\\\\\"}]+|\n              \\\\{4}|\n              \\\\{2}[$}]|\n              \\\\[^\\\\]\n            )+\n          )?}|\n          \\$(?!{[0-9]+:/[^}])\n        )*\n        \\\\?/\n        (?>\n          d(?![gimsvy]*d)|\n          g(?![dimsvy]*g)|\n          i(?![dgmsvy]*i)|\n          m(?![dgisvy]*m)|\n          s(?![dgimvy]*s)|\n          v(?![dgimsy]*v)|\n          y(?![dgimsv]*y)\n        )*\n      )?\n    )}\n  )\n)",
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"match": "\\G(\\\\{2})[$}]",
+					"captures": { "1": { "name": "constant.character.escape.json.comments.snippets" } }
+				},
+				{
+					"match": "\\G(\\\\{3})\\\\",
+					"captures": { "1": { "name": "constant.character.escape.json.comments.snippets" } }
+				},
+				{ "include": "#stringcontent" },
+				{ "include": "#tabstop" },
+				{ "include": "#choice" },
+				{ "include": "#placeholder" }
+			]
+		},
+		"tabstop": {
+			"comment": "$0 $TM_SELECTED_TEXT $_azAZ09",
+			"match": "\\G(\\$)(?>([0-9]+)|((?>TM_(?>SELECTED_TEXT|CURRENT_(?>LINE|WORD)|LINE_(?>INDEX|NUMBER)|FILENAME(?>_BASE)?|DIRECTORY|FILEPATH)|RELATIVE_FILEPATH|SELECTION|CLIPBOARD|WORKSPACE_(?>NAME|FOLDER)|CURSOR_(?>INDEX|NUMBER)|CURRENT_(?>YEAR(?>_SHORT)?|MONTH(?>_NAME(?>_SHORT)?)?|DATE|DAY_NAME(?>_SHORT)?|HOUR|MINUTE|SECOND(?>S_UNIX)?|TIMEZONE_OFFSET)|RANDOM(?>_HEX)?|UUID|BLOCK_COMMENT_(?>START|END)|LINE_COMMENT)(?![_a-zA-Z0-9]))|([_a-zA-Z0-9]+))",
+			"captures": {
+				"0": { "name": "meta.embedded.tabstop.json.comments.snippets" },
+				"1": { "name": "keyword.other.json.comments.snippets punctuation.definition.tabstop.json.comments.snippets" },
+				"2": { "name": "constant.numeric.tabstop.json.comments.snippets" },
+				"3": { "name": "variable.language.json.comments.snippets" },
+				"4": { "name": "variable.other.json.comments.snippets" }
+			}
+		},
+		"choice": {
+			"comment": "${1|a,b,c|} ${020|choice,\\,,\\||}",
+			"begin": "\\G(\\${)(0*[1-9][0-9]*)(\\|)",
+			"end": "(\\|)(})|(?=\")|$",
+			"beginCaptures": {
+				"1": { "name": "keyword.other.json.comments.snippets punctuation.definition.choice.begin.json.comments.snippets" },
+				"2": { "name": "constant.numeric.tabstop.json.comments.snippets" },
+				"3": { "name": "punctuation.definition.enum.choice.begin.json.comments.snippets" }
+			},
+			"endCaptures": {
+				"1": { "name": "punctuation.definition.enum.choice.end.json.comments.snippets" },
+				"2": { "name": "keyword.other.json.comments.snippets punctuation.definition.choice.end.json.comments.snippets" }
+			},
+			"name": "meta.embedded.choice.json.comments.snippets",
+			"contentName": "variable.other.enummember.choice.string.json.comments.snippets",
+			"patterns": [
+				{
+					"match": ",",
+					"name": "keyword.operator.json.comments.snippets punctuation.separator.choice.comma.json.comments.snippets"
+				},
+				{
+					"match": "(\\\\{2})[|,]",
+					"captures": { "1": { "name": "constant.character.escape.choice.json.comments.snippets" } }
+				},
+				{
+					"match": "(\\\\{3})\\\\",
+					"captures": { "1": { "name": "constant.character.escape.json.comments.snippets" } }
+				},
+				{ "include": "#stringcontent" }
+			]
+		},
+		"placeholder": {
+			"comment": "${2} ${variable} ${3:placeholder} ${transform/regex/format/options}",
+			"begin": "\\G(\\${)(?>([0-9]+)|((?>TM_(?>SELECTED_TEXT|CURRENT_(?>LINE|WORD)|LINE_(?>INDEX|NUMBER)|FILENAME(?>_BASE)?|DIRECTORY|FILEPATH)|RELATIVE_FILEPATH|SELECTION|CLIPBOARD|WORKSPACE_(?>NAME|FOLDER)|CURSOR_(?>INDEX|NUMBER)|CURRENT_(?>YEAR(?>_SHORT)?|MONTH(?>_NAME(?>_SHORT)?)?|DATE|DAY_NAME(?>_SHORT)?|HOUR|MINUTE|SECOND(?>S_UNIX)?|TIMEZONE_OFFSET)|RANDOM(?>_HEX)?|UUID|BLOCK_COMMENT_(?>START|END)|LINE_COMMENT))(?![_a-zA-Z0-9])|([_a-zA-Z0-9]+))",
+			"end": "}|(?=\")|$",
+			"beginCaptures": {
+				"1": { "name": "keyword.other.json.comments.snippets punctuation.definition.placeholder.begin.json.comments.snippets" },
+				"2": { "name": "constant.numeric.tabstop.json.comments.snippets" },
+				"3": { "name": "variable.language.json.comments.snippets" },
+				"4": { "name": "variable.other.json.comments.snippets" }
+			},
+			"endCaptures": { "0": { "name": "keyword.other.json.comments.snippets punctuation.definition.placeholder.end.json.comments.snippets" } },
+			"name": "meta.embedded.placeholder.json.comments.snippets",
+			"patterns": [
+				{
+					"comment": "placeholder",
+					"begin": ":",
+					"end": "(?=}|\")|$",
+					"beginCaptures": { "0": { "name": "punctuation.separator.placeholder.json.comments.snippets" } },
+					"contentName": "string.quoted.double.json.comments.snippets",
+					"patterns": [ { "include": "#any" } ]
+				},
+				{
+					"comment": "/regex/format/options",
+					"begin": "((\\\\)?/)((?>[^\\\\\"/]+|\\\\{2,5}/|\\\\{4}|\\\\[^/])*(?>(?<=\\\\)\\\\?/)?)((\\\\)?/)",
+					"end": "((\\\\)?/)([dgimsvy]*)(?=})|(?=\")|$",
+					"beginCaptures": {
+						"1": { "name": "punctuation.definition.regex.begin.json.comments.snippets" },
+						"2": { "name": "constant.character.escape.regex.json.comments.snippets" },
+						"3": {
+							"name": "meta.embedded.json.regexp string.regexp.json.comments.snippets",
+							"patterns": [
+								{
+									"match": "(\\\\{3,5})/",
+									"captures": { "1": { "name": "constant.character.escape.regex.tm" } }
+								},
+								{ "include": "#regexp" }
+							],
+							"repository": {
+								"regexp": {
+									"patterns": [
+										{
+											"match": "\\\\{2}[bB]|\\^|\\$",
+											"name": "keyword.control.anchor.regexp.json"
+										},
+										{
+											"match": "\\\\{2}([1-9][0-9]*)",
+											"captures": {
+												"0": { "name": "keyword.other.back-reference.regexp.json" },
+												"1": { "name": "constant.numeric.regexp.json" }
+											}
+										},
+										{
+											"begin": "\\\\{2}k<?",
+											"end": ">|(?=\")|$",
+											"name": "keyword.other.back-reference.regexp.json",
+											"patterns": [
+												{
+													"match": "[$_[:alpha:]][$_[:alnum:]]*",
+													"name": "variable.other.regexp.json"
+												},
+												{ "include": "#stringcontent" }
+											]
+										},
+										{
+											"match": "\\G(?>[*+?]|{(?>\\d+,?\\d*|,\\d+)}\\??)",
+											"name": "invalid.illegal.keyword.operator.quantifier.regexp.json"
+										},
+										{
+											"match": "[*+?]|{(?>\\d+,?\\d*|,\\d+)}\\??",
+											"name": "keyword.operator.quantifier.regexp.json"
+										},
+										{
+											"match": "\\|",
+											"name": "keyword.operator.or.regexp.json"
+										},
+										{
+											"match": "\\.",
+											"name": "constant.character.class.regexp.json"
+										},
+										{
+											"begin": "(\\()((\\?=)|(\\?!)|(\\?<=)|(\\?<!))",
+											"end": "\\)|(?=\")|$",
+											"beginCaptures": {
+												"1": { "name": "punctuation.definition.group.regexp.json" },
+												"2": { "name": "punctuation.definition.group.assertion.regexp.json" },
+												"3": { "name": "meta.assertion.look-ahead.regexp.json" },
+												"4": { "name": "meta.assertion.negative-look-ahead.regexp.json" },
+												"5": { "name": "meta.assertion.look-behind.regexp.json" },
+												"6": { "name": "meta.assertion.negative-look-behind.regexp.json" }
+											},
+											"endCaptures": { "0": { "name": "punctuation.definition.group.regexp.json" } },
+											"name": "meta.embedded.group.assertion.regexp.json",
+											"contentName": "string.regexp.json",
+											"patterns": [ { "include": "#regexp" } ]
+										},
+										{
+											"begin": "\\((?>(\\?([-ims]*):)|\\?<([$_[:alpha:]][$_[:alnum:]]*)>)?",
+											"end": "\\)|(?=\")|$",
+											"beginCaptures": {
+												"0": { "name": "punctuation.definition.group.regexp.json" },
+												"1": { "name": "punctuation.definition.group.no-capture.regexp.json" },
+												"2": { "name": "keyword.other.flags.regexp.json" },
+												"3": { "name": "variable.other.regexp.json" }
+											},
+											"endCaptures": { "0": { "name": "punctuation.definition.group.regexp.json" } },
+											"name": "meta.embedded.group.regexp.json",
+											"contentName": "string.regexp.json",
+											"patterns": [ { "include": "#regexp" } ]
+										},
+										{
+											"begin": "(\\[)(\\^)?",
+											"end": "]|(?=\")|$",
+											"beginCaptures": {
+												"1": { "name": "punctuation.definition.character-class.regexp.json" },
+												"2": { "name": "keyword.operator.negation.regexp.json" }
+											},
+											"endCaptures": { "0": { "name": "punctuation.definition.character-class.regexp.json" } },
+											"name": "meta.embedded.character-class.regexp.json",
+											"contentName": "constant.other.character-class.set.regexp.regex.json",
+											"patterns": [
+												{
+													"match": "[0-9]-[0-9]",
+													"name": "constant.numeric.character-class.range.regexp.json"
+												},
+												{
+													"match": "[a-z]-[a-z]|[A-Z]-[A-Z]",
+													"name": "variable.other.constant.character-class.range.regexp.json"
+												},
+												{
+													"match": "(?:(\\\\{2}(?>[0-7]{3}|x\\h{2}|u\\h{4}))|(\\\\{2}c[A-Z])|(\\\\{4}|\\\\{1,2}[^\\\\wWsSdD])|.)-(?:(\\\\{2}(?:[0-7]{3}|x\\h{2}|u\\h{4}))|(\\\\{2}c[A-Z])|(\\\\{4}|\\\\{1,2}[^\\\\wWsSdD])|[^]\"])",
+													"captures": {
+														"0": { "name": "support.class.range.regex.json" },
+														"1": { "name": "constant.character.numeric.regexp.json" },
+														"2": { "name": "constant.character.control.regexp.json" },
+														"3": { "name": "constant.character.escape.backslash.regexp.json" },
+														"4": { "name": "constant.character.numeric.regexp.json" },
+														"5": { "name": "constant.character.control.regexp.json" },
+														"6": { "name": "constant.character.escape.backslash.regexp.json" }
+													},
+													"name": "constant.other.character-class.range.regexp.json"
+												},
+												{ "include": "#regex-character-class" }
+											]
+										},
+										{ "include": "#regex-character-class" }
+									]
+								},
+								"regex-character-class": {
+									"patterns": [
+										{
+											"match": "\\\\{2}(?>[0-7]{3}|x\\h{2}|u\\h{4})",
+											"name": "constant.character.numeric.regexp.json"
+										},
+										{
+											"match": "\\\\{2}[wWsSdD]",
+											"name": "constant.character.class.regexp.json"
+										},
+										{
+											"match": "\\\\{2}[0bfnrtv]",
+											"name": "constant.character.escape.character.regexp.json"
+										},
+										{
+											"match": "\\\\{2}c[A-Za-z]",
+											"name": "constant.character.control.regexp.json"
+										},
+										{
+											"match": "(\\\\{3})\\\\",
+											"captures": { "1": { "name": "constant.character.escape.backslash.regex.regexp.json" } }
+										},
+										{ "include": "#unicode" },
+										{
+											"match": "(\\\\{2})[^\\\\\"]",
+											"captures": { "1": { "name": "constant.character.escape.backslash.regex.regexp.json" } }
+										},
+										{ "include": "#stringcontent" }
+									]
+								},
+								"unicode": {
+									"comment": "Unicode requires flag u or v to be active",
+									"patterns": [
+										{
+											"match": "\\\\{2}u{(0*\\h{4,5})}",
+											"captures": {
+												"0": { "name": "constant.character.numeric.regexp.json" },
+												"1": { "name": "constant.numeric.regexp.json" }
+											}
+										},
+										{
+											"begin": "\\\\{2}[pP]{",
+											"end": "}|(?=\")|$",
+											"name": "constant.character.numeric.regexp.json",
+											"patterns": [
+												{
+													"match": "(?<==)[a-zA-Z0-9_]+",
+													"name": "variable.other.regexp.json"
+												},
+												{
+													"match": "[a-zA-Z_]+",
+													"name": "variable.other.constant.regexp.json"
+												},
+												{ "include": "#stringcontent" }
+											]
+										}
+									]
+								}
+							}
+						},
+						"4": { "name": "punctuation.definition.regex.end.json.comments.snippets" },
+						"5": { "name": "constant.character.escape.regex.json.comments.snippets" }
+					},
+					"endCaptures": {
+						"1": { "name": "punctuation.definition.regex.json.comments.snippets" },
+						"2": { "name": "constant.character.escape.regex.json.comments.snippets" },
+						"3": { "name": "keyword.other.flag.json.comments.snippets" }
+					},
+					"name": "string.regexp.json.comments.snippets",
+					"contentName": "string.interpolated.json.comments.snippets",
+					"patterns": [
+						{
+							"comment": "$0 $1 $0009999",
+							"match": "(\\$)([0-9]+)",
+							"captures": {
+								"0": { "name": "meta.embedded.capture.json.comments.snippets" },
+								"1": { "name": "keyword.other.json.comments.snippets punctuation.definition.capture.json.comments.snippets" },
+								"2": { "name": "constant.numeric.capture.json.comments.snippets" }
+							}
+						},
+						{
+							"comment": "${2} ${3:/downcase} ${4:+if} ${5:?if:else} ${6:-else} ${7:else}",
+							"begin": "(\\${)([0-9]+)(:(?=/[_a-zA-Z][_a-zA-Z0-9]*}|(?>\\?(?>[^\\\\\":}]+|\\\\{4}|\\\\{2}[$}]|\\\\[^\\\\])+:|(?![?/])[+-]?)(?>[^\\\\\"}]+|\\\\{4}|\\\\{2}[$}]|\\\\[^\\\\])+})|(?=}))",
+							"end": "}",
+							"beginCaptures": {
+								"1": { "name": "keyword.other.json.comments.snippets punctuation.definition.format.begin.json.comments.snippets" },
+								"2": { "name": "constant.numeric.capture.json.comments.snippets" },
+								"3": { "name": "punctuation.separator.format.colon.json.comments.snippets" }
+							},
+							"endCaptures": { "0": { "name": "variable.language.json.comments.snippets punctuation.definition.format.end.json.comments.snippets" } },
+							"name": "meta.embedded.format.json.comments.snippets",
+							"contentName": "string.quoted.double.json.comments.snippets",
+							"patterns": [
+								{
+									"match": "\\G(\\\\)?(/(?>capitalize|(?>up|down|camel|pascal)case|([^}]+)))(?=})",
+									"captures": {
+										"1": { "name": "constant.character.escape.format.json.comments.snippets" },
+										"2": { "name": "markup.bold.case.json.comments.snippets" },
+										"3": { "name": "invalid.illegal.json.comments.snippets" }
+									}
+								},
+								{
+									"match": "\\G\\+",
+									"name": "keyword.operator.json.comments.snippets punctuation.definition.format.if.json.comments.snippets"
+								},
+								{
+									"match": "\\G-",
+									"name": "keyword.operator.json.comments.snippets punctuation.definition.format.else.json.comments.snippets"
+								},
+								{
+									"begin": "\\G\\?",
+									"end": ":",
+									"beginCaptures": { "0": { "name": "keyword.operator.json.comments.snippets punctuation.definition.format.if.begin.json.comments.snippets" } },
+									"endCaptures": { "0": { "name": "keyword.operator.json.comments.snippets punctuation.definition.format.if.end.json.comments.snippets" } },
+									"contentName": "string.quoted.double.json.comments.snippets",
+									"patterns": [
+										{
+											"match": "(\\\\{3})\\\\",
+											"captures": { "1": { "name": "constant.character.escape.json.comments.snippets" } }
+										},
+										{ "include": "#stringcontent" }
+									]
+								},
+								{
+									"match": "(\\\\{2})}",
+									"captures": { "1": { "name": "constant.character.escape.format.json.comments.snippets" } }
+								},
+								{
+									"match": "(\\\\{3})\\\\",
+									"captures": { "1": { "name": "constant.character.escape.json.comments.snippets" } }
+								},
+								{ "include": "#stringcontent" }
+							]
+						},
+						{
+							"match": "(\\\\{2,3})/",
+							"captures": { "1": { "name": "constant.character.escape.format.json.comments.snippets" } }
+						},
+						{
+							"match": "(\\\\{3})\\\\",
+							"captures": { "1": { "name": "constant.character.escape.json.comments.snippets" } }
+						},
+						{ "include": "#stringcontent" }
+					]
+				}
+			]
+		},
+		"value": {
+			"patterns": [
+				{ "include": "#constant" },
+				{ "include": "#number" },
+				{ "include": "#string" },
+				{ "include": "#array" },
+				{ "include": "#object" },
+				{ "include": "#comments" }
+			]
+		},
+		"object": {
+			"begin": "{",
+			"beginCaptures": { "0": { "name": "punctuation.definition.dictionary.begin.json.comments.snippets" } },
+			"end": "}",
+			"endCaptures": { "0": { "name": "punctuation.definition.dictionary.end.json.comments.snippets" } },
+			"name": "meta.structure.dictionary.json.comments.snippets",
+			"patterns": [ { "include": "#objectpair" } ]
+		},
+		"objectpair": {
+			"patterns": [
+				{
+					"comment": "the JSON object key",
+					"include": "#objectkey"
+				},
+				{ "include": "#comments" },
+				{
+					"begin": ":",
+					"beginCaptures": { "0": { "name": "punctuation.separator.dictionary.key-value.json.comments.snippets" } },
+					"end": ",|(?=})",
+					"endCaptures": { "0": { "name": "punctuation.separator.dictionary.pair.json.comments.snippets" } },
+					"name": "meta.structure.dictionary.value.json.comments.snippets",
+					"patterns": [
+						{
+							"comment": "the JSON object value",
+							"include": "#value"
+						},
+						{
+							"match": "\\S",
+							"name": "invalid.illegal.expected-dictionary-separator.json.comments.snippets"
+						}
+					]
+				},
+				{
+					"match": "\\S",
+					"name": "invalid.illegal.expected-dictionary-separator.json.comments.snippets"
+				}
+			]
+		},
+		"objectkey": {
+			"begin": "\"",
+			"beginCaptures": { "0": { "name": "punctuation.support.type.property-name.begin.json.comments.snippets" } },
+			"end": "\"",
+			"endCaptures": { "0": { "name": "punctuation.support.type.property-name.end.json.comments.snippets" } },
+			"name": "string.json.comments.snippets support.type.property-name.json.comments.snippets",
+			"patterns": [ { "include": "#stringcontent" } ]
+		},
+		"array": {
+			"begin": "\\[",
+			"beginCaptures": { "0": { "name": "punctuation.definition.array.begin.json.comments.snippets" } },
+			"end": "]",
+			"endCaptures": { "0": { "name": "punctuation.definition.array.end.json.comments.snippets" } },
+			"name": "meta.structure.array.json.comments.snippets",
+			"patterns": [
+				{ "include": "#value" },
+				{
+					"match": ",",
+					"name": "punctuation.separator.array.json.comments.snippets"
+				},
+				{
+					"match": "\\S",
+					"name": "invalid.illegal.expected-array-separator.json.comments.snippets"
+				}
+			]
+		},
+		"string": {
+			"begin": "\"",
+			"beginCaptures": { "0": { "name": "punctuation.definition.string.begin.json.comments.snippets" } },
+			"end": "\"",
+			"endCaptures": { "0": { "name": "punctuation.definition.string.end.json.comments.snippets" } },
+			"name": "string.quoted.double.json.comments.snippets",
+			"patterns": [ { "include": "#stringcontent" } ]
+		},
+		"stringcontent": {
+			"comment": "\\ \" \u0000",
+			"patterns": [
+				{
+					"match": "(\\\\)[\\\\\"/]",
+					"captures": { "1": { "name": "constant.character.escape.json.comments.snippets" } }
+				},
+				{
+					"match": "\\\\[bfnrt]",
+					"name": "constant.character.escape.json.comments.snippets"
+				},
+				{
+					"match": "\\\\u(\\h{4})",
+					"captures": {
+						"0": { "name": "constant.character.escape.json.comments.snippets" },
+						"1": { "name": "constant.numeric.json.comments.snippets" }
+					}
+				},
+				{
+					"match": "\\\\.",
+					"name": "invalid.illegal.unrecognized-string-escape.json.comments.snippets"
+				}
+			]
+		},
+		"constant": {
+			"match": "\\b(?>true|false|null)\\b",
+			"name": "constant.language.json.comments.snippets"
+		},
+		"number": {
+			"match": "-?(?>0|[1-9][0-9]*)(?>(?>\\.[0-9]+)?(?>[eE][+-]?[0-9]+)?)?",
+			"name": "constant.numeric.json.comments.snippets"
+		},
+		"comments": {
+			"patterns": [
+				{
+					"begin": "/\\*\\*(?!/)",
+					"end": "\\*/",
+					"captures": { "0": { "name": "punctuation.definition.comment.json.comments.snippets" } },
+					"name": "comment.block.documentation.json.comments.snippets"
+				},
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"captures": { "0": { "name": "punctuation.definition.comment.json.comments.snippets" } },
+					"name": "comment.block.json.comments.snippets"
+				},
+				{
+					"begin": "//",
+					"end": "$",
+					"beginCaptures": { "0": { "name": "punctuation.definition.comment.json.comments.snippets" } },
+					"name": "comment.line.double-slash.js"
+				}
+			]
+		}
+	}
+}

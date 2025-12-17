@@ -1,0 +1,289 @@
+[
+	{
+		"key": "enter",
+		"command": "-magit.visit-at-point",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "alt+0",
+		"command": "workbench.view.explorer",
+		"when": "editorTextFocus || terminalFocus"
+	},
+	{
+		"key": "ctrl+`",
+		"command": "-workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+	{
+		"key": "shift+cmd+o",
+		"command": "-editor.action.accessibleViewGoToSymbol",
+		"when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
+	},
+	{
+		"key": "ctrl+c ctrl+c",
+		"command": "cmake.buildWithTarget",
+		"when": "cmake:enableFullFeatureSet && !cmake:hideBuildCommand && editorLangId != 'git-commit' && editorLangId != 'git-rebase'"
+	},
+	{
+		"key": "shift+f7",
+		"command": "-cmake.buildWithTarget",
+		"when": "cmake:enableFullFeatureSet && !cmake:hideBuildCommand"
+	},
+	{
+		"key": "backspace",
+		"command": "-extension.smartBackspace",
+		"when": "config.hungryDelete.enableSmartBackspace && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "alt+backspace",
+		"command": "-emacs-mcx.backwardKillWord",
+		"when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd && !editorReadonly"
+	},
+	{
+		"key": "ctrl+alt+e",
+		"command": "emacs-mcx.forwardParagraph",
+		"when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd && !suggestWidgetVisible && editorLangId != cpp"
+	},
+	{
+		"key": "shift+alt+]",
+		"command": "-emacs-mcx.forwardParagraph",
+		"when": "editorTextFocus && !config.emacs-mcx.useMetaPrefixMacCmd && !suggestWidgetVisible"
+	},
+	{
+		"key": "shift+cmd+]",
+		"command": "-emacs-mcx.forwardParagraph",
+		"when": "config.emacs-mcx.useMetaPrefixMacCmd && editorTextFocus && !suggestWidgetVisible"
+	},
+	{
+		"key": "cmd+;",
+		"command": "workbench.action.switchWindow",
+		"when": "! config.simple-project-switcher.present"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-md-shortcut.toggleBold",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-markdown.extension.editing.toggleBold",
+		"when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+k v",
+		"command": "-markdown-preview-enhanced.openPreviewToTheSide",
+		"when": "editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+shift+enter",
+		"command": "multiCommand.PythonRuninTerminalandStep",
+		"when": "editorTextFocus && editorLangId == 'python'"
+	},
+	{
+		"key": "shift+enter",
+		"command": "-python.execSelectionInTerminal",
+		"when": "editorTextFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
+	},
+	{
+		"key": "shift+enter",
+		"command": "-jupyter.execSelectionInteractive",
+		"when": "editorTextFocus && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+	},
+	{
+		"key": "shift+enter",
+		"command": "-jupyter.runcurrentcelladvance",
+		"when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !editorHasSelection"
+	},
+	{
+		"key": "alt+enter",
+		"command": "multiCommand.postgresRunandStep",
+		"when": "editorLangId == 'postgres'"
+	},
+	{
+		"key": "alt+p",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "pgsql\r"
+		},
+		"when": "editorTextFocus && editorLangId == 'sql' || editorLangId == 'postgres'"
+	},
+	{
+		"key": "ctrl+x ctrl+r",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "reticulate::repl_python()\r"
+		},
+		"when": "editorTextFocus && editorLangId == 'rmd'"
+	},
+	{
+		"key": "ctrl+g",
+		"command": "-closeReferenceSearchEditor",
+		"when": "inReferenceSearchEditor && !config.editor.stablePeek"
+	},
+	{
+		"key": "ctrl+g",
+		"command": "-closeReferenceSearch",
+		"when": "referenceSearchVisible && !config.editor.stablePeek"
+	},
+	{
+		"key": "f10",
+		"command": "-jupyter.runByLineContinue",
+		"when": "jupyter.notebookeditor.runByLineInProgress && notebookKernelCount > 0"
+	},
+	{
+		"key": "f10",
+		"command": "-jupyter.runByLine",
+		"when": "!jupyter.notebookeditor.debuggingInProgress && !jupyter.notebookeditor.runByLineInProgress && notebookKernelCount > 0"
+	},
+	{
+		"key": "shift+enter",
+		"command": "-jupyter.runcurrentcelladvance",
+		"when": "editorTextFocus && isWorkspaceTrusted && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
+	},
+	{
+		"key": "shift+enter",
+		"command": "-python.execSelectionInTerminal",
+		"when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+	},
+	{
+		"key": "shift+k",
+		"command": "selectPrevSuggestion",
+		"when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+	}, // 使用 shift+k 来选择上一个可选项（相当于方向键上）
+	{
+		"key": "ctrl+u",
+		"command": "editor.action.insertSnippet",
+		"when": "editorTextFocus",
+		"args": {
+			"snippet": "^{$1}$0"
+		}
+	}, // snip：latex上标
+	{
+		"key": "ctrl+alt+u",
+		"command": "latex-workshop.synctex",
+		"when": "editorTextFocus && !config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId == 'latex'"
+	}, // latex 正向搜索
+	{
+		"key": "ctrl+u",
+		"command": "-extension.vim_ctrl+u",
+		"when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-extension.vim_ctrl+d",
+		"when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+	},
+	{
+		"key": "pageup",
+		"command": "-workbench.action.terminal.navigationModeFocusPreviousPage",
+		"when": "accessibilityModeEnabled && terminalA11yTreeFocus && terminalNavigationModeActive && terminalProcessSupported || accessibilityModeEnabled && terminalFocus && terminalNavigationModeActive && terminalProcessSupported"
+	},
+	{
+		"key": "ctrl+alt+p",
+		"command": "-latex-workshop.view",
+		"when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$/"
+	},
+	{
+		"key": "space e",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.toggleSidebarVisibility",
+				"workbench.files.action.focusFilesExplorer"
+			]
+		},
+		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+	},
+	{
+		"key": "space e",
+		"when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "shift-k",
+		"command": "editor.action.moveLinesUpAction",
+		"when": "vim.mode == 'VisualLine' && editorTextFocus"
+	},
+	{
+		"key": "space g g",
+		"command": "runCommands",
+		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+		"args": {
+			"commands": [
+				"workbench.view.scm",
+				"workbench.scm.focus"
+			]
+		}
+	},
+	{
+		"key": "space f m",
+		"command": "editor.action.formatDocument",
+		"when": "vim.mode == 'Normal' && editorTextFocus"
+	},
+	{
+		"key": "ctrl-n",
+		"command": "editor.action.addSelectionToNextFindMatch",
+		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+	},
+	{
+		"key": "space f t",
+		"command": "find-it-faster.findWithinFilesWithType",
+		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-editor.action.startFindReplaceAction",
+		"when": "editorFocus || editorIsOpen"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "workbench.explorer.openEditorsView.active || filesExplorerFocus && vim.active && vim.mode!='Insert'"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.files.action.focusOpenEditorsView",
+		"when": "filesExplorerFocus && vim.active && vim.mode!='Insert'"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.files.action.focusFilesExplorer",
+		"when": "!editorFocus && workbench.explorer.openEditorsView.active && vim.active && vim.mode!='Insert'"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.navigateLeft",
+		"when": "vim.active && vim.mode!='Insert'"
+	},
+	{
+		"key": "ctrl+c",
+		"command": "vim.remap",
+		"when": "inputFocus && vim.mode == 'Normal'",
+		"args": {
+			"after": [
+				"y",
+				"y"
+			]
+		}
+	},
+	{
+		"key": "g c c",
+		"command": "editor.action.commentLine",
+		"when": "editor.TextFocus && !editorReadonly"
+	},
+	{
+		"key": "g d",
+		"command": "editor.action.revealDefinition",
+		"when": "vim.mode == 'Normal' && editorHasDefinitionProvider && editorTextFocus && !isEmbeddedEditor"
+	},
+	{
+		"key": "[ d",
+		"command": "editor.action.marker.prev",
+		"when": "editorFocus && vim.mode == 'Normal'"
+	},
+]
