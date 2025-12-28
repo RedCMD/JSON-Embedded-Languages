@@ -56,7 +56,7 @@
 							"match": "[$_[:alpha:]][$_[:alnum:]]*",
 							"name": "variable.other.regexp.json"
 						},
-						{ "include": "source.json.embedded#stringcontent" }
+						{ "include": "#escapes" }
 					]
 				},
 				{
@@ -125,15 +125,17 @@
 							"name": "variable.other.constant.character-class.range.regexp.json"
 						},
 						{
-							"match": "(?:(\\\\{2}(?>[0-7]{3}|x\\h{2}|u\\h{4}))|(\\\\{2}c[A-Z])|(\\\\{4}|\\\\{1,2}[^\\\\wWsSdD])|.)-(?:(\\\\{2}(?:[0-7]{3}|x\\h{2}|u\\h{4}))|(\\\\{2}c[A-Z])|(\\\\{4}|\\\\{1,2}[^\\\\wWsSdD])|[^]\"])",
+							"match": "(?:(\\\\{2}(?>[0-7]{3}|x\\h{2}|u\\h{4}))|(\\\\{2}c[A-Za-z])|(\\\\{3})\\\\|(\\\\{1,2})[^\\\\wWsSdD]|.)-(?:(\\\\{2}(?:[0-7]{3}|x\\h{2}|u\\h{4}))|(\\\\{2}c[A-Za-z])|(\\\\{3})\\\\|(\\\\{1,2})[^\\\\wWsSdD]|[^]\"])",
 							"captures": {
 								"0": { "name": "support.class.range.regex.json" },
 								"1": { "name": "constant.character.numeric.regexp.json" },
 								"2": { "name": "constant.character.control.regexp.json" },
 								"3": { "name": "constant.character.escape.backslash.regexp.json" },
-								"4": { "name": "constant.character.numeric.regexp.json" },
-								"5": { "name": "constant.character.control.regexp.json" },
-								"6": { "name": "constant.character.escape.backslash.regexp.json" }
+								"4": { "name": "constant.character.escape.backslash.regexp.json" },
+								"5": { "name": "constant.character.numeric.regexp.json" },
+								"6": { "name": "constant.character.control.regexp.json" },
+								"7": { "name": "constant.character.escape.backslash.regexp.json" },
+								"8": { "name": "constant.character.escape.backslash.regexp.json" }
 							},
 							"name": "constant.other.character-class.range.regexp.json"
 						},
@@ -170,7 +172,7 @@
 					"match": "(\\\\{2})[^\\\\\"]",
 					"captures": { "1": { "name": "constant.character.escape.backslash.regex.regexp.json" } }
 				},
-				{ "include": "source.json.embedded#stringcontent" }
+				{ "include": "#escapes" }
 			]
 		},
 		"unicode": {
@@ -196,9 +198,18 @@
 							"match": "[a-zA-Z_]+",
 							"name": "variable.other.constant.regexp.json"
 						},
-						{ "include": "source.json.embedded#stringcontent" }
+						{ "include": "#escapes" }
 					]
 				}
+			]
+		},
+		"escapes": {
+			"patterns": [
+				{
+					"match": "(\\\\)[\"/]",
+					"captures": { "1": { "name": "constant.character.escape.json.comments" } }
+				},
+				{ "include": "source.json.comments.embedded#stringcontent" }
 			]
 		}
 	}
