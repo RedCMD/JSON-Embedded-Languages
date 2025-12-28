@@ -1,5 +1,5 @@
 {
-	"$schema": "https://www.schemastore.org/package",
+	"//$schema": "https://www.schemastore.org/package",
 	"scripts": {
 		"build": "npm run compile && npm run compile-web && npm run generate-wasm && node ./out/Onigmo/moveOnigmo",
 		"package": "vsce package",
@@ -82,6 +82,55 @@
 					"dark": "assets/TextMate-file-icon.svg",
 					"light": "assets/TextMate-file-icon.svg"
 				}
+			}
+		],
+		"grammars": [
+			{
+				"language": "json-textmate",
+				"scopeName": "source.json.textmate",
+				"path": "./syntaxes/json.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
+				},
+				"tokenTypes": {
+					"abc.def": "string"
+				},
+				"unbalancedBracketScopes": [
+					"invalid.illegal.expected-dictionary-separator.json",
+					"invalid.illegal.expected-array-separator.json",
+					"invalid.illegal.expected-value-separator.json"
+				]
+			},
+			{
+				"language": "json-textmate-regex",
+				"scopeName": "source.json.textmate.regexp",
+				"path": "./syntaxes/regex.tmLanguage.json"
+			},
+			{
+				"language": "yaml-textmate",
+				"scopeName": "source.yaml.textmate",
+				"path": "./syntaxes/yaml.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.json.textmate.regexp": "json-textmate-regex",
+					"meta.embedded.yaml.textmate.regexp": "json-textmate-regex"
+				},
+				"unbalancedBracketScopes": [
+					"invalid.illegal",
+					"storage.type.tag.shorthand.yaml",
+					"keyword.control.flow"
+				]
+			},
+			{
+				"scopeName": "source.json.snippets",
+				"path": "./syntaxes/schema-defaultSnippets.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.json.comments.snippets.snippets": "snippets-snippets",
+					"meta.embedded.json.comments.snippets": "snippets",
+					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
+				},
+				"injectTo": [
+					"source.json.embedded"
+				]
 			}
 		],
 		"breakpoints": [

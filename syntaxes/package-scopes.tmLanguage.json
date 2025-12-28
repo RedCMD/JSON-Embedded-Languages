@@ -14,13 +14,12 @@
 		"embeddedLanguages": {
 			"begin": "(?<=\")\\G(?=(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++\")",
 			"end": "(?=\"|$)",
-			"name": "meta.embedded.json.textmate.source",
+			"name": "meta.embedded.json.textmate.source string.quoted.double.json",
 			"patterns": [
 				{
 					"begin": "(?>text|source|markdown)(?=\\.[\\w.:])",
 					"end": "(?![\\w.:-])",
 					"beginCaptures": { "0": { "name": "support.function.tm" } },
-					"name": "string",
 					"patterns": [
 						{
 							"match": "\\.",
@@ -30,7 +29,7 @@
 				},
 				{
 					"match": "[\\w.:][\\w.:-]*",
-					"name": "string $0"
+					"name": "$0"
 				},
 				{
 					"comment": "balancedBracketScopes ONLY",
