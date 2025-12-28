@@ -1,5 +1,16 @@
 >{
 #^ source.json.embedded meta.structure.dictionary.json punctuation.definition.dictionary.begin.json
+>	"$schema": "https://json-schema.org/draft-04/schema#",
+#^ source.json.embedded meta.structure.dictionary.json
+# ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. string.json support.type.property-name.json punctuation.support.type.property-name.begin.json
+#  ^^^^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. string.json support.type.property-name.json
+#         ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. string.json support.type.property-name.json punctuation.support.type.property-name.end.json
+#          ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. meta.structure.dictionary.value.json punctuation.separator.dictionary.key-value.json
+#           ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. meta.structure.dictionary.value.json
+#            ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. meta.structure.dictionary.value.json string.quoted.double.json punctuation.definition.string.begin.json
+#             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. meta.structure.dictionary.value.json string.quoted.double.json
+#                                                     ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. meta.structure.dictionary.value.json string.quoted.double.json punctuation.definition.string.end.json
+#                                                      ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.schema. meta.structure.dictionary.value.json punctuation.separator.dictionary.pair.json
 >	"pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
 #^ source.json.embedded meta.structure.dictionary.json
 # ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.pattern. string.json support.type.property-name.json punctuation.support.type.property-name.begin.json
@@ -178,7 +189,7 @@
 >			"body": {
 #^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json
 #   ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json punctuation.support.type.property-name.begin.json
-#    ^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json meta.embedded.json.comments.snippets.snippets support.type.property-name.string.json
+#    ^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json
 #        ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json punctuation.support.type.property-name.end.json
 #         ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. meta.structure.dictionary.value.json punctuation.separator.dictionary.key-value.json
 #          ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. meta.structure.dictionary.value.json
@@ -851,7 +862,7 @@
 >			"body": {
 #^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json
 #   ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json punctuation.support.type.property-name.begin.json
-#    ^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json meta.embedded.json.comments.snippets.snippets support.type.property-name.string.json
+#    ^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json
 #        ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json punctuation.support.type.property-name.end.json
 #         ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. meta.structure.dictionary.value.json punctuation.separator.dictionary.key-value.json
 #          ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. meta.structure.dictionary.value.json
@@ -1515,7 +1526,7 @@
 >			"body": {
 #^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json
 #   ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json punctuation.support.type.property-name.begin.json
-#    ^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json meta.embedded.json.comments.snippets.snippets support.type.property-name.string.json
+#    ^^^^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json
 #        ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. string.json support.type.property-name.json punctuation.support.type.property-name.end.json
 #         ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. meta.structure.dictionary.value.json punctuation.separator.dictionary.key-value.json
 #          ^ source.json.embedded meta.structure.dictionary.json .meta.embedded.defaultSnippets. meta.structure.dictionary.value.json meta.structure.array.json meta.structure.dictionary.json .meta.embedded.body. meta.structure.dictionary.value.json
