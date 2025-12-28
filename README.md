@@ -8,7 +8,7 @@ Then using multiple injection grammars that target those scopeNames and inject s
 * ShellScript within `"scripts"` for `package.json` (`JSON`)  
 ![Example `package.json/scripts`](images/Example-scripts.png)
 
-* [when-clause-contexts](https://code.visualstudio.com/api/references/when-clause-contexts) within `"when"` for `package.json` (`JSON`)  
+* [when-clause-contexts](https://code.visualstudio.com/api/references/when-clause-contexts) within `"when"` for `package.json` and `keybindings.json` (`JSON`)  
 ![Example `package.json/when`](images/Example-when.png)
 
 * JSON escaped JavaScript Regular Expressions within `"wordPattern"`, `"folding"`, `"onEnterRules"` and `"indentationRules"` for `language-configuration.json` (`JSONC`)  

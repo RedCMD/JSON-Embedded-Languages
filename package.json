@@ -90,7 +90,7 @@
 			},
 			{
 				"scopeName": "source.json.package.when",
-				"path": "./syntaxes/package-when.tmLanguage.json",
+				"path": "./syntaxes/when.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.when.json": "javascript"
 				},
