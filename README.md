@@ -5,6 +5,7 @@ Then using multiple injection grammars that target those scopeNames and inject s
 
 
 ## Features
+
 * ShellScript within `"scripts"` for `package.json` (`JSON`)  
 ![Example `package.json/scripts`](images/Example-scripts.png)
 
@@ -26,20 +27,26 @@ Then using multiple injection grammars that target those scopeNames and inject s
 
 This extension targets every `JSON` and `JSONC` file, not just `package.json`.  
 There will be false positives and false negatives.  
-Please report any you come across.  
+Please report any [issues](https://github.com/RedCMD/JSON-Embedded-Languages/issues) you come across.  
 
 VSCode TextMate injections are rather slow.  
 It may take longer for documents to fully syntax highlight.  
-The `regexp` `"injectionSelector"` is almost 10,000 characters long.  
+The `"injectionSelector"` for `regexp` is almost 10,000 characters long.  
 
 
 ## For more information
 
 * The GitHub [Issue](https://github.com/microsoft/vscode/issues/224581) that spawned the idea
-* [Repository](https://github.com/RedCMD/JSON-Embedded-Languages)
-* [Marketplace](https://marketplace.visualstudio.com/items?itemName=RedCMD.json-embedded-languages)
+* Github [Repository](https://github.com/RedCMD/JSON-Embedded-Languages)
+* VSCode [Marketplace](https://marketplace.visualstudio.com/items?itemName=RedCMD.json-embedded-languages)
+* Related extensions:
+  * [Extended Embedded Languages](https://marketplace.visualstudio.com/items?itemName=walteh.embedded-languages-vscode)
+  * [Injected Regex Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=RedCMD.regexp-syntax-highlighter)
+  * [YAML Embedded Languages](https://marketplace.visualstudio.com/items?itemName=harrydowning.yaml-embedded-languages)
+  * [Snippets Snippets](https://marketplace.visualstudio.com/items?itemName=RedCMD.snippets-snippets)
 
 
 ## TODO:
-* `globs`/`"filenamePatterns"`
+* Support args
 * Improve performance
+* Fix false positives
