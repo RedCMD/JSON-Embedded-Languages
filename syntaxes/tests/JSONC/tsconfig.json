@@ -1,0 +1,17 @@
+{
+	"$schema": "https://www.schemastore.org/tsconfig",
+	"ts-node": {
+		"moduleTypes": {
+			"**/glob/pattern/*.md": {
+				"not/glob": "*"
+			}
+		}
+	},
+	"include": [
+		"src/**/*.ts",
+	],
+	"exclude": [
+		"node_modules",
+		"out/*.js",
+	]
+}

@@ -18,6 +18,9 @@ Then using multiple injection grammars that target those scopeNames and inject s
   Recommend the [Snippets Snippets](https://marketplace.visualstudio.com/items?itemName=RedCMD.snippets-snippets) extension  
 ![Example `schema.json`](images/Example-schema.png)
 
+* Glob patterns within `"filenamePatterns"` and `"fileMatch"` for `package.json`
+![Example `package.json/filenamePatterns`](images/Example-filenamePatterns.png)
+
 
 ## Known Issues
 

@@ -1,4 +1,5 @@
 {
+	"$schema": "https://www.schemastore.org/package",
 	"scripts": {
 		"build": "npm run compile && npm run compile-web && npm run generate-wasm && node ./out/Onigmo/moveOnigmo",
 		"package": "vsce package",
@@ -12,6 +13,69 @@
 	"contributes": {
 		"languages": [
 			{
+				"filenamePatterns": [
+					"**/syntaxes/*inject*.json",
+					"**/syntaxes/*codeblock*.json",
+					"**/syntaxes/*code?block*.json",
+					"**/syntaxes/*.tmLanguage.json",
+					"**/syntaxes/*.tmLanguage copy{, [0-9]*}.json",
+					"**/syntaxes/*.tmLanguage{, copy} - Copy{, ([0-9]*)}{, - Copy*}.json",
+					"**/grammars/*inject*.json",
+					"**/grammars/*codeblock*.json",
+					"**/grammars/*code?block*.json",
+					"**/grammars/*.tmLanguage.json",
+					"**/grammars/*.tmLanguage copy{, [0-9]*}.json",
+					"**/grammars/*.tmLanguage{, copy} - Copy{, ([0-9]*)}{, - Copy*}.json",
+					"* ** *** {*} {**} {***} {*,**} [*] [**] [***]",
+					"? {?} {?,?} [?]",
+					"[\/ / /-/ ] [/]] [/^\/]/] []a[!] [A-Fa-f0-9] []-] [--0] [--0] [.-0] [---] [!]a-] [[?*\\]",
+					"**/{Crusader Kings III,CK,CK3,1158310}/**/*.{txt,gui,info}",
+					"**/{Europa Universalis IV,EU,EU4,236850}/**/*.{txt,gui}",
+					"**/{Hearts of Iron IV,HOI,HOI4,394360}/**/*.{txt,gui}",
+					"**/{Victoria 3,VIC,VIC3,529340}/**/*.{txt,gui,info}",
+					"**/*requirements*.{txt, in}",
+					"**/*constraints*.txt",
+					"**/requirements/*.{txt,in}",
+					"**/constraints/*.txt",
+					"@vcode-tm-log-*-*-*-*-*.txt",
+					"**/*.[w.-]+",
+					"**/([w.-]+)/?",
+					"{**/*?[w.-]+/?(,**/*?[w.-]+/?)*}",
+					"{**/*?[w.-]+(/(**)?)?(,**/*?[w.-]+(/(**)?)?)*}",
+					"**((/[w.-]+)+)/?",
+					"([w.-]+(/[w.-]+)*)/?",
+					"Dockerfile.*",
+					"Containerfile.*",
+					"**/rebase-merge/done",
+					"**/.config/git/config",
+					"**/.git/config",
+					"**/User/snippets/*.json",
+					"**/User/profiles/*/snippets/*.json",
+					"**/snippets*.json",
+					"**/.cursor/**/*.mdc",
+					"**/.github/agents/*.md",
+					"tsconfig.*.json",
+					"jsconfig.*.json",
+					"tsconfig-*.json",
+					"jsconfig-*.json",
+					"compose.yml",
+					"compose.yaml",
+					"compose.*.yml",
+					"compose.*.yaml",
+					"*docker*compose*.yml",
+					"*docker*compose*.yaml",
+					"**/templates/**/*.html",
+					"**/templates/**/*",
+					"**/test/integration/**/*.rb",
+					"**/controls/*.rb",
+					"**/recipes/*.yml",
+					"**/recipes/*.yaml",
+					"*suite*.rc",
+					"suite*.rc.*",
+					"flow.rc",
+					"flow-tests.rc",
+					"@vcode-tm-log-*-*-*-*-*.txt"
+				],
 				"firstLine": "{(\"scopeName\"|\"(information_for_contributors|fileTypes)\":\\[)",
 				"configuration": "./language-configuration.json",
 				"icon": {
@@ -346,6 +410,14 @@
 				"title": "%walkthrough.pythonWelcome.title%",
 				"when": "workspacePlatform != webworker"
 			}
+		]
+	},
+	"workspaces": [
+		"workspace/**"
+	],
+	"workspaces": {
+		"packages": [
+			"workspace/**"
 		]
 	}
 }

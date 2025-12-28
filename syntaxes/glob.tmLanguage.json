@@ -1,0 +1,128 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "\"filenamePatterns\", \"fileMatch\" & \"workspaces\" inside `package.json` and \"include\", \"exclude\" & \"moduleTypes\" inside `tsconfig.json`",
+	"comment": "https://code.visualstudio.com/docs/editor/glob-patterns",
+	"scopeName": "source.json.package.glob",
+	"injectionSelector": [
+		"L:source.json.embedded .meta.embedded.contributes. .meta.embedded.languages. meta.structure.array.json .meta.embedded.filenamePatterns. meta.structure.array.json string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json meta.structure.array.json) -meta.embedded.glob.json -comment",
+		"L:source.json.embedded .meta.embedded.contributes. .meta.embedded.jsonValidation. meta.structure.array.json .meta.embedded.fileMatch. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.glob.json -comment",
+		"L:source.json.embedded .meta.embedded.workspaces. meta.structure.array.json string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.glob.json -comment",
+		"L:source.json.embedded .meta.embedded.workspaces. .meta.embedded.packages. meta.structure.array.json string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.embedded.configurations. meta.structure.array.json.comments string.quoted.double.json.comments (.meta.embedded.skipFiles. | .meta.embedded.outFiles.) -(meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments) -(meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments) -meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded meta.structure.array.json.comments string.quoted.double.json.comments (.meta.embedded.include. | .meta.embedded.exclude.) -(meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments) -(meta.structure.array.json.comments meta.structure.array.json.comments) -meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.embedded.ts-node. .meta.embedded.moduleTypes. meta.structure.dictionary.json.comments support.type.property-name.json.comments -(meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments) -meta.structure.array.json.comments -meta.embedded.glob.json -comment"
+	],
+	"patterns": [
+		{
+			"begin": "(?<=\")\\G(?=(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++\")",
+			"end": "(?=\"|$)",
+			"name": "meta.embedded.glob.json",
+			"contentName": "string.regexp.glob.json",
+			"patterns": [ { "include": "#glob" } ]
+		}
+	],
+	"repository": {
+		"glob": {
+			"patterns": [
+				{
+					"match": "(\\\\?)/",
+					"name": "keyword.separator.path.glob-split.glob.json",
+					"captures": { "1": { "name": "constant.character.escape.glob.json" } }
+				},
+				{
+					"match": "(\\*\\*)(\\**)|(\\*)",
+					"name": "keyword.operator.quantifier.regexp.glob.json",
+					"captures": {
+						"1": { "name": "punctuation.definition.globstar.glob.json" },
+						"2": { "name": "comment.globstar.glob.json" },
+						"3": { "name": "punctuation.definition.star.glob.json" }
+					}
+				},
+				{
+					"match": "\\?",
+					"name": "keyword.operator.quantifier.regexp.glob.json"
+				},
+				{
+					"match": "}",
+					"name": "comment.group.glob.json"
+				},
+				{
+					"begin": "{",
+					"end": "}|(?=\")|$",
+					"beginCaptures": { "0": { "name": "punctuation.definition.group.begin.glob.json" } },
+					"endCaptures": { "0": { "name": "punctuation.definition.group.end.glob.json" } },
+					"name": "meta.embedded.group.glob.json",
+					"contentName": "string.regexp.glob.json",
+					"patterns": [
+						{
+							"match": ",",
+							"name": "keyword.operator.separator.comma.glob.json punctuation.separator.comma.glob.string"
+						},
+						{ "include": "#glob" }
+					]
+				},
+				{
+					"match": "]",
+					"name": "meta.embedded.character-class.glob.json",
+					"captures": { "0": { "name": "invalid.illegal.character-class.end.glob.json" } }
+				},
+				{
+					"begin": "(\\[)((?:\\\\?/)*)([!^]?)((?:\\\\?/)*)",
+					"end": "(?!\\G)]|(?=\")|$",
+					"beginCaptures": {
+						"1": { "name": "punctuation.definition.character-class.begin.glob.json" },
+						"2": { "patterns": [ { "include": "#glob-split" } ] },
+						"3": { "name": "keyword.operator.negation.glob.json" },
+						"4": { "patterns": [ { "include": "#glob-split" } ] }
+					},
+					"endCaptures": { "0": { "name": "punctuation.definition.character-class.end.glob.json" } },
+					"name": "meta.embedded.character-class.glob.json",
+					"contentName": "constant.other.character-class.set.regexp.string.glob.json",
+					"patterns": [
+						{ "include": "#glob-split" },
+						{
+							"match": "[0-9]-[0-9]",
+							"name": "constant.numeric.character-class.range.glob.json"
+						},
+						{
+							"match": "[a-z]-[a-z]|[A-Z]-[A-Z]",
+							"name": "variable.other.constant.character-class.range.glob.json"
+						},
+						{
+							"comment": "Character Class Range contains glob-split character / ",
+							"match": "[ -.]-(?:[0-\\[^-~]|(?=\\\\))",
+							"name": "invalid.illegal.character-class.range.glob-split.glob.json"
+						},
+						{
+							"match": "(?:(\\\\)[\\\\\"]|[^\\\\/])((?:\\\\?/)*)-((?:\\\\?/)*)(?:(\\\\)[\\\\\"]|[^]\\\\\"/])",
+							"captures": {
+								"0": { "name": "support.class.range.string.glob.json" },
+								"1": { "name": "constant.character.escape.backslash.glob.json" },
+								"2": { "patterns": [ { "include": "#glob-split" } ] },
+								"3": { "patterns": [ { "include": "#glob-split" } ] },
+								"4": { "name": "constant.character.escape.backslash.glob.json" }
+							},
+							"name": "constant.other.character-class.range.glob.json"
+						},
+						{
+							"match": "(\\\\?)\\\\",
+							"captures": { "1": { "name": "constant.character.escape.glob.json" } }
+						},
+						{ "include": "source.json.embedded#stringcontent" }
+					]
+				},
+				{
+					"match": "(\\\\?)\\\\",
+					"captures": { "1": { "name": "constant.character.escape.glob.json" } }
+				},
+				{ "include": "source.json.embedded#stringcontent" }
+			]
+		},
+		"glob-split": {
+			"comment": "glob-split / is ignored inside square brackets https://man7.org/linux/man-pages/man7/glob.7.html",
+			"match": "(\\\\?)/",
+			"name": "comment.invalid.illegal.glob-split.glob.json",
+			"captures": { "1": { "name": "constant.character.escape.glob.json" } }
+		}
+	}
+}
