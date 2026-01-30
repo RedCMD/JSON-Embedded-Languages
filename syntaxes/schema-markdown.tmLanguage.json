@@ -4,9 +4,9 @@
 	"name": "JSON Embedded Markdown",
 	"scopeName": "source.json.markdown",
 	"injectionSelector": [
-		"L:source.json.embedded .meta.embedded.markdownDescription. string.quoted.double.json -(.meta.embedded.markdownDescription. meta.structure.dictionary.json) -(.meta.embedded.markdownDescription. meta.structure.array.json) -meta.embedded.text.html.markdown -comment",
-		"L:source.json.embedded .meta.embedded.markdownDeprecationMessage. string.quoted.double.json -(.meta.embedded.markdownDeprecationMessage. meta.structure.dictionary.json) -(.meta.embedded.markdownDeprecationMessage. meta.structure.array.json) -meta.embedded.text.html.markdown -comment",
-		"L:source.json.embedded .meta.embedded.markdownEnumDescriptions. meta.structure.array.json string.quoted.double.json -(.meta.embedded.markdownEnumDescriptions. meta.structure.dictionary.json) -(.meta.embedded.markdownEnumDescriptions. meta.structure.array.json meta.structure.array.json) -meta.embedded.text.html.markdown -comment"
+		"L:source.json.embedded .meta.markdownDescription. string.quoted.double.json -(.meta.markdownDescription. meta.structure.dictionary.json) -(.meta.markdownDescription. meta.structure.array.json) -meta.embedded.text.html.markdown -comment",
+		"L:source.json.embedded .meta.markdownDeprecationMessage. string.quoted.double.json -(.meta.markdownDeprecationMessage. meta.structure.dictionary.json) -(.meta.markdownDeprecationMessage. meta.structure.array.json) -meta.embedded.text.html.markdown -comment",
+		"L:source.json.embedded .meta.markdownEnumDescriptions. meta.structure.array.json string.quoted.double.json -(.meta.markdownEnumDescriptions. meta.structure.dictionary.json) -(.meta.markdownEnumDescriptions. meta.structure.array.json meta.structure.array.json) -meta.embedded.text.html.markdown -comment"
 	],
 	"patterns": [
 		{

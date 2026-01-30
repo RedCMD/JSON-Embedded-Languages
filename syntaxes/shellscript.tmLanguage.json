@@ -3,7 +3,7 @@
 	"comment": "\"scripts\" in `package.json` and \"command\" in `tasks.json`",
 	"name": "JSON Embedded ShellScript",
 	"scopeName": "source.json.shellscript",
-	"injectionSelector": "L:source.json.embedded .meta.embedded.scripts. meta.structure.dictionary.json string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -meta.embedded.shellscript.json -comment",
+	"injectionSelector": "L:source.json.embedded .meta.scripts. meta.structure.dictionary.json string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -meta.embedded.shellscript.json -comment",
 	"patterns": [
 		{
 			"comment": "https://github.com/microsoft/vscode-textmate/issues/242",
