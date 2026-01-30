@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "`package.json` \"scripts\": {}",
+	"comment": "\"scripts\" in `package.json` and \"command\" in `tasks.json`",
+	"name": "JSON Embedded ShellScript",
 	"scopeName": "source.json.shellscript",
 	"injectionSelector": "L:source.json.embedded .meta.embedded.scripts. meta.structure.dictionary.json string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -meta.structure.array.json -meta.embedded.shellscript.json -comment",
 	"patterns": [

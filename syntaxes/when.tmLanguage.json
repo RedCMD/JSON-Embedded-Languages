@@ -1,8 +1,9 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "\"when\" & \"enablement\" inside package.json and keybindings.json",
-	"comment": "https://code.visualstudio.com/api/references/when-clause-contexts",
-	"scopeName": "source.json.package.when",
+	"//": "https://code.visualstudio.com/api/references/when-clause-contexts",
+	"comment": "\"when\" & \"enablement\" inside `package.json` & `keybindings.json`",
+	"name": "JSON Embedded When Clause",
+	"scopeName": "source.json.when",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.embedded.contributes. meta.structure.array.json .meta.embedded.when. string.quoted.double.json (.meta.embedded.continueEditSession. | .meta.embedded.keybindings. | .meta.embedded.viewsWelcome. | .meta.embedded.taskDefinitions. | .meta.embedded.chatParticipants. | .meta.embedded.languageModelTools. | .meta.embedded.debuggers. | .meta.embedded.debugVisualizers. | .meta.embedded.walkthroughs. | .meta.embedded.chatViewsWelcome. | .meta.embedded.breakpoints.) -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.when.json -comment",
 		"L:source.json.embedded .meta.embedded.contributes. meta.structure.array.json .meta.embedded.when. string.quoted.double.json (.meta.embedded.walkthroughs. meta.structure.array.json .meta.embedded.steps. | .meta.embedded.chatParticipants. meta.structure.array.json .meta.embedded.commands.) -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json meta.structure.array.json) -meta.embedded.when.json -comment",

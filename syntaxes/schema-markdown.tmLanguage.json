@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "Schema \"markdownDescription\" and \"patternProperties\" Markdown",
+	"comment": "\"markdownDescription\" & \"patternProperties\" inside `*.schema.json`",
+	"name": "JSON Embedded Markdown",
 	"scopeName": "source.json.markdown",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.embedded.markdownDescription. string.quoted.double.json -(.meta.embedded.markdownDescription. meta.structure.dictionary.json) -(.meta.embedded.markdownDescription. meta.structure.array.json) -meta.embedded.text.html.markdown -comment",

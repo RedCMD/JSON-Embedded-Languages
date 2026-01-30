@@ -1,8 +1,8 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "Shellscript JSON escaped",
 	"comment": "Double quotes requiring escaping when embedded inside JSON",
-	"scopeName": "source.shellscript.json.escaped",
+	"name": "JSON Escaped ShellScript Strings",
+	"scopeName": "source.json.shellscript.escaped",
 	"injectionSelector": "L:source.json.embedded meta.embedded.shellscript.json -string.quoted.double.shell",
 	"patterns": [
 		{ "include": "#string" }

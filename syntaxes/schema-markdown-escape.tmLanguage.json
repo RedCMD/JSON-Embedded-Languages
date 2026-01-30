@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "Schema \"markdownDescription\" and \"patternProperties\" Escapes",
+	"name": "JSON Escaped Markdown",
 	"scopeName": "source.json.markdown.escape",
 	"injectionSelector": "L:source.json.embedded meta.embedded.text.html.markdown",
 	"patterns": [

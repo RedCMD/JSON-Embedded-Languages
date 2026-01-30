@@ -1,7 +1,8 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"comment": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions https://github.com/wraith13/vscode-schemas/blob/master/en/latest/schemas/language-configuration.json#L237-L258",
-	"name": "JSON escaped JavaScript Regexp. package.json, language-configuration.json & task.json",
+	"comment": "`package.json`, `language-configuration.json`, `*.schema.json` & `task.json`",
+	"//": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions https://github.com/wraith13/vscode-schemas/blob/master/en/latest/schemas/language-configuration.json#L237-L258",
+	"name": "JSON Embedded JavaScript Regexp",
 	"scopeName": "source.json.regexp",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.embedded.patternProperties. meta.structure.dictionary.json support.type.property-name.json -(.meta.embedded.patternProperties. meta.structure.dictionary.json meta.structure.dictionary.json) -(.meta.embedded.patternProperties. meta.structure.array.json) -meta.embedded.json.regexp -comment",

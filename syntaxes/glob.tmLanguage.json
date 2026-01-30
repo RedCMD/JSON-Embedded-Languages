@@ -1,8 +1,9 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "\"filenamePatterns\", \"fileMatch\" & \"workspaces\" inside `package.json` and \"include\", \"exclude\" & \"moduleTypes\" inside `tsconfig.json`",
-	"comment": "https://code.visualstudio.com/docs/editor/glob-patterns",
-	"scopeName": "source.json.package.glob",
+	"comment": "\"filenamePatterns\", \"fileMatch\" & \"workspaces\" inside `package.json` and \"include\", \"exclude\" & \"moduleTypes\" inside `tsconfig.json`",
+	"//": "https://code.visualstudio.com/docs/editor/glob-patterns",
+	"name": "JSON Embedded Glob Patterns",
+	"scopeName": "source.json.glob",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.embedded.contributes. .meta.embedded.languages. meta.structure.array.json .meta.embedded.filenamePatterns. meta.structure.array.json string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json meta.structure.array.json) -meta.embedded.glob.json -comment",
 		"L:source.json.embedded .meta.embedded.contributes. .meta.embedded.jsonValidation. meta.structure.array.json .meta.embedded.fileMatch. string.quoted.double.json -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.glob.json -comment",

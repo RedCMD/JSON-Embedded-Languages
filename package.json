@@ -49,15 +49,15 @@
 				"path": "./syntaxes/JSONC.tmLanguage.json"
 			},
 			{
-				"scopeName": "source.json.package.scopes",
-				"path": "./syntaxes/package-scopes.tmLanguage.json",
+				"scopeName": "source.json.textmate.scopes",
+				"path": "./syntaxes/scopes.tmLanguage.json",
 				"injectTo": [
 					"source.json.embedded"
 				]
 			},
 			{
 				"scopeName": "source.json.shellscript",
-				"path": "./syntaxes/package-scripts.tmLanguage.json",
+				"path": "./syntaxes/shellscript.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.shellscript": "shellscript"
 				},
@@ -66,8 +66,8 @@
 				]
 			},
 			{
-				"scopeName": "source.shellscript.json.escaped",
-				"path": "./syntaxes/package-shellscript.json.escaped.tmLanguage.json",
+				"scopeName": "source.json.shellscript.escaped",
+				"path": "./syntaxes/shellscript-escaped.tmLanguage.json",
 				"injectTo": [
 					"source.json.embedded"
 				]
@@ -84,7 +84,7 @@
 				]
 			},
 			{
-				"scopeName": "source.json.package.when",
+				"scopeName": "source.json.when",
 				"path": "./syntaxes/when.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.when.json": "javascript"
@@ -95,7 +95,7 @@
 				]
 			},
 			{
-				"scopeName": "source.json.package.glob",
+				"scopeName": "source.json.glob",
 				"path": "./syntaxes/glob.tmLanguage.json",
 				"injectTo": [
 					"source.json.comments.embedded",

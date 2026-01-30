@@ -1,7 +1,8 @@
 {
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
-	"name": "`package.json` embeddedLanguages & tokenTypes & balancedBracketScopes & unbalancedBracketScopes & injectTo & scopeName",
-	"scopeName": "source.json.package.scopes",
+	"comment": "\"embeddedLanguages\" & \"tokenTypes\" & \"balancedBracketScopes\" & \"unbalancedBracketScopes\" & \"injectTo\" & \"scopeName\" inside `package.json`, \"editor.tokenColorCustomizations\" inside \"settings.json\" and \"t\" inside `colorize-results.json`",
+	"name": "JSON Embedded TextMate Scopes",
+	"scopeName": "source.json.textmate.scopes",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.embedded.contributes. .meta.embedded.grammars. meta.structure.array.json (.meta.embedded.embeddedLanguages. meta.structure.dictionary.json | .meta.embedded.tokenTypes. meta.structure.dictionary.json) -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json) -meta.embedded.json.textmate.source -comment",
 		"L:source.json.embedded .meta.embedded.contributes. .meta.embedded.grammars. meta.structure.array.json (.meta.embedded.balancedBracketScopes. meta.structure.array.json | .meta.embedded.unbalancedBracketScopes. meta.structure.array.json | .meta.embedded.injectTo. meta.structure.array.json ) -(meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json) -(meta.structure.array.json meta.structure.array.json meta.structure.array.json) -meta.embedded.json.textmate.source -comment",
