@@ -1,0 +1,22 @@
+{
+	"not-glob": {
+		"files.associations": {}
+	},
+	"when": [
+		"not-glob"
+	]
+}
+
+[
+	{
+		"include": "not-glob",
+		"exclude": "not-glob"
+	},
+	{
+		"outFiles": {
+			"configurations": [
+				"not-glob"
+			]
+		}
+	},
+]

@@ -1,0 +1,75 @@
+{
+	"$schema": "vscode://schemas/settings/user",
+	"cSpell.ignorePaths": [
+		"package-lock.json",
+		"package.json",
+		"node_modules",
+		".git/{info,lfs,logs,refs,objects}/**",
+		".git/{index,*refs,*HEAD}",
+		".vscode",
+		".vscode-insiders",
+		".vscode-test-web",
+		// "**/extensions",
+		"UNICODE_PROPERTIES.ts",
+		"unicode_property_data.ts",
+		"**/vscode-main",
+		"**/achieve*.txt"
+	],
+	"files.associations": {
+		"__bit_reference": "cpp",
+		"__hash_table": "cpp",
+		"*.rasi": "css",
+		"*.rex": "rexx",
+		"*.sublime-snippet": "xml",
+		"*.wasm": "wasm",
+		"*.Xresources": "xdefaults",
+		"**/.frontmatter/config/*.json": "jsonc",
+		"**/*.ASM*{,/*}": "hlasm",
+		"**/*.ASSEMBLE*{,/*}": "hlasm",
+		"**/*.CNTL*{,/*}": "jcl",
+		"**/*.COB*{,/*}": "cobol",
+		"**/*.COBCOPY*{,/*}": "cobol",
+		"**/*.COBOL*{,/*}": "cobol",
+		"**/*.COPY*{,/*}": "cobol",
+		"**/*.COPYBOOK*{,/*}": "cobol",
+		"**/*.DBD*{,/*}": "hlasm",
+		"**/*.EXEC*{,/*}": "rexx",
+		"**/*.HLA*{,/*}": "hlasm",
+		"**/*.HLASM*{,/*}": "hlasm",
+		"**/*.INC*{,/*}": "pl1",
+		"**/*.INCLUDE*{,/*}": "pl1",
+		"**/*.JCL*{,/*}": "jcl",
+		"**/*.MACLIB*{,/*}": "hlasm",
+		"**/*.MFS*{,/*}": "hlasm",
+		"**/*.PCB*{,/*}": "hlasm",
+		"**/*.PL1*{,/*}": "pl1",
+		"**/*.PLI*{,/*}": "pl1",
+		"**/*.PROC*{,/*}": "jcl",
+		"**/*.REXX*{,/*}": "rexx",
+		"**/*.REXXINC*{,/*}": "rexx",
+		"**/frontmatter.json": "jsonc",
+		"algorithm": "c",
+		"array": "cpp",
+		"chrono": "cpp",
+		"deghost.h": "c",
+		"deque": "cpp"
+	},
+	"files.exclude": {
+		"**/.git": false,
+		"desktop.ini": true
+	},
+	"files.readonlyExclude": {
+		"**/node_modules/vscode-textmate/**/*": true
+	},
+	"workbench.editorAssociations": {
+		"{hexdiff}:/**/*.*": "hexEditor.hexedit",
+		"*.abs": "default",
+		"*.dat": "default",
+		"*.g1m": "hexEditor.hexedit",
+		"*.txt": "default",
+		"*.wasm": "default"
+	},
+	"workbench.localHistory.exclude": {
+		"**/*": true
+	}
+}

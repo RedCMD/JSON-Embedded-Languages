@@ -4,7 +4,8 @@
 		"moduleTypes": {
 			"**/glob/pattern/*.md": {
 				"not/glob": "*"
-			}
+			},
+			"workspaceContains:**/*.bx": {},
 		}
 	},
 	"include": [

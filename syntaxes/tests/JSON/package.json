@@ -1,5 +1,31 @@
 {
 	"//$schema": "https://www.schemastore.org/package",
+	"//$schema": "vscode://schemas/vscode-extensions",
+	"activationEvents": [
+		"onLanguage:python",
+		"workspaceContains:**/*.bx",
+		"workspaceContains:**/*.bxm",
+		"workspaceContains:**/*.bxs"
+	],
+	"files": [
+		"dist/api.*",
+		"dist/syntax.*",
+		"dist/ast.*",
+		"dist/errors.*",
+		"dist/lexer.*",
+		"dist/parser.*",
+		"dist/parser/",
+		"dist/interpreter.*",
+		"dist/interpreter/",
+		"dist/token.*",
+		"dist/cli/",
+		"dist/repl.*",
+		"dist/init.*",
+		"dist/debugger.*",
+		"dist/README.md",
+		"!dist/visualizer.*",
+		"!dist/lsp/"
+	],
 	"scripts": {
 		"build": "npm run compile && npm run compile-web && npm run generate-wasm && node ./out/Onigmo/moveOnigmo",
 		"package": "vsce package",
@@ -9,6 +35,14 @@
 		"compile-web": "webpack --no-devtool --no-watch --mode production",
 		"generate-wasm": "cd ./src/tree-sitter/tree-sitter-json/ && tree-sitter generate && tree-sitter build --wasm --output ../../../out/tree-sitter-jsontm.wasm && cd ./../tree-sitter-regex/ && tree-sitter generate && tree-sitter build --wasm --output ../../../out/tree-sitter-regextm.wasm",
 		"open-in-browser": "vscode-test-web --extensionDevelopmentPath=. ."
+	},
+	"workspaces": [
+		"workspace/**"
+	],
+	"workspaces": {
+		"packages": [
+			"workspace/**"
+		]
 	},
 	"contributes": {
 		"languages": [
@@ -133,6 +167,54 @@
 				]
 			}
 		],
+		"jsonValidation": [
+			{
+				"fileMatch": [
+					"*.tmLanguage.json",
+					"*.tmGrammar.json",
+					"*.JSON-tmLanguage"
+				],
+				"url": "./vscode.tmLanguage.schema.json"
+			},
+			{
+				"fileMatch": "lift*.json",
+				"url": "./schemas/lift.schema.json"
+			}
+		],
+		"yamlValidation": [
+			{
+				"fileMatch": [
+					"*.tmLanguage.yaml",
+					"*.tmLanguage.yml",
+					"*.YAML-tmLanguage",
+					"*.yaml-tmLanguage"
+				],
+				"url": "./vscode.tmLanguage.schema.json"
+			}
+		],
+		"ymlValidation": [
+			{
+				"fileMatch": "*.yml",
+				"url": "./schema.json"
+			}
+		],
+		"tomlValidation": [
+			{
+				"fileMatch": [
+					".mise.toml",
+					".mise.*.toml",
+					"mise.toml",
+					"mise.*.toml",
+					"**/.mise/config.toml",
+					"**/mise/config.toml"
+				],
+				"url": "https://mise.jdx.dev/schema/mise.json"
+			},
+			{
+				"regexMatch": "task[s]?.toml",
+				"url": "https://mise.jdx.dev/schema/mise-task.json"
+			}
+		],
 		"breakpoints": [
 			{
 				"language": "",
@@ -239,6 +321,18 @@
 			{
 				"command": "",
 				"when": "true"
+			}
+		],
+		"customEditors": [
+			{
+				"viewType": "verilog.fliplotEditor",
+				"displayName": "Fliplot Waveform Viewer",
+				"selector": [
+					{
+						"filenamePattern": "*.vcd"
+					}
+				],
+				"priority": "default"
 			}
 		],
 		"debuggers": [
@@ -459,14 +553,6 @@
 				"title": "%walkthrough.pythonWelcome.title%",
 				"when": "workspacePlatform != webworker"
 			}
-		]
-	},
-	"workspaces": [
-		"workspace/**"
-	],
-	"workspaces": {
-		"packages": [
-			"workspace/**"
 		]
 	}
 }

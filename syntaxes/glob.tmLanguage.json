@@ -6,12 +6,19 @@
 	"scopeName": "source.json.glob",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.contributes. .meta.languages. meta.structure.array.json .meta.filenamePatterns. meta.structure.array.json string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.embedded.glob.json -comment",
-		"L:source.json.embedded .meta.contributes. .meta.jsonValidation. meta.structure.array.json .meta.fileMatch. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.glob.json -comment",
-		"L:source.json.embedded .meta.workspaces. meta.structure.array.json string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.glob.json -comment",
+		"L:source.json.embedded .meta.contributes. meta.structure.dictionary.json meta.structure.array.json .meta.fileMatch. string.quoted.double.json\n(.meta.jsonValidation. | .meta.yamlValidation. | .meta.ymlValidation. | .meta.tomlValidation.)\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.structure.array.json meta.structure.array.json .meta.fileMatch.\n-meta.embedded.glob.json -comment",
+		"L:source.json.embedded .meta.contributes. .meta.customEditors. meta.structure.array.json .meta.selector. meta.structure.array.json .meta.filenamePattern. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.embedded.glob.json -comment",
 		"L:source.json.embedded .meta.workspaces. .meta.packages. meta.structure.array.json string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.glob.json -comment",
-		"L:source.json.comments.embedded .meta.configurations. meta.structure.array.json.comments string.quoted.double.json.comments\n(.meta.skipFiles. | .meta.outFiles.)\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
-		"L:source.json.comments.embedded meta.structure.array.json.comments string.quoted.double.json.comments\n(.meta.include. | .meta.exclude.)\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
-		"L:source.json.comments.embedded .meta.ts-node. .meta.moduleTypes. meta.structure.dictionary.json.comments support.type.property-name.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments\n-meta.embedded.glob.json -comment"
+		"L:source.json.embedded meta.structure.dictionary.json meta.structure.array.json string.quoted.double.json\n(.meta.files. | .meta.workspaces.)\n-meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.glob.json -comment",
+		"R:source.json.embedded .meta.activationEvents. meta.structure.array.json\n-meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-string.quoted.double.json\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.configurations. meta.structure.array.json.comments meta.structure.dictionary.json.comments string.quoted.double.json.comments\n(.meta.skipFiles. | .meta.outFiles | .meta.resolveSourceMapLocations.)\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.launch. .meta.configurations. meta.structure.array.json.comments meta.structure.dictionary.json.comments string.quoted.double.json.comments\n(.meta.skipFiles. | .meta.outFiles | .meta.resolveSourceMapLocations.)\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded meta.structure.dictionary.json.comments meta.structure.array.json.comments string.quoted.double.json.comments\n(.meta.include. | .meta.exclude.)\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.ts-node. .meta.moduleTypes. meta.structure.dictionary.json.comments support.type.property-name.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.settings. .meta.cSpell.ignorePaths. meta.structure.array.json.comments string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.cSpell.ignorePaths. meta.structure.array.json.comments string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded .meta.settings. meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments support.type.property-name.json.comments\n(.meta.files.associations. meta.structure.dictionary.json.comments | .meta.files.exclude. meta.structure.dictionary.json.comments | .meta.files.readonlyExclude. meta.structure.dictionary.json.comments | .meta.workbench.editorAssociations. meta.structure.dictionary.json.comments | .meta.workbench.localHistory.exclude. meta.structure.dictionary.json.comments)\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments\n-meta.embedded.glob.json -comment",
+		"L:source.json.comments.embedded meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments support.type.property-name.json.comments\n(.meta.files.associations. meta.structure.dictionary.json.comments | .meta.files.exclude. meta.structure.dictionary.json.comments | .meta.files.readonlyExclude. meta.structure.dictionary.json.comments | .meta.workbench.editorAssociations. meta.structure.dictionary.json.comments | .meta.workbench.localHistory.exclude. meta.structure.dictionary.json.comments)\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments\n-meta.embedded.glob.json -comment"
 	],
 	"patterns": [
 		{
@@ -20,6 +27,22 @@
 			"name": "meta.embedded.glob.json",
 			"contentName": "string.regexp.glob.json",
 			"patterns": [ { "include": "#glob" } ]
+		},
+		{
+			"begin": "(?<=\\[)\\G\\s*",
+			"end": "(?=])",
+			"patterns": [
+				{ "include": "#activationEvents" },
+				{ "include": "source.json.embedded#value" },
+				{
+					"match": ",",
+					"name": "punctuation.separator.array.json"
+				},
+				{
+					"match": "\\S",
+					"name": "invalid.illegal.expected-array-separator.json"
+				}
+			]
 		}
 	],
 	"repository": {
@@ -27,17 +50,17 @@
 			"patterns": [
 				{
 					"match": "(\\\\?)/",
-					"name": "keyword.separator.path.glob-split.glob.json",
-					"captures": { "1": { "name": "constant.character.escape.glob.json" } }
+					"captures": { "1": { "name": "constant.character.escape.glob.json" } },
+					"name": "keyword.separator.path.glob-split.glob.json"
 				},
 				{
 					"match": "(\\*\\*)(\\**)|(\\*)",
-					"name": "keyword.operator.quantifier.regexp.glob.json",
 					"captures": {
 						"1": { "name": "punctuation.definition.globstar.glob.json" },
 						"2": { "name": "comment.globstar.glob.json" },
 						"3": { "name": "punctuation.definition.star.glob.json" }
-					}
+					},
+					"name": "keyword.operator.quantifier.regexp.glob.json"
 				},
 				{
 					"match": "\\?",
@@ -64,8 +87,8 @@
 				},
 				{
 					"match": "]",
-					"name": "meta.embedded.character-class.glob.json",
-					"captures": { "0": { "name": "invalid.illegal.character-class.end.glob.json" } }
+					"captures": { "0": { "name": "invalid.illegal.character-class.end.glob.json" } },
+					"name": "meta.embedded.character-class.glob.json"
 				},
 				{
 					"begin": "(\\[)((?:\\\\?/)*)([!^]?)((?:\\\\?/)*)",
@@ -122,8 +145,17 @@
 		"glob-split": {
 			"comment": "glob-split / is ignored inside square brackets https://man7.org/linux/man-pages/man7/glob.7.html",
 			"match": "(\\\\?)/",
-			"name": "comment.invalid.illegal.glob-split.glob.json",
-			"captures": { "1": { "name": "constant.character.escape.glob.json" } }
+			"captures": { "1": { "name": "constant.character.escape.glob.json" } },
+			"name": "comment.invalid.illegal.glob-split.glob.json"
+		},
+		"activationEvents": {
+			"begin": "(\")workspaceContains:(?=(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++\"(?!\\s*:))",
+			"end": "\"|$",
+			"beginCaptures": { "1": { "name": "punctuation.definition.string.begin.json" } },
+			"endCaptures": { "0": { "name": "punctuation.definition.string.end.json" } },
+			"name": "string.quoted.double.json",
+			"contentName": "meta.embedded.glob.json string.regexp.glob.json",
+			"patterns": [ { "include": "#glob" } ]
 		}
 	}
 }

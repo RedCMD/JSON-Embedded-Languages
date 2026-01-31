@@ -1,0 +1,45 @@
+{
+	"launch": {
+		"inputs": [],
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch",
+				"type": "node-terminal",
+				"request": "launch",
+				"command": "npm start",
+				"skipFiles": [
+					"<node_internals>/**"
+				],
+				"outFiles": [
+					"${workspaceFolder}/out/**/*.js"
+				],
+				"resolveSourceMapLocations": [
+					"${workspaceFolder}/**",
+					"!**/node_modules/**"
+				]
+			}
+		]
+	},
+	"settings": {
+		"cSpell.ignorePaths": [
+			".git/{info,lfs,logs,refs,objects}/**"
+		],
+		"files.associations": {
+			"**/.frontmatter/config/*.json": "jsonc",
+			"**/*.ASM*{,/*}": "hlasm"
+		},
+		"files.exclude": {
+			"**/.git": false
+		},
+		"files.readonlyExclude": {
+			"**/node_modules/vscode-textmate/**/*": true
+		},
+		"workbench.editorAssociations": {
+			"{hexdiff}:/**/*.*": "hexEditor.hexedit"
+		},
+		"workbench.localHistory.exclude": {
+			"**/*": true
+		}
+	}
+}
