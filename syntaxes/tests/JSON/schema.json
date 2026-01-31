@@ -1,5 +1,23 @@
 {
 	"$schema": "https://json-schema.org/draft-04/schema#",
+	"patternProperties": {
+		"(^\\d+(-\\d+)?$)|(.+)": {
+			"markdownDescription": "When true, a modal dialog will show if the chosen local port isn't used for forwarding.",
+			"patternProperties": {
+				"^[a-zA-Z0-9-_.]+[.]*\/[a-zA-Z0-9-_*]+[.]*$": {
+					"anyOf": [
+						{
+							"patternProperties": {
+								"^([a-zA-Z0-9_-]+(:[a-zA-Z0-9_-]+)?)$": {
+									"markdownDescription": "Only 3 nested levels"
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	},
 	"pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
 	"defaultSnippets": [
 		{

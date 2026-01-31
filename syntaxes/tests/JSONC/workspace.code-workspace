@@ -21,6 +21,26 @@
 			}
 		]
 	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"problemMatcher": {
+					"background": {
+						"beginsPattern": {
+							"regexp": "[Cc]ompiling.*?|[Cc]ompil(ation|er) .*?starting"
+						},
+						"endsPattern": "^(\\[INFO\\] Succeeded|\\[SEVERE\\] Failed) after"
+					},
+					"pattern": [
+						{
+							"regexp": "^(ERROR)\\s([^:]+):(\\d+):(\\d+):(\\d+)\\s(.*)$"
+						}
+					]
+				}
+			}
+		]
+	},
 	"settings": {
 		"cSpell.ignorePaths": [
 			".git/{info,lfs,logs,refs,objects}/**"

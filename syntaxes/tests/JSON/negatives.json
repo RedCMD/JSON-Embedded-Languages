@@ -32,6 +32,26 @@
 				}
 			]
 		],
+		"regexp": {
+			"problemMatchers": [
+				{
+					"background": {
+						"beginsPattern": "not-regex",
+						"endsPattern": "not-regex"
+					}
+				}
+			]
+		},
+		"problemMatchers": [
+			{
+				"background": {
+					"beginsPattern": {
+						"string": "not-regex"
+					},
+					"regexp": "not-regex"
+				}
+			}
+		],
 		"configurationDefaults": {
 			"editor.tokenColorCustomizations": {
 				"textMateRules": [

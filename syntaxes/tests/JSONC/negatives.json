@@ -13,6 +13,44 @@
 	"not-glob": {
 		"files.associations": {}
 	},
+	"beginsPattern": {
+		"tasks": [
+			{
+				"problemMatcher": {
+					"background": {
+						"regexp": "not-regex"
+					}
+				}
+			}
+		],
+		"problemMatcher": {
+			"background": {
+				"regexp": "not-regex"
+			}
+		}
+	},
+	"problemMatcher": {
+		"background": {
+			"beginsPattern": {
+				"not-regex": "not-regex"
+			}
+		},
+		"pattern": [
+			[
+				{
+					"regexp": "not-regex"
+				}
+			]
+		],
+		"pattern": {
+			"regexp": [
+				"not-regex"
+			]
+		}
+	},
+	"pattern": {
+		"wordPattern": "not-regex"
+	},
 	"when": [
 		"not-glob"
 	]
@@ -30,4 +68,11 @@
 			]
 		}
 	},
+	{
+		"problemMatcher": {
+			"pattern": {
+				"regexp": "not-regex"
+			}
+		}
+	}
 ]

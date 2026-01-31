@@ -529,6 +529,52 @@
 				}
 			]
 		},
+		"problemMatchers": [
+			{
+				"background": {
+					"beginsPattern": {
+						"regexp": "regex",
+						"string": "string"
+					},
+					"endsPattern": "regex",
+					"activeOnStart": true,
+					"regexp": "string",
+					"string": "string"
+				},
+				"pattern": [
+					{
+						"regexp": "^([^\\\\s].*)\\\\((\\\\d+,\\\\d+)\\\\):\\\\s*(.*)$",
+						"file": 1,
+						"location": 2,
+						"message": 3
+					}
+				]
+			},
+			{
+				"pattern": {
+					"regexp": "^([^\\\\s].*)\\\\((\\\\d+,\\\\d+)\\\\):\\\\s*(.*)$",
+					"file": 1,
+					"location": 2,
+					"message": 3
+				}
+			}
+		],
+		"problemPatterns": [
+			{
+				"name": "rustc",
+				"patterns": [
+					{
+						"regexp": "^(warning|warn|error)(?:\\[(.*?)\\])?: (.*)$",
+						"severity": 1,
+						"code": 2,
+						"message": 3
+					}
+				]
+			},
+			{
+				"regexp": "^.*\"message\":{\"message\":\"([^\"]*).*?\"file_name\":\"([^\"]+).*?\"line_start\":(\\d+).*?\"line_end\":(\\d+).*?\"column_start\":(\\d+).*?\"column_end\":(\\d+).*}$"
+			}
+		],
 		"taskDefinitions": [
 			{
 				"properties": {
