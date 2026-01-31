@@ -1,0 +1,886 @@
+[
+	{
+		"c": "//",
+		"t": "source.cpp comment.line.double-slash.cpp punctuation.definition.comment.cpp"
+	},
+	{
+		"c": " classes example",
+		"t": "source.cpp comment.line.double-slash.cpp"
+	},
+	{
+		"c": "#",
+		"t": "source.cpp meta.preprocessor.include.cpp keyword.control.directive.include.cpp punctuation.definition.directive.cpp"
+	},
+	{
+		"c": "include",
+		"t": "source.cpp meta.preprocessor.include.cpp keyword.control.directive.include.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.preprocessor.include.cpp"
+	},
+	{
+		"c": "<",
+		"t": "source.cpp meta.preprocessor.include.cpp string.quoted.other.lt-gt.include.cpp punctuation.definition.string.begin.cpp"
+	},
+	{
+		"c": "iostream",
+		"t": "source.cpp meta.preprocessor.include.cpp string.quoted.other.lt-gt.include.cpp"
+	},
+	{
+		"c": ">",
+		"t": "source.cpp meta.preprocessor.include.cpp string.quoted.other.lt-gt.include.cpp punctuation.definition.string.end.cpp"
+	},
+	{
+		"c": "using",
+		"t": "source.cpp meta.using-namespace.cpp keyword.other.using.directive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.using-namespace.cpp"
+	},
+	{
+		"c": "namespace",
+		"t": "source.cpp meta.using-namespace.cpp keyword.other.namespace.directive.cpp storage.type.namespace.directive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.using-namespace.cpp"
+	},
+	{
+		"c": "std",
+		"t": "source.cpp meta.using-namespace.cpp entity.name.namespace.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.using-namespace.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "#",
+		"t": "source.cpp meta.preprocessor.macro.cpp keyword.control.directive.define.cpp punctuation.definition.directive.cpp"
+	},
+	{
+		"c": "define",
+		"t": "source.cpp meta.preprocessor.macro.cpp keyword.control.directive.define.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.preprocessor.macro.cpp"
+	},
+	{
+		"c": "EXTERN_C",
+		"t": "source.cpp meta.preprocessor.macro.cpp entity.name.function.preprocessor.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.block.extern.cpp"
+	},
+	{
+		"c": "extern",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.block.extern.cpp meta.head.extern.cpp storage.type.extern.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.block.extern.cpp meta.head.extern.cpp"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.block.extern.cpp meta.head.extern.cpp string.quoted.double.cpp punctuation.definition.string.begin.cpp"
+	},
+	{
+		"c": "C",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.block.extern.cpp meta.head.extern.cpp string.quoted.double.cpp"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.block.extern.cpp meta.head.extern.cpp string.quoted.double.cpp punctuation.definition.string.end.cpp"
+	},
+	{
+		"c": "class",
+		"t": "source.cpp meta.block.class.cpp meta.head.class.cpp storage.type.class.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.block.class.cpp"
+	},
+	{
+		"c": "Rectangle",
+		"t": "source.cpp meta.block.class.cpp entity.name.type.class.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.block.class.cpp"
+	},
+	{
+		"c": "{",
+		"t": "source.cpp meta.block.class.cpp meta.head.class.cpp punctuation.section.block.begin.bracket.curly.class.cpp"
+	},
+	{
+		"c": "    ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " width",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp"
+	},
+	{
+		"c": ",",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp punctuation.separator.delimiter.comma.cpp"
+	},
+	{
+		"c": " height",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp"
+	},
+	{
+		"c": "public",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp storage.type.modifier.access.control.public.cpp"
+	},
+	{
+		"c": ":",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp storage.type.modifier.access.control.public.cpp punctuation.separator.colon.access.control.cpp"
+	},
+	{
+		"c": "    ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp"
+	},
+	{
+		"c": "void",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.qualified_type.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp"
+	},
+	{
+		"c": "set_values",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp entity.name.function.definition.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.begin.bracket.round.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": ",",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp punctuation.separator.delimiter.comma.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.end.bracket.round.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "    ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.qualified_type.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp"
+	},
+	{
+		"c": "area",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp entity.name.function.definition.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.begin.bracket.round.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.end.bracket.round.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp"
+	},
+	{
+		"c": "{",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.block.begin.bracket.curly.function.definition.cpp"
+	},
+	{
+		"c": "return",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.control.return.cpp"
+	},
+	{
+		"c": " width",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "*",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.operator.arithmetic.cpp"
+	},
+	{
+		"c": "height",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "}",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.block.end.bracket.curly.function.definition.cpp"
+	},
+	{
+		"c": "}",
+		"t": "source.cpp meta.block.class.cpp meta.body.class.cpp punctuation.section.block.end.bracket.curly.class.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.block.class.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "void",
+		"t": "source.cpp meta.function.definition.cpp meta.qualified_type.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp"
+	},
+	{
+		"c": "Rectangle",
+		"t": "source.cpp meta.function.definition.cpp entity.name.scope-resolution.function.definition.cpp"
+	},
+	{
+		"c": "::",
+		"t": "source.cpp meta.function.definition.cpp punctuation.separator.namespace.access.cpp punctuation.separator.scope-resolution.function.definition.cpp"
+	},
+	{
+		"c": "set_values",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp entity.name.function.definition.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.begin.bracket.round.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp"
+	},
+	{
+		"c": "x",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp variable.parameter.cpp"
+	},
+	{
+		"c": ",",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp punctuation.separator.delimiter.comma.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp"
+	},
+	{
+		"c": "y",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp meta.function.definition.parameters meta.parameter.cpp variable.parameter.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.end.bracket.round.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp"
+	},
+	{
+		"c": "{",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.block.begin.bracket.curly.function.definition.cpp"
+	},
+	{
+		"c": "  width ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "=",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.operator.assignment.cpp"
+	},
+	{
+		"c": " x",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  height ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "=",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.operator.assignment.cpp"
+	},
+	{
+		"c": " y",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "}",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.block.end.bracket.curly.function.definition.cpp"
+	},
+	{
+		"c": "long",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.qualified_type.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.qualified_type.cpp"
+	},
+	{
+		"c": "double",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.qualified_type.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp"
+	},
+	{
+		"c": "operator",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp keyword.other.operator.overload.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp"
+	},
+	{
+		"c": "\"\"",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp entity.name.operator.custom-literal.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp"
+	},
+	{
+		"c": "_w",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp entity.name.operator.custom-literal.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp punctuation.section.parameters.begin.bracket.round.special.operator-overload.cpp"
+	},
+	{
+		"c": "long",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp meta.function.definition.parameters.special.operator-overload meta.parameter.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp meta.function.definition.parameters.special.operator-overload meta.parameter.cpp"
+	},
+	{
+		"c": "double",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp meta.function.definition.parameters.special.operator-overload meta.parameter.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.special.operator-overload.cpp meta.head.function.definition.special.operator-overload.cpp punctuation.section.parameters.end.bracket.round.special.operator-overload.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "#",
+		"t": "source.cpp meta.preprocessor.macro.cpp keyword.control.directive.define.cpp punctuation.definition.directive.cpp"
+	},
+	{
+		"c": "define",
+		"t": "source.cpp meta.preprocessor.macro.cpp keyword.control.directive.define.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.preprocessor.macro.cpp"
+	},
+	{
+		"c": "MY_MACRO",
+		"t": "source.cpp meta.preprocessor.macro.cpp entity.name.function.preprocessor.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.preprocessor.macro.cpp punctuation.definition.parameters.begin.preprocessor.cpp"
+	},
+	{
+		"c": "a",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.function.preprocessor.parameters.cpp variable.parameter.preprocessor.cpp"
+	},
+	{
+		"c": ",",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.function.preprocessor.parameters.cpp punctuation.separator.parameters.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.function.preprocessor.parameters.cpp"
+	},
+	{
+		"c": "b",
+		"t": "source.cpp meta.preprocessor.macro.cpp meta.function.preprocessor.parameters.cpp variable.parameter.preprocessor.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.preprocessor.macro.cpp punctuation.definition.parameters.end.preprocessor.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.function.definition.cpp meta.qualified_type.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp"
+	},
+	{
+		"c": "main",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp entity.name.function.definition.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.begin.bracket.round.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.parameters.end.bracket.round.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp"
+	},
+	{
+		"c": "{",
+		"t": "source.cpp meta.function.definition.cpp meta.head.function.definition.cpp punctuation.section.block.begin.bracket.curly.function.definition.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "1",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ".",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.point.cpp"
+	},
+	{
+		"c": "2",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": "_w",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.other.suffix.literal.user-defined.integer.cpp keyword.other.unit.user-defined.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp comment.line.double-slash.cpp"
+	},
+	{
+		"c": "//",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp comment.line.double-slash.cpp punctuation.definition.comment.cpp"
+	},
+	{
+		"c": " calls operator \"\" _w(1.2L)",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp comment.line.double-slash.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "asm",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.asm.cpp storage.type.asm.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.asm.cpp punctuation.section.parens.begin.bracket.round.assembly.cpp"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.asm.cpp string.quoted.double.cpp punctuation.definition.string.begin.assembly.cpp"
+	},
+	{
+		"c": "movl %a %b",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.asm.cpp string.quoted.double.cpp meta.embedded.assembly"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.asm.cpp string.quoted.double.cpp punctuation.definition.string.end.assembly.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.asm.cpp punctuation.section.parens.end.bracket.round.assembly.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "MY_MACRO",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp entity.name.function.call.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.begin.bracket.round.function.call.cpp"
+	},
+	{
+		"c": "1",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ",",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.separator.delimiter.comma.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "2",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.end.bracket.round.function.call.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  Rectangle rect",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "rect",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp variable.other.object.access.cpp"
+	},
+	{
+		"c": ".",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.separator.dot-access.cpp"
+	},
+	{
+		"c": "set_values",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp entity.name.function.member.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.begin.bracket.round.function.member.cpp"
+	},
+	{
+		"c": "3",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ",",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.separator.delimiter.comma.cpp"
+	},
+	{
+		"c": "4",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.end.bracket.round.function.member.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  cout ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "<<",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.operator.bitwise.shift.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp string.quoted.double.cpp punctuation.definition.string.begin.cpp"
+	},
+	{
+		"c": "area: ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp string.quoted.double.cpp"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp string.quoted.double.cpp punctuation.definition.string.end.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "<<",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.operator.bitwise.shift.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "rect",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp variable.other.object.access.cpp"
+	},
+	{
+		"c": ".",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.separator.dot-access.cpp"
+	},
+	{
+		"c": "area",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp entity.name.function.member.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.begin.bracket.round.function.member.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.end.bracket.round.function.member.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "Task",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp entity.name.scope-resolution.cpp"
+	},
+	{
+		"c": "<",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.template.call.cpp meta.template.call.cpp punctuation.section.angle-brackets.begin.template.call.cpp"
+	},
+	{
+		"c": "ANY_OUTPUT_TYPE",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.template.call.cpp meta.template.call.cpp meta.qualified_type.cpp entity.name.type.cpp"
+	},
+	{
+		"c": ",",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.template.call.cpp meta.template.call.cpp punctuation.separator.delimiter.comma.template.argument.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.template.call.cpp meta.template.call.cpp meta.qualified_type.cpp"
+	},
+	{
+		"c": "ANY_INPUT_TYPE",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.template.call.cpp meta.template.call.cpp meta.qualified_type.cpp entity.name.type.cpp"
+	},
+	{
+		"c": ">",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.template.call.cpp meta.template.call.cpp punctuation.section.angle-brackets.end.template.call.cpp"
+	},
+	{
+		"c": "::",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.separator.namespace.access.cpp punctuation.separator.scope-resolution.cpp"
+	},
+	{
+		"c": "links_to",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "int",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp storage.type.primitive.cpp storage.type.built-in.primitive.cpp"
+	},
+	{
+		"c": " t ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "=",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.operator.assignment.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "2",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "if",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.control.if.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.parens.cpp punctuation.section.parens.begin.bracket.round.cpp"
+	},
+	{
+		"c": "t ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.parens.cpp"
+	},
+	{
+		"c": ">",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.parens.cpp keyword.operator.comparison.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.parens.cpp"
+	},
+	{
+		"c": "0",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.parens.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp meta.parens.cpp punctuation.section.parens.end.bracket.round.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "puts",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp entity.name.function.call.cpp"
+	},
+	{
+		"c": "(",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.begin.bracket.round.function.call.cpp"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp string.quoted.double.cpp punctuation.definition.string.begin.cpp"
+	},
+	{
+		"c": "\\n",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp string.quoted.double.cpp constant.character.escape.cpp"
+	},
+	{
+		"c": "*************************************************",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp string.quoted.double.cpp"
+	},
+	{
+		"c": "\"",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp string.quoted.double.cpp punctuation.definition.string.end.cpp"
+	},
+	{
+		"c": ")",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.arguments.end.bracket.round.function.call.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "  ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "return",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp keyword.control.return.cpp"
+	},
+	{
+		"c": " ",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp"
+	},
+	{
+		"c": "0",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp constant.numeric.decimal.cpp"
+	},
+	{
+		"c": ";",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.terminator.statement.cpp"
+	},
+	{
+		"c": "}",
+		"t": "source.cpp meta.function.definition.cpp meta.body.function.definition.cpp punctuation.section.block.end.bracket.curly.function.definition.cpp"
+	}
+]

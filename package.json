@@ -52,6 +52,7 @@
 				"scopeName": "source.json.textmate.scopes",
 				"path": "./syntaxes/scopes.tmLanguage.json",
 				"injectTo": [
+					"source.json.comments.embedded",
 					"source.json.embedded"
 				]
 			},

@@ -1,4 +1,15 @@
 {
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": [
+					[
+						"comment.not-scope"
+					]
+				]
+			}
+		]
+	},
 	"not-glob": {
 		"files.associations": {}
 	},

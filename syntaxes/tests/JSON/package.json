@@ -124,7 +124,8 @@
 				"scopeName": "source.json.textmate",
 				"path": "./syntaxes/json.tmLanguage.json",
 				"embeddedLanguages": {
-					"meta.embedded.json.textmate.regexp": "json-textmate-regex"
+					"meta.embedded.json.textmate.regexp": "json-textmate-regex",
+					"embeddedLanguages": "embeddedLanguages"
 				},
 				"tokenTypes": {
 					"abc.def": "string"
@@ -328,6 +329,44 @@
 			},
 			"title": "CMake Tools",
 			"type": "object"
+		},
+		"configurationDefaults": {
+			"editor.tokenColorCustomizations": {
+				"textMateRules": [
+					{
+						"scope": "variable.parameter.attachment.lea",
+						"settings": {
+							"foreground": "#CE9178",
+							"fontStyle": "bold"
+						}
+					},
+					{
+						"scope": "support.type.decorator.validate.lea",
+						"settings": {
+							"foreground": "#4682B4",
+							"fontStyle": "italic"
+						}
+					},
+					{
+						"scope": "keyword.operator.parallel-pipe.lea",
+						"settings": {
+							"foreground": "#DCDCAA"
+						}
+					},
+					{
+						"name": "Koi Playbook Content - Bright Yellow",
+						"scope": [
+							"comment",
+							".comment.",
+							"string.quoted.triple.playbook.koi",
+							"string.quoted.triple.affordance.koi"
+						],
+						"settings": {
+							"foreground": "#F7DF1E"
+						}
+					}
+				]
+			}
 		},
 		"continueEditSession": [
 			{

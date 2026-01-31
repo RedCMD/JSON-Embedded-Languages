@@ -1,5 +1,30 @@
 {
+	"embeddedLanguages": {
+		"contributes": {
+			"grammars": [
+				{
+					"embeddedLanguages": {
+						"meta.embedded.json.textmate.not-scopeName": "json-textmate-regex"
+					}
+				}
+			]
+		}
+	},
+	"unbalancedBracketScopes": {
+		"contributes": {
+			"grammars": [
+				"invalid.illegal.expected-dictionary-separator.not-scopeName"
+			]
+		}
+	},
 	"contributes": {
+		"grammars": [
+			[
+				{
+					"scopeName": "source.json.not-scopeName"
+				}
+			]
+		],
 		"jsonValidation": [
 			[
 				{
@@ -7,6 +32,19 @@
 				}
 			]
 		],
+		"configurationDefaults": {
+			"editor.tokenColorCustomizations": {
+				"textMateRules": [
+					{
+						"scope": [
+							[
+								"comment.not-scope"
+							]
+						]
+					}
+				]
+			}
+		},
 		"debuggers": [
 			{
 				"type": "sqlopsExtensionHost",

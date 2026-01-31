@@ -15,6 +15,40 @@
 		"**/vscode-main",
 		"**/achieve*.txt"
 	],
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": "variable.parameter.attachment.lea",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#CE9178"
+				}
+			},
+			{
+				"scope": "support.type.decorator.validate.lea",
+				"settings": {
+					"fontStyle": "italic",
+					"foreground": "#4682B4"
+				}
+			},
+			{
+				"scope": "keyword.operator.parallel-pipe.lea",
+				"settings": {
+					"foreground": "#DCDCAA"
+				}
+			},
+			{
+				"name": "Koi Playbook Content - Bright Yellow",
+				"scope": [
+					"comment.string.quoted.triple.playbook.koi",
+					"comment.string.quoted.triple.affordance.koi"
+				],
+				"settings": {
+					"foreground": "#F7DF1E"
+				}
+			}
+		]
+	},
 	"files.associations": {
 		"__bit_reference": "cpp",
 		"__hash_table": "cpp",
