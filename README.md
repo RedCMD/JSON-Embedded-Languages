@@ -1,6 +1,6 @@
 # JSON Embedded Languages
 Syntax Highlighting for embedded languages within `JSON` and `JSONC` files.  
-It does so by overriding the default `JSON` and `JSONC` languages and assigning a scopeName to each object with the form `.meta.embedded.objectkey.`.  
+It does so by overriding the default `JSON` and `JSONC` languages and assigning a scopeName to each object with the form `.meta.objectkey.`.  
 Then using multiple injection grammars that target those scopeNames and inject specific languages into it.  
 
 
@@ -9,19 +9,33 @@ Then using multiple injection grammars that target those scopeNames and inject s
 * ShellScript within `"scripts"` for `package.json` (`JSON`)  
 ![Example `package.json/scripts`](images/Example-scripts.png)
 
-* [when-clause-contexts](https://code.visualstudio.com/api/references/when-clause-contexts) within `"when"` for `package.json` and `keybindings.json` (`JSON`)  
+* [when-clause-contexts](https://code.visualstudio.com/api/references/when-clause-contexts) within `"when"` for `package.json` (`JSON`) & `keybindings.json` (`JSONC`)  
 ![Example `package.json/when`](images/Example-when.png)
 
-* JSON escaped JavaScript Regular Expressions within `"wordPattern"`, `"folding"`, `"onEnterRules"` and `"indentationRules"` for `language-configuration.json` (`JSONC`)  
+* JSON escaped JavaScript Regular Expressions within `"wordPattern"`, `"folding"`, `"onEnterRules"` & `"indentationRules"` for `language-configuration.json` (`JSONC`) and `"regexp"`, `"beginsPattern"` & `"endsPattern"` for `package.json` (`JSON`), `tasks.json` & `workspace.code-workspace` (`JSONC`)  
 ![Example `language-configuration.json`](images/Example-language-configuration.png)
 
-* Snippets, Regex and Markdown within `"defaultSnippets"`, `"pattern"` and `"markdownDescription"` for `.schema.json` (`JSON`)  
+* Snippets, Regex and Markdown within `"defaultSnippets"`, `"patternProperties"`, `"pattern"` and `"markdownDescription"` for `.schema.json` (`JSON`)  
   Recommend the [Snippets Snippets](https://marketplace.visualstudio.com/items?itemName=RedCMD.snippets-snippets) extension  
 ![Example `schema.json`](images/Example-schema.png)
 
-* Glob patterns within `"filenamePatterns"` and `"fileMatch"` for `package.json`
+* Glob patterns within `"activationEvents"`, `"files"`, `"workspaces"`, `"jsonValidation"`, `"filenamePattern"`, `"filenamePatterns"` & `"fileMatch"` for `package.json`
 ![Example `package.json/filenamePatterns`](images/Example-filenamePatterns.png)
 
+## Supported Files
+#### JSON
+* `package.json`
+* `schema.json`
+* `colorize-results.json`
+* `color-theme.json`
+#### JSONC
+* `language-configuration.json`
+* `keybindings.json`
+* `settings.json`
+* `launch.json`
+* `tasks.json`
+* `tsconfig.json`
+* `workspace.code-workspace`
 
 ## Known Issues
 
@@ -31,7 +45,7 @@ Please report any [issues](https://github.com/RedCMD/JSON-Embedded-Languages/iss
 
 VSCode TextMate injections are rather slow.  
 It may take longer for documents to fully syntax highlight.  
-The `"injectionSelector"` for `regexp` is almost 10,000 characters long.  
+The `"injectionSelector"` for `regexp` is well over 10,000 characters long.  
 
 
 ## For more information
@@ -47,6 +61,6 @@ The `"injectionSelector"` for `regexp` is almost 10,000 characters long.
 
 
 ## TODO:
-* Support args
+* Support command arguments inside `"args"`
+* Support Markdown Links inside `"contents"` under `"viewsWelcome"`
 * Improve performance
-* Fix false positives
