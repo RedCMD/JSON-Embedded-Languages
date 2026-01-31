@@ -35,5 +35,32 @@
 				]
 			}
 		]
+	},
+	"keybindings": {
+		"contributes": [
+			{
+				"when": "not-when"
+			}
+		]
+	},
+	"chatParticipants": [
+		{
+			"commands": {
+				"contributes": [
+					{
+						"when": "not-when"
+					}
+				]
+			}
+		}
+	],
+	"viewsContainers": {
+		"contributes": {
+			"activitybar": [
+				{
+					"when": "not-when"
+				}
+			]
+		}
 	}
 }

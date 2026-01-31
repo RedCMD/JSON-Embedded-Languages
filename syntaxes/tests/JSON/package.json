@@ -241,6 +241,18 @@
 				"when": "config.githubPullRequests.experimental.chat"
 			}
 		],
+		"chatSessions": [
+			{
+				"when": "config.github.copilot.chat.backgroundAgent.enabled",
+				"commands": [
+					{
+						"name": "delegate",
+						"description": "Delegate chat session to cloud agent and create associated PR",
+						"when": "config.github.copilot.chat.cloudAgent.enabled"
+					}
+				]
+			}
+		],
 		"chatViewsWelcome": [
 			{
 				"when": "true && '"
@@ -272,7 +284,7 @@
 			"title": "ABC",
 			"enablement": "dfd > .1true"
 		},
-		"commands2": [
+		"commands": [
 			{
 				"command": "",
 				"enablement": "a && a && a =~ /"
@@ -280,7 +292,7 @@
 			{
 				"command": "prettier.forceFormatDocument",
 				"title": "%ext.command.forceFormatDocument.title%",
-				"when": "editorFocus"
+				"when": "not-when"
 			}
 		],
 		"configuration": {
@@ -347,16 +359,34 @@
 				"when": "debugConfigurationType == 'debugpy' && (variableType == 'float' || variableType == 'int')"
 			}
 		],
+		"interactiveSession": [
+			{
+				"label": "GitHub Copilot",
+				"id": "copilot",
+				"icon": "",
+				"when": "!github.copilot.interactiveSession.disabled"
+			}
+		],
 		"keybindings": {
 			"command": "",
 			"key": "",
 			"when": "true"
 		},
-		"keybindings2": [
+		"keybindings": [
 			{
 				"command": "",
 				"key": "",
 				"when": "true"
+			},
+			{
+				"enablement": "not-when"
+			}
+		],
+		"languageModelChatProviders": [
+			{
+				"vendor": "customoai",
+				"when": "productQualityType != 'stable'",
+				"displayName": "OpenAI Compatible"
 			}
 		],
 		"languageModelTools": [
