@@ -21,10 +21,33 @@
 			}
 		]
 	},
+	"mcp": {
+		"servers": {
+			"mcp-server-time": {
+				"command": "python",
+				"args": [
+					"-m",
+					"mcp_server_time",
+					"--local-timezone=America/Los_Angeles"
+				],
+				"env": {}
+			}
+		}
+	},
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
 			{
+				"command": "echo hello",
+				"windows": {
+					"command": "${workspaceRoot}/build.cmd"
+				},
+				"linux": {
+					"command": "g++"
+				},
+				"osx": {
+					"command": "g++"
+				},
 				"problemMatcher": {
 					"background": {
 						"beginsPattern": {

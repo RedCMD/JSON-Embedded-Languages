@@ -69,6 +69,13 @@
 		}
 	},
 	{
+		"tasks": [
+			{
+				"command": "not-shell"
+			}
+		]
+	},
+	{
 		"problemMatcher": {
 			"pattern": {
 				"regexp": "not-regex"

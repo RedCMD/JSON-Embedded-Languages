@@ -28,7 +28,7 @@
 	],
 	"scripts": {
 		"build": "npm run compile && npm run compile-web && npm run generate-wasm && node ./out/Onigmo/moveOnigmo",
-		"package": "vsce package",
+		"package": "vsce package $\"escape \\\\ \\\" \\$ \\` $@ string\"",
 		"watch": "tsc -watch -p ./",
 		"watch-web": "webpack --watch",
 		"compile": "tsc -p ./",

@@ -63,6 +63,7 @@
 					"meta.embedded.shellscript": "shellscript"
 				},
 				"injectTo": [
+					"source.json.comments.embedded",
 					"source.json.embedded"
 				]
 			},
@@ -70,6 +71,7 @@
 				"scopeName": "source.json.shellscript.escaped",
 				"path": "./syntaxes/shellscript-escaped.tmLanguage.json",
 				"injectTo": [
+					"source.json.comments.embedded",
 					"source.json.embedded"
 				]
 			},

@@ -3,7 +3,10 @@
 	"comment": "Double quotes requiring escaping when embedded inside JSON",
 	"name": "JSON Escaped ShellScript Strings",
 	"scopeName": "source.json.shellscript.escaped",
-	"injectionSelector": "L:source.json.embedded meta.embedded.shellscript.json -string.quoted.double.shell",
+	"injectionSelector": [
+		"L:source.json.embedded meta.embedded.shellscript.json -string.quoted.double.shell",
+		"L:source.json.comments.embedded meta.embedded.shellscript.json -string.quoted.double.shell"
+	],
 	"patterns": [
 		{ "include": "#string" }
 	],

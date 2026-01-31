@@ -380,6 +380,40 @@
 >	{
 #^ source.json.comments.embedded meta.structure.array.json.comments
 # ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.begin.json.comments
+>		"tasks": [
+#^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments
+#  ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.begin.json.comments
+#   ^^^^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. string.json.comments support.type.property-name.json.comments
+#        ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.end.json.comments
+#         ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.key-value.json.comments
+#          ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments
+#           ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments punctuation.definition.array.begin.json.comments
+>			{
+#^^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments
+#   ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.begin.json.comments
+>				"command": "not-shell"
+#^^^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments
+#    ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.begin.json.comments
+#     ^^^^^^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments
+#            ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.end.json.comments
+#             ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.key-value.json.comments
+#              ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments
+#               ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments punctuation.definition.string.begin.json.comments
+#                ^^^^^^^^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments
+#                         ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments punctuation.definition.string.end.json.comments
+>			}
+#^^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments
+#   ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.end.json.comments
+>		]
+#^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments
+#  ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments meta.structure.array.json.comments punctuation.definition.array.end.json.comments
+>	},
+#^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.tasks. meta.structure.dictionary.value.json.comments
+# ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.end.json.comments
+#  ^ source.json.comments.embedded meta.structure.array.json.comments punctuation.separator.array.json.comments
+>	{
+#^ source.json.comments.embedded meta.structure.array.json.comments
+# ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.begin.json.comments
 >		"problemMatcher": {
 #^^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments
 #  ^ source.json.comments.embedded meta.structure.array.json.comments meta.structure.dictionary.json.comments .meta.problemMatcher. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.begin.json.comments

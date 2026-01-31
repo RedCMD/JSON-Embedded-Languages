@@ -19,6 +19,10 @@
 	},
 	"tasks": [
 		{
+			"command": [
+				"npm run test -- -c",
+				"npm run test -- -c $\"escape \\\\ \\\" \\$ \\` $@ string\""
+			],
 			"problemMatcher": {
 				"background": {
 					"beginsPattern": {
@@ -31,6 +35,40 @@
 						"regexp": "^(ERROR)\\s([^:]+):(\\d+):(\\d+):(\\d+)\\s(.*)$"
 					}
 				]
+			},
+			"windows": {
+				"command": "${workspaceRoot}/build.cmd",
+				"args": [
+					"<Path/To/MinGW/Cygwin/Bin/Folder>", // Path to the bin folder containing g++ to compile
+					"fib.exe" // Output executable name
+				]
+			},
+			"linux": {
+				"command": "g++",
+				"args": [
+					"-g",
+					"*.cpp",
+					"-lpthread",
+					"--std=c++11",
+					"-o",
+					"fib.out"
+				]
+			},
+			"osx": {
+				"command": "g++",
+				"args": [
+					"-g",
+					"*.cpp",
+					"-lpthread",
+					"--std=c++11",
+					"-o",
+					"fib.out"
+				]
+			}
+		},
+		{
+			"windows": {
+				"command": "C:\\MinGW\\bin\\g++.exe"
 			}
 		},
 		{
