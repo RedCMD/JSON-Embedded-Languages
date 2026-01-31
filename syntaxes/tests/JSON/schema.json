@@ -151,6 +151,24 @@
 					}
 				}
 			}
+		},
+		{
+			"label": "body$0",
+			"description": "body$0",
+			"markdownDescription": "body$0",
+			"body": "body$0",
+			"bodyText": "body$0"
+		},
+		{
+			"body": {
+				"body": "body$0",
+				"body$0": "body"
+			},
+			"TODO: false-positive": {
+				"body": {
+					"body": "body$0"
+				}
+			}
 		}
 	]
 }

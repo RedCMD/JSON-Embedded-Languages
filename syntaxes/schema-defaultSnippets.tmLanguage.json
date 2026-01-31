@@ -5,7 +5,7 @@
 	"scopeName": "source.json.snippets",
 	"injectionSelector": [
 		"L:source.json.embedded .meta.defaultSnippets. meta.structure.array.json .meta.bodyText. string.quoted.double.json\n-.meta.bodyText. meta.structure.dictionary.json\n-.meta.bodyText. meta.structure.array.json\n-.meta.defaultSnippets. meta.structure.array.json meta.structure.array.json .meta.bodyText.\n-.meta.defaultSnippets. meta.structure.dictionary.json meta.structure.dictionary.json .meta.bodyText.\n-meta.embedded.json.comments.snippets.snippets -comment",
-		"L:source.json.embedded .meta.defaultSnippets. meta.structure.array.json .meta.body. meta.structure.dictionary.json\n(string.quoted.double.json | support.type.property-name.json)\n-.meta.defaultSnippets. meta.structure.array.json meta.structure.array.json .meta.body.\n-.meta.defaultSnippets. meta.structure.dictionary.json meta.structure.dictionary.json .meta.body.\n-meta.embedded.json.comments.snippets.snippets -comment"
+		"L:source.json.embedded .meta.defaultSnippets. meta.structure.array.json .meta.body. meta.structure.dictionary.value.json\n(string.quoted.double.json | support.type.property-name.json)\n-meta.embedded.json.comments.snippets.snippets -comment"
 	],
 	"patterns": [
 		{
