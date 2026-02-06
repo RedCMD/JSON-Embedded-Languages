@@ -1,4 +1,20 @@
 {
+	"comment": [
+		"comment",
+		"brackets should work"
+	],
+	"not-string": [
+		"not-string",
+		"brackets should work"
+	],
+	"not@regex": [
+		"not@regex",
+		"brackets should work"
+	],
+	"not@-comment": [
+		"not@comment",
+		"brackets should work"
+	],
 	"embeddedLanguages": {
 		"contributes": {
 			"grammars": [

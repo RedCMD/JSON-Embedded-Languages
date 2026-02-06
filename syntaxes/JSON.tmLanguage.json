@@ -69,10 +69,19 @@
 			"patterns": [
 				{
 					"comment": "Apply a targetable scopeName to the entire object. Attempt to remove all non-scope characters; as they are not targetable",
-					"begin": "(?=\"\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(?<scope>(?>[0-9A-Za-z_.:-]++|\\\\u00(?i:2[DE]|3[0-9A]|4[1-9A-F]|5[0-9AF]|6[1-9A-F]|7[0-9A]))*+)\\g<separator>(?<string>(?>[^\\\\\"]++|\\\\.)*+)(?<separator>(?>[^0-9A-Za-z_.:\\\\\"]++|\\\\u(?!00(?i:2[DE]|3[0-9A]|4[1-9A-F]|5[0-9AF]|6[1-9A-F]|7[0-9A]))\\h{1,4}|\\\\.?)*+){0}\")",
+					"begin": "(?x)(?=\"\n\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>\n(?<scope>[0-9A-Za-z_.:-]*+)\n\\g<separator>\n(?<string>(?>[^\\\\\"]++|\\\\.)*+)\n(?<separator>(?>[^\\\\\"0-9A-Za-z_.:-]++|\\\\u\\h{,4}|\\\\.?)*+){0}\n\")",
 					"end": "(?!\\G)(?<=,)|(?=})",
 					"name": ".meta.$1$2$3$4$5$6$7$8$9.",
-					"patterns": [ { "include": "#objectpair" } ]
+					"patterns": [
+						{
+							"comment": "Resets standard token type back to other",
+							"begin": "(?=\\G\"(?>[^crs\\\\\"]++|\\\\.|(?!\\bcomment\\b)c+|(?!\\bregex\\b)r+|(?!\\bstring\\b)s+)*\\b(?>comment|regex|string)\\b)",
+							"end": "(?!\\G)(?<=,)|(?=})",
+							"name": "meta.embedded",
+							"patterns": [ { "include": "#objectpair" } ]
+						},
+						{ "include": "#objectpair" }
+					]
 				},
 				{ "include": "#objectpair" }
 			]
