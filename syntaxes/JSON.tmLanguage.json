@@ -2,6 +2,12 @@
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
 	"name": "JSON",
 	"scopeName": "source.json.embedded",
+	"fileTypes": [
+		"package.json",
+		"schema.json",
+		"colorize-results.json",
+		".json"
+	],
 	"patterns": [
 		{ "include": "#value" }
 	],

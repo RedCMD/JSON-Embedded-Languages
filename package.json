@@ -31,9 +31,8 @@
 		"package": "vsce package",
 		"publish": "vsce publish",
 		"test": "npm run test:JSON && npm run test:JSONC",
-		"test:grammars": "vscode-tmgrammar-snap --grammar ./syntaxes/tests/grammars/markdown.tmLanguage.json --grammar ./syntaxes/tests/grammars/shell-unix-bash.tmLanguage.json --grammar ./syntaxes/tests/grammars/snippets.tmLanguage.json",
-		"test:JSON": "npm run test:grammars -- ./syntaxes/tests/JSON/*.* --scope source.json.embedded",
-		"test:JSONC": "npm run test:grammars -- ./syntaxes/tests/JSONC/*.* --scope source.json.comments.embedded",
+		"test:JSON": "textmate-grammar-snap ./syntaxes/tests/JSON/*.* --scope source.json.embedded --grammar ./syntaxes/tests/grammars/*.tmLanguage.json",
+		"test:JSONC": "textmate-grammar-snap ./syntaxes/tests/JSONC/*.* --scope source.json.comments.embedded --grammar ./syntaxes/tests/grammars/*.tmLanguage.json",
 		"test:update": "npm run test:JSON -- --updateSnapshot && npm run test:JSONC -- --updateSnapshot"
 	},
 	"contributes": {
@@ -138,6 +137,6 @@
 	},
 	"devDependencies": {
 		"@vscode/vsce": "^3.7.1",
-		"vscode-tmgrammar-test": "^0.1.3"
+		"textmate-grammar-test": "^0.4.2"
 	}
 }

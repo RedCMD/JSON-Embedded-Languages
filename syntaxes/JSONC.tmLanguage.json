@@ -2,6 +2,17 @@
 	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
 	"name": "JSON with Comments",
 	"scopeName": "source.json.comments.embedded",
+	"fileTypes": [
+		"color-theme.json",
+		"keybindings.json",
+		"launch.json",
+		"settings.json",
+		"tasks.json",
+		"tsconfig.json",
+		"language-configuration.json",
+		".code-workspace",
+		".jsonc"
+	],
 	"patterns": [
 		{ "include": "#value" }
 	],
