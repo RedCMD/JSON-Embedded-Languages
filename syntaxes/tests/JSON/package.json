@@ -419,7 +419,20 @@
 		"debuggers": [
 			{
 				"type": "clr",
-				"when": "workspacePlatform == windows"
+				"when": "workspacePlatform == windows",
+				"configurationSnippets": [
+					{
+						"label": "Pascaline: Debug Program",
+						"description": "Debug a Pascaline/Pascal program using pint",
+						"body": {
+							"type": "pascaline",
+							"request": "launch",
+							"name": "Debug ${1:program}",
+							"program": "^\"\\${file}\"",
+							"stopOnEntry": true
+						}
+					}
+				]
 			}
 		],
 		"debugVisualizers": [

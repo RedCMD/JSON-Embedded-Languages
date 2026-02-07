@@ -88,24 +88,26 @@
 				"program": "./out/src/nodeDebug.js",
 				"runtime": "node",
 				"configurationSnippets": [
-					{
-						"label": "%extensionHost.snippet.launch.label%",
-						"description": "%extensionHost.snippet.launch.description%",
-						"body": {
-							"type": "extensionHost",
-							"request": "launch",
-							"name": "%extensionHost.launch.config.name%",
-							"runtimeExecutable": "^\"\\azuredatastudio\"",
-							"args": [
-								"^\"--extensionDevelopmentPath=\\${workspaceFolder}\""
-							],
-							"outFiles": [
-								"^\"\\${workspaceFolder}/out/**/*.js\"not-glob"
-							],
-							"preLaunchTask": "npm",
-							"timeout": 15000
+					[
+						{
+							"label": "%extensionHost.snippet.launch.label%",
+							"description": "%extensionHost.snippet.launch.description%",
+							"body": {
+								"type": "extensionHost",
+								"request": "launch",
+								"name": "%extensionHost.launch.config.name%",
+								"runtimeExecutable": "^\"\\azuredatastudio\"",
+								"args": [
+									"^\"--extensionDevelopmentPath=\\${workspaceFolder}\""
+								],
+								"outFiles": [
+									"^\"\\${workspaceFolder}/out/**/*.js\"not-glob"
+								],
+								"preLaunchTask": "npm",
+								"timeout": 15000
+							}
 						}
-					}
+					]
 				]
 			}
 		]
