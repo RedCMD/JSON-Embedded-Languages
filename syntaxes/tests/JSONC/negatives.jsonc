@@ -53,7 +53,14 @@
 	},
 	"when": [
 		"not-glob"
-	]
+	],
+	"configurations": [
+		[
+			{
+				"outFiles": "not-glob",
+			},
+		],
+	],
 }
 
 [

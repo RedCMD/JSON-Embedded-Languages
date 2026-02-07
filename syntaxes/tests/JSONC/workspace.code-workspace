@@ -1,4 +1,5 @@
 {
+	"//$schema": "vscode://schemas/workspaceConfig",
 	"launch": {
 		"inputs": [],
 		"version": "0.2.0",
@@ -30,14 +31,24 @@
 					"mcp_server_time",
 					"--local-timezone=America/Los_Angeles"
 				],
-				"env": {}
+				"dev": {
+					"watch": "src/**/*.ts",
+				},
 			}
 		}
 	},
 	"tasks": {
+		"group": {
+			"kind": "test",
+			"isDefault": "**/*",
+		},
 		"version": "2.0.0",
 		"tasks": [
 			{
+				"group": {
+					"kind": "test",
+					"isDefault": "**/*",
+				},
 				"command": "echo hello",
 				"windows": {
 					"command": "${workspaceRoot}/build.cmd"
@@ -98,6 +109,10 @@
 		},
 		"files.readonlyExclude": {
 			"**/node_modules/vscode-textmate/**/*": true
+		},
+		"search.exclude": {
+			"dist": true, // set this to false to include "dist" folder in search results
+			"out": true, // set this to false to include "out" folder in search results
 		},
 		"workbench.editorAssociations": {
 			"{hexdiff}:/**/*.*": "hexEditor.hexedit"

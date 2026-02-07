@@ -69,6 +69,22 @@
 			"patterns": [
 				{
 					"comment": "Apply a targetable scopeName to the entire object. Attempt to remove all non-scope characters; as they are not targetable",
+					"begin": "(?x)(?=\"\n\\g<separator>\\.++(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>\n(?<scope>[0-9A-Za-z_.:-]*+)\n\\g<separator>\n(?<string>(?>[^\\\\\"]++|\\\\.)*+)\n(?<separator>(?>[^\\\\\"0-9A-Za-z_.:-]++|\\\\u\\h{,4}|\\\\.?)*+){0}\n\")",
+					"end": "(?!\\G)(?<=,)|(?=})",
+					"name": ".meta..$1$2$3$4$5$6$7$8$9.",
+					"patterns": [
+						{
+							"comment": "Resets standard token type back to other",
+							"begin": "(?=\\G\"(?>[^crs\\\\\"]++|\\\\.|(?!\\bcomment\\b)c+|(?!\\bregex\\b)r+|(?!\\bstring\\b)s+)*\\b(?>comment|regex|string)\\b)",
+							"end": "(?!\\G)(?<=,)|(?=})",
+							"name": "meta.embedded",
+							"patterns": [ { "include": "#objectpair" } ]
+						},
+						{ "include": "#objectpair" }
+					]
+				},
+				{
+					"comment": "Apply a targetable scopeName to the entire object. Attempt to remove all non-scope characters; as they are not targetable",
 					"begin": "(?x)(?=\"\n\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>(\\g<scope>)\\g<separator>\n(?<scope>[0-9A-Za-z_.:-]*+)\n\\g<separator>\n(?<string>(?>[^\\\\\"]++|\\\\.)*+)\n(?<separator>(?>[^\\\\\"0-9A-Za-z_.:-]++|\\\\u\\h{,4}|\\\\.?)*+){0}\n\")",
 					"end": "(?!\\G)(?<=,)|(?=})",
 					"name": ".meta.$1$2$3$4$5$6$7$8$9.",

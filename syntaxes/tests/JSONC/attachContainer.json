@@ -1,0 +1,16 @@
+// Assign Language JSONC
+// extensions/configuration-editing/schemas/attachContainer.schema.json
+{
+	"$schema": "vscode://schemas/attachContainer.schema.json",
+	"settings": {
+		"cSpell.ignorePaths": [
+			"package-lock.json",
+			"node_modules",
+			"vscode-extension",
+			".git/{info,lfs,logs,refs,objects}/**",
+			".git/{index,*refs,*HEAD}",
+			".vscode",
+			".vscode-insiders",
+		],
+	},
+}

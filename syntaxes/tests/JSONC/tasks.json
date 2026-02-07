@@ -1,6 +1,10 @@
 {
 	"$schema": "vscode://schemas/tasks",
 	"version": "2.0.0",
+	"group": {
+		"kind": "build",
+		"isDefault": "**/*",
+	},
 	"problemMatcher": {
 		"background": {
 			"beginsPattern": {
@@ -19,6 +23,10 @@
 	},
 	"tasks": [
 		{
+			"group": {
+				"kind": "test",
+				"isDefault": "**/*",
+			},
 			"command": [
 				"npm run test -- -c",
 				"npm run test -- -c $\"escape \\\\ \\\" \\$ \\` $@ string\""

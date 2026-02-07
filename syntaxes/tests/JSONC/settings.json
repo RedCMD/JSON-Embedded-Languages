@@ -1,5 +1,11 @@
 {
 	"$schema": "vscode://schemas/settings/user",
+	"chat.editorAssociations": {
+		"*.md": "vscode.markdown.preview.editor",
+	},
+	"cSpell.files": [
+		"**/*",
+	],
 	"cSpell.ignorePaths": [
 		"package-lock.json",
 		"package.json",
@@ -14,6 +20,21 @@
 		"unicode_property_data.ts",
 		"**/vscode-main",
 		"**/achieve*.txt"
+	],
+	"cSpell.overrides": [
+		{
+			"filename": [
+				"TODO: glob **/*",
+			],
+		},
+		{
+			"filename": "TODO: glob **/*",
+		},
+	],
+	"debug.javascript.autoAttachSmartPattern": [
+		"${workspaceFolder}/**",
+		"!**/node_modules/**",
+		"**/$KNOWN_TOOLS$/**",
 	],
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
@@ -48,6 +69,11 @@
 				}
 			}
 		]
+	},
+	"explorer.autoRevealExclude": {
+		"**/*.source-extension": {
+			"when": "$(basename).not-when",
+		},
 	},
 	"files.associations": {
 		"__bit_reference": "cpp",
@@ -95,6 +121,40 @@
 	"files.readonlyExclude": {
 		"**/node_modules/vscode-textmate/**/*": true
 	},
+	"files.readonlyInclude": {
+		"**/node_modules/vscode-textmate/**/*": true,
+	},
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/.hg/store/**": true,
+	},
+	"git.worktreeIncludeFiles": [
+		"**/*",
+	],
+	"javascript.preferences.autoImportFileExcludePatterns": [
+		"**/*",
+	],
+	"markdown.updateLinksOnFileMove.include": [
+		"**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+		"**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}",
+	],
+	"markdown.validate.ignoredLinks": [
+		"/assets/**/*.svg",
+	],
+	"npm.exclude": [
+		"**/*",
+	],
+	"search.exclude": {
+		"**/*.code-search": true,
+		"**/bower_components": true,
+		"**/node_modules": true,
+		"dist": true, // set this to false to include "dist" folder in search results
+		"out": true, // set this to false to include "out" folder in search results
+	},
+	"typescript.preferences.autoImportFileExcludePatterns": [
+		"**/*",
+	],
 	"workbench.editorAssociations": {
 		"{hexdiff}:/**/*.*": "hexEditor.hexedit",
 		"*.abs": "default",

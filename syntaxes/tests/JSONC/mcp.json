@@ -1,0 +1,10 @@
+{
+	"$schema": "vscode://schemas/mcp",
+	"servers": {
+		"mcp-server-time": {
+			"dev": {
+				"watch": "src/**/*.ts",
+			},
+		},
+	},
+}

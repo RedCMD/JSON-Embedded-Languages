@@ -7,6 +7,36 @@
 		"workspaceContains:**/*.bxm",
 		"workspaceContains:**/*.bxs"
 	],
+	"exports": {
+		".": {
+			"development": "./src/components/index.ts",
+			"types": "./dist/components/index.d.ts",
+			"import": "./dist/components/index.js",
+			"require": "./dist/components/index.js",
+			"default": "./dist/components/index.js"
+		},
+		"./lib/*": {
+			"development": "./src/lib/*.ts",
+			"types": "./dist/lib/*.d.ts",
+			"import": "./dist/lib/*.js",
+			"require": "./dist/lib/*.js",
+			"default": "./dist/lib/*.js"
+		},
+		"./cucumber/step_definitions": {
+			"import": "./dist/cucumber/step_definitions/**/*.js",
+			"require": "./dist/cucumber/step_definitions/**/*.js",
+			"types": "./dist/cucumber/step_definitions/**/*.d.ts"
+		},
+		"./*": {
+			"require": "./dist/cjs/**/*.cjs",
+			"import": "./dist/esm/**/*.js"
+		},
+		"./**/*": {
+			"require": "./dist/**/*/index.js",
+			"import": "./dist/**/*/index.js",
+			"types": "./dist/@types/**/*/index.d.ts"
+		}
+	},
 	"files": [
 		"dist/api.*",
 		"dist/syntax.*",
