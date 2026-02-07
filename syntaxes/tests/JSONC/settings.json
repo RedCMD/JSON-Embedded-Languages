@@ -21,14 +21,42 @@
 		"**/vscode-main",
 		"**/achieve*.txt"
 	],
+	"cSpell.ignoreRegExpList": [
+		"regexp",
+	],
+	"cSpell.includeRegExpList": [
+		"regexp",
+	],
 	"cSpell.overrides": [
 		{
 			"filename": [
 				"TODO: glob **/*",
 			],
+			"patterns": [
+				{
+					"pattern": [
+						"regexp",
+					],
+				},
+			],
 		},
 		{
 			"filename": "TODO: glob **/*",
+			"patterns": [
+				{
+					"pattern": "regexp",
+				},
+			],
+		},
+	],
+	"cSpell.patterns": [
+		{
+			"pattern": [
+				"regexp",
+			],
+		},
+		{
+			"pattern": "regexp",
 		},
 	],
 	"debug.javascript.autoAttachSmartPattern": [
@@ -36,6 +64,7 @@
 		"!**/node_modules/**",
 		"**/$KNOWN_TOOLS$/**",
 	],
+	"editor.minimap.markSectionHeaderRegex": "\\bMARK:\\s*(?<separator>-?)\\s*(?<label>.*)$",
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
