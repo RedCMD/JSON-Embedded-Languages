@@ -2,9 +2,20 @@
 	"$schema": "vscode://schemas/mcp",
 	"servers": {
 		"mcp-server-time": {
+			"command": "python",
+			"args": [
+				"-m",
+				"mcp_server_time",
+				"--local-timezone=America/Los_Angeles",
+			],
 			"dev": {
 				"watch": "src/**/*.ts",
 			},
 		},
 	},
+	"inputs": [
+		{
+			"command": "python",
+		},
+	],
 }

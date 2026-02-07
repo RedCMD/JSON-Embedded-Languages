@@ -1,7 +1,7 @@
 // Assign Language JSONC
-// extensions/configuration-editing/schemas/attachContainer.schema.json
 {
-	"$schema": "vscode://schemas/attachContainer.schema.json",
+	"//$schema": "vscode://schemas/attachContainer.schema.json",
+	"$schema": "https://raw.githubusercontent.com/microsoft/vscode/refs/heads/main/extensions/configuration-editing/schemas/attachContainer.schema.json",
 	"settings": {
 		"cSpell.ignorePaths": [
 			"package-lock.json",
@@ -13,4 +13,8 @@
 			".vscode-insiders",
 		],
 	},
+	"postAttachCommand": "python",
+	"postAttachCommand": [
+		"python",
+	],
 }

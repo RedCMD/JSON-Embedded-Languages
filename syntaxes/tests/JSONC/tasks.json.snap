@@ -59,6 +59,40 @@
 #^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.group. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments
 # ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.group. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.end.json.comments
 #  ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.group. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.pair.json.comments
+>	"command": "shell",
+#^ source.json.comments.embedded meta.structure.dictionary.json.comments
+# ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.begin.json.comments
+#  ^^^^^^^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments
+#         ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.end.json.comments
+#          ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.key-value.json.comments
+#           ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments
+#            ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments punctuation.definition.string.begin.json.comments
+#             ^^^^^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments meta.embedded.shellscript.json meta.statement.shell meta.statement.command.shell meta.statement.command.name.shell entity.name.function.call.shell entity.name.command.shell
+#                  ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments punctuation.definition.string.end.json.comments
+#                   ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.pair.json.comments
+>	"windows": {
+#^ source.json.comments.embedded meta.structure.dictionary.json.comments
+# ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.begin.json.comments
+#  ^^^^^^^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. string.json.comments support.type.property-name.json.comments
+#         ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.end.json.comments
+#          ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.key-value.json.comments
+#           ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments
+#            ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.begin.json.comments
+>		"command": "command",
+#^^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments
+#  ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.begin.json.comments
+#   ^^^^^^^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments
+#          ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.end.json.comments
+#           ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.key-value.json.comments
+#            ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments
+#             ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments punctuation.definition.string.begin.json.comments
+#              ^^^^^^^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments meta.embedded.shellscript.json meta.statement.shell meta.statement.command.shell meta.statement.command.name.shell entity.name.function.call.shell entity.name.command.shell support.function.builtin.shell
+#                     ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments string.quoted.double.json.comments punctuation.definition.string.end.json.comments
+#                      ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments .meta.command. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.pair.json.comments
+>	},
+#^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments
+# ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments meta.structure.dictionary.json.comments punctuation.definition.dictionary.end.json.comments
+#  ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.windows. meta.structure.dictionary.value.json.comments punctuation.separator.dictionary.pair.json.comments
 >	"problemMatcher": {
 #^ source.json.comments.embedded meta.structure.dictionary.json.comments
 # ^ source.json.comments.embedded meta.structure.dictionary.json.comments .meta.problemMatcher. string.json.comments support.type.property-name.json.comments punctuation.support.type.property-name.begin.json.comments

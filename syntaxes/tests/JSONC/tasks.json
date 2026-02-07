@@ -5,6 +5,10 @@
 		"kind": "build",
 		"isDefault": "**/*",
 	},
+	"command": "shell",
+	"windows": {
+		"command": "command",
+	},
 	"problemMatcher": {
 		"background": {
 			"beginsPattern": {

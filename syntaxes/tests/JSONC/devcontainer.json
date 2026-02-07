@@ -1,0 +1,22 @@
+{
+	"$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+	"portsAttributes": {
+		"3000": {
+			"label": "Application",
+			"onAutoForward": "notify"
+		}
+	},
+	"initializeCommand": "python",
+	"updateContentCommand": [
+		"python"
+	],
+	"onCreateCommand": {
+		"string": "python",
+		"array": [
+			"python"
+		]
+	},
+	"TODO: not-command": {
+		"postCreateCommand": "not-command"
+	},
+}

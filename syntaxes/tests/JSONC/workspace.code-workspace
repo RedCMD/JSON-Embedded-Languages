@@ -35,12 +35,21 @@
 					"watch": "src/**/*.ts",
 				},
 			}
-		}
+		},
+		"inputs": [
+			{
+				"command": "python",
+			},
+		],
 	},
 	"tasks": {
 		"group": {
 			"kind": "test",
 			"isDefault": "**/*",
+		},
+		"command": "command",
+		"linux": {
+			"command": "command",
 		},
 		"version": "2.0.0",
 		"tasks": [
