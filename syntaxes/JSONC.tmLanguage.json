@@ -3,9 +3,12 @@
 	"name": "JSON with Comments",
 	"scopeName": "source.json.comments.embedded",
 	"fileTypes": [
+		"attachContainer.json",
 		"color-theme.json",
+		"devcontainer.json",
 		"keybindings.json",
 		"launch.json",
+		"mcp.json",
 		"settings.json",
 		"tasks.json",
 		"tsconfig.json",

@@ -27,12 +27,15 @@ Then using multiple injection grammars that target those scopeNames and inject s
 * `package.json`
 * `schema.json`
 * `colorize-results.json`
-* `color-theme.json`
 #### JSONC
+* `attachContainer.json`
+* `color-theme.json`
+* `devcontainer.json`
 * `language-configuration.json`
 * `keybindings.json`
-* `settings.json`
 * `launch.json`
+* `mcp.json`
+* `settings.json`
 * `tasks.json`
 * `tsconfig.json`
 * `workspace.code-workspace`
@@ -45,7 +48,7 @@ Please report any [issues](https://github.com/RedCMD/JSON-Embedded-Languages/iss
 
 VSCode TextMate injections are rather slow.  
 It may take longer for documents to fully syntax highlight.  
-The `"injectionSelector"` for `regexp` is well over 10,000 characters long.  
+The `"injectionSelector"` for `regexp` is well over 15,000 characters long.  
 
 
 ## For more information
