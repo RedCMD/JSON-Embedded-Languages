@@ -31,8 +31,8 @@
 		"package": "vsce package",
 		"publish": "vsce publish",
 		"test": "npm run test:JSON && npm run test:JSONC",
-		"test:JSON": "textmate-grammar-snap ./syntaxes/tests/JSON/*.* --scope source.json.embedded --grammar ./syntaxes/tests/grammars/*.tmLanguage.json",
-		"test:JSONC": "textmate-grammar-snap ./syntaxes/tests/JSONC/*.* --scope source.json.comments.embedded --grammar ./syntaxes/tests/grammars/*.tmLanguage.json",
+		"test:JSON": "textmate-grammar-snap ./syntaxes/tests/JSON/*.* --scope source.json.embedded --grammar \"./syntaxes/tests/grammars/*.tmLanguage.json\"",
+		"test:JSONC": "textmate-grammar-snap ./syntaxes/tests/JSONC/*.* --scope source.json.comments.embedded --grammar \"./syntaxes/tests/grammars/*.tmLanguage.json\"",
 		"test:update": "npm run test:JSON -- --updateSnapshot && npm run test:JSONC -- --updateSnapshot"
 	},
 	"contributes": {
