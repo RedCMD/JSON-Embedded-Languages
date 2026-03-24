@@ -1,0 +1,223 @@
+[
+	{
+		"grammars": [
+			"fixtures/groovy.json"
+		],
+		"grammarPath": "fixtures/groovy.json",
+		"desc": "Groovy",
+		"lines": [
+			{
+				"line": "class BootStrap { }",
+				"tokens": [
+					{
+						"value": "class",
+						"scopes": [
+							"source.groovy",
+							"meta.definition.class.groovy",
+							"meta.class.identifier.groovy",
+							"storage.modifier.groovy"
+						]
+					},
+					{
+						"value": " ",
+						"scopes": [
+							"source.groovy",
+							"meta.definition.class.groovy",
+							"meta.class.identifier.groovy"
+						]
+					},
+					{
+						"value": "BootStrap",
+						"scopes": [
+							"source.groovy",
+							"meta.definition.class.groovy",
+							"meta.class.identifier.groovy",
+							"entity.name.type.class.groovy"
+						]
+					},
+					{
+						"value": " ",
+						"scopes": [
+							"source.groovy",
+							"meta.definition.class.groovy"
+						]
+					},
+					{
+						"value": "{",
+						"scopes": [
+							"source.groovy",
+							"meta.definition.class.groovy",
+							"meta.class.body.groovy"
+						]
+					},
+					{
+						"value": " ",
+						"scopes": [
+							"source.groovy",
+							"meta.definition.class.groovy",
+							"meta.class.body.groovy"
+						]
+					},
+					{
+						"value": "}",
+						"scopes": [
+							"source.groovy",
+							"meta.definition.class.groovy",
+							"punctuation.section.class.end.groovy"
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"grammars": [
+			"fixtures/markdown.plist"
+		],
+		"grammarPath": "fixtures/markdown.plist",
+		"desc": "Nested repositories in Markdown",
+		"lines": [
+			{
+				"line": "This is a paragraph",
+				"tokens": [
+					{
+						"value": "This is a paragraph",
+						"scopes": [
+							"text.html.markdown",
+							"meta.paragraph.markdown"
+						]
+					}
+				]
+			},
+			{
+				"line": "## This is *great* stuff",
+				"tokens": [
+					{
+						"value": "##",
+						"scopes": [
+							"text.html.markdown",
+							"markup.heading.${1/(#)(#)?(#)?(#)?(#)?(#)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.markdown",
+							"punctuation.definition.heading.markdown"
+						]
+					},
+					{
+						"value": " ",
+						"scopes": [
+							"text.html.markdown",
+							"markup.heading.${1/(#)(#)?(#)?(#)?(#)?(#)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.markdown"
+						]
+					},
+					{
+						"value": "This is ",
+						"scopes": [
+							"text.html.markdown",
+							"markup.heading.${1/(#)(#)?(#)?(#)?(#)?(#)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.markdown",
+							"entity.name.section.markdown"
+						]
+					},
+					{
+						"value": "*",
+						"scopes": [
+							"text.html.markdown",
+							"markup.heading.${1/(#)(#)?(#)?(#)?(#)?(#)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.markdown",
+							"entity.name.section.markdown",
+							"markup.italic.markdown",
+							"punctuation.definition.italic.markdown"
+						]
+					},
+					{
+						"value": "great",
+						"scopes": [
+							"text.html.markdown",
+							"markup.heading.${1/(#)(#)?(#)?(#)?(#)?(#)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.markdown",
+							"entity.name.section.markdown",
+							"markup.italic.markdown"
+						]
+					},
+					{
+						"value": "*",
+						"scopes": [
+							"text.html.markdown",
+							"markup.heading.${1/(#)(#)?(#)?(#)?(#)?(#)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.markdown",
+							"entity.name.section.markdown",
+							"markup.italic.markdown",
+							"punctuation.definition.italic.markdown"
+						]
+					},
+					{
+						"value": " stuff",
+						"scopes": [
+							"text.html.markdown",
+							"markup.heading.${1/(#)(#)?(#)?(#)?(#)?(#)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.markdown",
+							"entity.name.section.markdown"
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"grammars": [
+			"fixtures/aspvbnet.plist"
+		],
+		"grammarPath": "fixtures/aspvbnet.plist",
+		"desc": "asp",
+		"lines": [
+			{
+				"line": "Dim tmpStr As String",
+				"tokens": [
+					{
+						"value": "Dim",
+						"scopes": [
+							"source.asp.vb.net",
+							"variable.other.dim.asp",
+							"storage.type.asp"
+						]
+					},
+					{
+						"value": " ",
+						"scopes": [
+							"source.asp.vb.net",
+							"variable.other.dim.asp"
+						]
+					},
+					{
+						"value": "tmpStr",
+						"scopes": [
+							"source.asp.vb.net",
+							"variable.other.dim.asp",
+							"variable.other.bfeac.asp"
+						]
+					},
+					{
+						"value": " ",
+						"scopes": [
+							"source.asp.vb.net",
+							"variable.other.dim.asp"
+						]
+					},
+					{
+						"value": "As",
+						"scopes": [
+							"source.asp.vb.net",
+							"keyword.operator.asp"
+						]
+					},
+					{
+						"value": " ",
+						"scopes": [
+							"source.asp.vb.net"
+						]
+					},
+					{
+						"value": "String",
+						"scopes": [
+							"source.asp.vb.net",
+							"support.type.vb.asp"
+						]
+					}
+				]
+			}
+		]
+	}
+]
