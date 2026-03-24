@@ -164,6 +164,9 @@
 	"javascript.preferences.autoImportFileExcludePatterns": [
 		"**/*",
 	],
+	"js/ts.preferences.autoImportFileExcludePatterns": [
+		"**/*",
+	],
 	"markdown.updateLinksOnFileMove.include": [
 		"**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
 		"**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}",
