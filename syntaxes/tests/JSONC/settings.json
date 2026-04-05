@@ -97,7 +97,21 @@
 					"foreground": "#F7DF1E"
 				}
 			}
-		]
+		],
+		"[Dark Modern]": {
+			"textMateRules": [
+				{
+					"name": "Markdown italic and bold",
+					"scope": [
+						"markup.bold markup.italic",
+						"markup.italic markup.bold"
+					],
+					"settings": {
+						"fontStyle": "italic bold"
+					}
+				}
+			]
+		},
 	},
 	"explorer.autoRevealExclude": {
 		"**/*.source-extension": {

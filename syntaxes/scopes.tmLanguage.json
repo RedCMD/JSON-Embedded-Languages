@@ -4,57 +4,69 @@
 	"name": "JSON Embedded TextMate Scopes",
 	"scopeName": "source.json.textmate.scopes",
 	"injectionSelector": [
-		"L:source.json.embedded .meta.contributes. .meta.grammars. meta.structure.array.json meta.structure.dictionary.json meta.structure.dictionary.json support.type.property-name.json\n(.meta.embeddedLanguages. | .meta.tokenTypes.)\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.embedded .meta.contributes. .meta.grammars. meta.structure.array.json meta.structure.dictionary.json meta.structure.array.json\n(.meta.balancedBracketScopes. | .meta.unbalancedBracketScopes. | .meta.injectTo.)\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.embedded .meta.contributes. .meta.grammars. meta.structure.array.json .meta.scopeName. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.embedded meta.structure.array.json .meta.t. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.embedded meta.structure.array.json .meta.lines. meta.structure.array.json .meta.tokens. meta.structure.array.json .meta.scopes. meta.structure.array.json string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.embedded .meta.contributes. .meta.configurationDefaults. .meta.editor.tokenColorCustomizations. .meta.textMateRules. meta.structure.array.json .meta.scope. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-.meta.scope. meta.structure.array.json meta.structure.array.json\n-meta.structure.array.json meta.structure.array.json .meta.scope.\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.comments.embedded .meta.settings. .meta.editor.tokenColorCustomizations. .meta.textMateRules. meta.structure.array.json.comments .meta.scope. string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments .meta.scope.\n-.meta.scope. meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.comments.embedded .meta.editor.tokenColorCustomizations. .meta.textMateRules. meta.structure.array.json.comments .meta.scope. string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments .meta.scope.\n-.meta.scope. meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.comments.embedded .meta.tokenColors. meta.structure.array.json.comments .meta.scope. string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments .meta.scope.\n-.meta.scope. meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.json.textmate.source -comment",
-		"L:source.json.embedded .meta.tokenColors. meta.structure.array.json .meta.scope. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.structure.array.json meta.structure.array.json .meta.scope.\n-.meta.scope. meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.source -comment"
+		"L:source.json.embedded .meta.contributes. .meta.grammars. meta.structure.array.json meta.structure.dictionary.json meta.structure.dictionary.json support.type.property-name.json\n(.meta.embeddedLanguages. | .meta.tokenTypes.)\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.embedded .meta.contributes. .meta.grammars. meta.structure.array.json meta.structure.dictionary.json meta.structure.array.json\n(.meta.balancedBracketScopes. | .meta.unbalancedBracketScopes. | .meta.injectTo.)\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.embedded .meta.contributes. .meta.grammars. meta.structure.array.json .meta.scopeName. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.embedded meta.structure.array.json .meta.t. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.embedded meta.structure.array.json .meta.lines. meta.structure.array.json .meta.tokens. meta.structure.array.json .meta.scopes. meta.structure.array.json string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.embedded .meta.contributes. .meta.configurationDefaults. .meta.editor.tokenColorCustomizations. .meta.textMateRules. meta.structure.array.json .meta.scope. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-.meta.textMateRules. meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json .meta.editor.tokenColorCustomizations.\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-.meta.scope. meta.structure.array.json meta.structure.array.json\n-meta.structure.array.json meta.structure.array.json .meta.scope.\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.comments.embedded .meta.settings. .meta.editor.tokenColorCustomizations. .meta.textMateRules. meta.structure.array.json.comments .meta.scope. string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-.meta.textMateRules. meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments .meta.editor.tokenColorCustomizations.\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments .meta.scope.\n-.meta.scope. meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.comments.embedded .meta.editor.tokenColorCustomizations. .meta.textMateRules. meta.structure.array.json.comments .meta.scope. string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-.meta.textMateRules. meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments .meta.editor.tokenColorCustomizations.\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments .meta.scope.\n-.meta.scope. meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.comments.embedded .meta.tokenColors. meta.structure.array.json.comments .meta.scope. string.quoted.double.json.comments\n-meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments meta.structure.dictionary.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.structure.array.json.comments meta.structure.array.json.comments .meta.scope.\n-.meta.scope. meta.structure.array.json.comments meta.structure.array.json.comments\n-meta.embedded.json.textmate.scope -comment",
+		"L:source.json.embedded .meta.tokenColors. meta.structure.array.json .meta.scope. string.quoted.double.json\n-meta.structure.dictionary.json meta.structure.dictionary.json meta.structure.dictionary.json\n-meta.structure.array.json meta.structure.array.json meta.structure.array.json\n-meta.structure.array.json meta.structure.array.json .meta.scope.\n-.meta.scope. meta.structure.array.json meta.structure.array.json\n-meta.embedded.json.textmate.scope -comment"
 	],
 	"patterns": [
-		{ "include": "#embeddedLanguages" }
+		{ "include": "#balancedBracketScopes" },
+		{ "include": "#tokenTypes" },
+		{ "include": "#scopeNames" }
 	],
 	"repository": {
-		"embeddedLanguages": {
-			"begin": "(?<=\")\\G(?=(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++\")",
-			"end": "(?=\"|$)",
-			"name": "meta.embedded.json.textmate.source string.quoted.double.json",
+		"balancedBracketScopes": {
+			"comment": "balancedBracketScopes ONLY",
+			"match": "(?<=(?:^|\\[)\\s*\")\\G\\*(?=\"\\s*(?:,|$))",
+			"name": "keyword.control.any"
+		},
+		"tokenTypes": {
+			"comment": "TODO: tokenTypes Type ONLY",
+			"match": "(?<=:\\s*\")\\Gother(?=\")",
+			"name": "meta.embedded.other"
+		},
+		"scopeNames": {
 			"patterns": [
 				{
-					"begin": "(?>text|source|markdown)(?=\\.[\\w.:])",
+					"begin": "(?<=\")\\G(?=(\\.(?>[^\\x00-\\x1F\"\\\\]++|\\\\.)*+)\")",
+					"end": "(?=\"|$)",
+					"name": "meta.embedded.json.textmate.scope .$1",
+					"patterns": [
+						{ "include": "#scopeName" },
+						{ "include": "source.json.embedded#stringcontent" }
+					]
+				},
+				{
+					"begin": "(?<=\")\\G(?=((?>[^\\x00-\\x1F\"\\\\]++|\\\\.)++)\")",
+					"end": "(?=\"|$)",
+					"name": "meta.embedded.json.textmate.scope $1",
+					"patterns": [
+						{ "include": "#scopeName" },
+						{ "include": "source.json.embedded#stringcontent" }
+					]
+				}
+			],
+			"repository": {
+				"scopeName": {
+					"begin": "(?<=\"| )(?>text|source|markdown)\\.(?=[\\w.:])",
 					"end": "(?![\\w.:-])",
 					"beginCaptures": { "0": { "name": "support.function.tm" } },
+					"name": "string.quoted.double.json",
 					"patterns": [
 						{
 							"match": "\\.",
 							"name": "support.function.tm"
-						}
+						},
+						{ "include": "source.json.embedded#stringcontent" }
 					]
-				},
-				{
-					"match": "\\.[\\w.:-]*",
-					"name": ".$0"
-				},
-				{
-					"match": "[\\w.:][\\w.:-]*",
-					"name": "$0"
-				},
-				{
-					"comment": "balancedBracketScopes ONLY",
-					"match": "(?<=\")\\*(?=\")",
-					"name": "keyword.control.any"
-				},
-				{
-					"comment": "tokenTypes Type ONLY",
-					"match": "(?<=\")other(?=\")",
-					"name": "meta.embedded.other"
-				},
-				{ "include": "source.json.embedded#stringcontent" }
-			]
+				}
+			}
 		}
 	}
 }

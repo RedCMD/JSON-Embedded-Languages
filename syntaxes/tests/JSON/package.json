@@ -395,7 +395,22 @@
 							"foreground": "#F7DF1E"
 						}
 					}
-				]
+				],
+				"[Dark Modern]": {
+					"textMateRules": [
+						{
+							"scope": [
+								"markup.italic.markdown markup.bold.markdown markup.strikethrough",
+								"markup.strikethrough markup.bold.markdown markup.italic.markdown",
+								"italic bold strikethrough",
+								"ABC"
+							],
+							"settings": {
+								"fontStyle": "italic bold strikethrough"
+							}
+						}
+					]
+				}
 			}
 		},
 		"continueEditSession": [
