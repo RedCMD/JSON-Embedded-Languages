@@ -42,6 +42,10 @@
 		"markers": {
 			"start": "^\\s*#pragma\\s+region\\b",
 			"end": "^\\s*#pragma\\s+endregion\\b"
+		},
+		"markers": {
+			"start": { "pattern": "^\\s*#?\\s*\\bIF\\b.*$", "flags": "i" },
+			"end": { "pattern": "^\\s*#?\\s*\\bENDIF\\b.*$", "flags": "i" }
 		}
 	}
 }
