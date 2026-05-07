@@ -3,7 +3,7 @@
 	"displayName": "JSON Embedded Languages",
 	"description": "Embedded Language(s) inside JSON",
 	"publisher": "RedCMD",
-	"version": "0.4.4",
+	"version": "0.5.0",
 	"engines": {
 		"vscode": "^1.92.0"
 	},
